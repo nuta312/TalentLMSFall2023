@@ -1,5 +1,6 @@
 package uiTest;
 
+import drivers.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
@@ -12,14 +13,13 @@ public abstract class BaseTest {
 
     @BeforeClass
     public void setUp(){
-        driver = WebDriverManager.initDriver();
+        driver = Driver.getDriver();
         actions = new Actions(driver);
     }
 
     @AfterClass
     public void tearDown(){
-        WebDriverManager.closeDriver();
+        Driver.closeDriver();
     }
-
 }
 
