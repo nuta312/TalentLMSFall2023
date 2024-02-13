@@ -30,7 +30,7 @@ public class Driver {
             }
         } return driver;
     }
-    public static void closeDriver(){ // нужен по умолчанию
+    public static void closeDriver(){ //нужен по умолчанию
         try {
             if (driver!=null){
                 driver.close();
@@ -41,5 +41,4 @@ public class Driver {
             System.out.println("Error while closing driver");
         }
     }
-
 }

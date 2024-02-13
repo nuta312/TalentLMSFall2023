@@ -13,4 +13,6 @@ public class EdgeWebDriver {
         driver.manage().window().maximize();
         return driver;
     }
+
+
 }
