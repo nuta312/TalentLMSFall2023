@@ -6,6 +6,15 @@ This project automates web testing for [TalentLMS](https://www.talentlms.com/) u
 
 - Java 17
 - Maven 3.8 or above
+- 
+# Remove the file from the repository
+git rm -r --cached .idea/
+
+# now update your gitignore file to ignore this folder
+echo '.idea' >> .gitignore
+
+# add the .gitignore file
+git add .gitignore
 
 Ensure Java and Maven are correctly installed on your system by running `java -version` and `mvn -version` in your terminal.
 
