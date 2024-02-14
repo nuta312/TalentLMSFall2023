@@ -2,12 +2,10 @@ package driver;
 
 import config.ConfigReader;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Driver {
     private static WebDriver driver;
     private Driver(){
-
     }
     public static WebDriver getDriver(){
         if (driver == null){
@@ -28,6 +26,7 @@ public class Driver {
 
         return driver;
     }
+
     public static void closeDriver(){
         try {
             if (driver!=null){
