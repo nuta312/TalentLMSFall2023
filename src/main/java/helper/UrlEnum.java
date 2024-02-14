@@ -2,9 +2,8 @@ package helper;
 
 public enum UrlEnum {
 
-        TALANTLMS("https://www.talentlms.com/"),
-        DEMOQA("https://demoqa.com/"),
-        DIGITALNOMADS("https://digitalnomads.talentlms.com/");
+        TALANTLMS("https://www.talentlms.com/");
+
 
         private final String url;
 
