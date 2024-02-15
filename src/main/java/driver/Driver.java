@@ -4,9 +4,12 @@ import config.ConfigReader;
 import org.openqa.selenium.WebDriver;
 
 public class Driver {
+
     private static WebDriver driver;
     private Driver(){
+
     }
+
     public static WebDriver getDriver(){
         if (driver == null){
             switch (ConfigReader.getValue("browser").toLowerCase()){
@@ -23,7 +26,6 @@ public class Driver {
                     throw new IllegalArgumentException("You provided wrong Driver name");
             }
         }
-
         return driver;
     }
 
@@ -38,4 +40,5 @@ public class Driver {
             System.out.println("Error while closing driver");
         }
     }
+
 }
