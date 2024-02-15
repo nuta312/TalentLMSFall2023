@@ -62,4 +62,10 @@ public class WebElementHelper {
         return this;
     }
 
+    public WebElementHelper scrollDownPage(){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver(); // интерфейс JavascriptExecutor
+        js.executeScript("window.scrollBy(0, 200)");
+        return this;
+    }
+
 }
