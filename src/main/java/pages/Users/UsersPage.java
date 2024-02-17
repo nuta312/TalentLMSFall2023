@@ -12,70 +12,48 @@ import java.util.List;
 public class UsersPage extends BasePage {
 
     User randomUser = FakeDataHelper.createNewUserWithFakerData();
-
     @FindBy(xpath = "//a[contains(text(), 'Home')]")
     public WebElement homeBtn;
-
     @FindBy(xpath = "(//div[@class='hidden-phone']/child::a)[1]")
     public WebElement homeAddUserBtn;
-
     @FindBy(xpath = "//input[@name='name']")
     public WebElement firstnameInput;
-
     @FindBy(xpath = "//input[@name='surname']")
     public WebElement lastnameInput;
-
     @FindBy(xpath = "//input[@name='email']")
     public WebElement emailInput;
-
     @FindBy(xpath = "//input[@name='login']")
     public WebElement usernameInput;
-
     @FindBy(xpath = "//input[@name='password']")
     public WebElement passwordInput;
-
     @FindBy(xpath = "//textarea[@name='description']")
     public WebElement bioInput;
-
     @FindBy(xpath = "(//span[@class=\"select2-arrow\"])[1]")
     public WebElement userTypesSelectBtn;
-
     @FindBy(xpath = "(//span[@class=\"select2-chosen\"])[2]")
     public WebElement timeZoneSelectBtn;
-
     @FindBy(xpath = "//span[contains(text(),'(Russian)')]")
     public WebElement languageSelectInput;
-
     @FindBy(xpath = "//input[@id=\"status\"]")
     public WebElement activeCheckbox;
-
     @FindBy(xpath = "(//input[@type='checkbox'])[3]")
     public WebElement excludeFromEmailsCheckbox;
-
     @FindBy(xpath = "//input[@name=\"submit_personal_details\"]")
     public WebElement addUserSubmitBtn;
-
     @FindBy(xpath = "//a[text()='cancel']")
     public WebElement cancelAddUserSubmitBtn;
-
     @FindBy(xpath = "//div[@class='toast-message']")
     public WebElement addUserSuccessMessage;
-
     @FindBy(xpath = "(//span[@class=\"help-inline\"])[3]")
     public WebElement emailMessage;
-
     @FindBy(xpath = "(//span[@class=\"help-inline\"])[4]")
     public WebElement userNameMessage;
-
     @FindBy(xpath = "(//span[@class=\"help-inline\"])[1]")
     public WebElement nameIsRequiredMessage;
-
     @FindBy(xpath = "(//span[@class=\"help-inline\"])[2]")
     public WebElement lastNameIsRequiredMessage;
-
     @FindBy(xpath = "(//span[@class=\"help-inline\"])[3]")
     public WebElement emailAddressValidationMessage;
-
     @FindBy(xpath = "(//span[@class=\"help-inline\"])[2]")
     public WebElement passwordValidationMessage;
 
@@ -107,7 +85,6 @@ public class UsersPage extends BasePage {
         int randomIndex = random.nextInt(timeZoneDropDown.size());
         timeZoneDropDown.get(randomIndex).click();
         return this;
-
     }
 
     public UsersPage selectLanguage() {
@@ -119,6 +96,7 @@ public class UsersPage extends BasePage {
         languageDropDown.get(randomIndex).click();
         return this;
     }
+
     public UsersPage clickOnExcludeFromEmailsCheckbox(){
         webElementHelper.scrollToElement(excludeFromEmailsCheckbox);
         webElementHelper.click(excludeFromEmailsCheckbox);
@@ -132,5 +110,4 @@ public class UsersPage extends BasePage {
         webElementHelper.click(addUserSubmitBtn);
         return this;
     }
-
 }

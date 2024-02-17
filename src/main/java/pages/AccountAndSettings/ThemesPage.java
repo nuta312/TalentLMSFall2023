@@ -14,28 +14,20 @@ public class ThemesPage extends BasePage {
 
     @FindBy(id = "select-theme")
     public WebElement themesButton;
-
     @FindBy(id = "select-item")
     public WebElement selectItem;
-
     @FindBy (id = "set-active-theme")
     public WebElement activeThemeButton;
-
     @FindBy(id = "update-theme")
     public WebElement updateThemeButton;
-
     @FindBy(id="save-as-new-button")
     public WebElement saveAsNewButton;
-
     @FindBy(id="delete-button")
     public WebElement deleteButton;
-
     @FindBy(xpath = "//div[@class='toast-message']")
     public WebElement successMessage;
-
     @FindBy(xpath = "//option[@value='1']")
     public WebElement defaultTheme;
-
     @FindBy (xpath = "//option[@value='41']")
     public WebElement modernTheme;
 
@@ -54,7 +46,6 @@ public class ThemesPage extends BasePage {
         for (WebElement e: themesList){
             valueList.add(e.getText());
         }
-
         Random random = new Random();
         int randomIndex = random.nextInt(valueList.size());
         themesList.get(randomIndex).click();
@@ -70,5 +61,4 @@ public class ThemesPage extends BasePage {
         element.sendKeys(txt);
         return this;
     }
-
 }

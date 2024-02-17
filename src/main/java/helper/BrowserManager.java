@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.LinkedList;
 import java.util.Set;
@@ -51,7 +50,7 @@ public class BrowserManager {
         public FrameHelper switchToFrame(WebElement element){
             try {
                 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));
-            }catch (TimeoutException e){
+            } catch (TimeoutException e){
                 e.printStackTrace();
             }
             return this;
@@ -103,7 +102,5 @@ public class BrowserManager {
                 driver.close();
             }
         }
-
     }
-
 }

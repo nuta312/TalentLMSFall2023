@@ -8,22 +8,16 @@ public class DomainPage extends BasePage {
 
     @FindBy(xpath = "//input[@name='domain_name']")
     public WebElement domainNameInput;
-
     @FindBy(xpath = "//input[@name='submit_domain_name']")
     public WebElement changeDomainNameButton;
-
     @FindBy(xpath = "//button[text()='Map a custom domain']")
     public WebElement mapCustomDomainButton;
-
     @FindBy(xpath = "//a[text()='cancel']")
     public WebElement cancelButton;
-
     @FindBy(xpath = "//a[text()='Upgrade']")
     public WebElement upgradeButton;
-
     @FindBy(xpath = "//a[text()='Back to domain name']")
     public WebElement backToDomainNameButton;
-
     @FindBy(xpath = "//div[text()='Domain name changed']")
     public WebElement successRenameDomainMessage;
 
@@ -56,5 +50,4 @@ public class DomainPage extends BasePage {
         webElementHelper.click(backToDomainNameButton);
         return this;
     }
-
 }

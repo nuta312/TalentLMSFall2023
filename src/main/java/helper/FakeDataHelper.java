@@ -19,5 +19,4 @@ public class FakeDataHelper {
                 "scrambled it to make a type specimen book. It has survived not only five centuries.");
         return user;
     }
-
 }

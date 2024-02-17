@@ -2,7 +2,6 @@ package driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.safari.SafariDriver;
-
 import java.time.Duration;
 
 public class SafariWebDriver {
@@ -13,5 +12,4 @@ public class SafariWebDriver {
         driver.manage().window().maximize();
         return driver;
     }
-
 }

@@ -6,7 +6,6 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class AlertHelper {
@@ -24,7 +23,7 @@ public class AlertHelper {
     }
 
     public boolean isAlertPresent(){
-        try{
+        try {
             Driver.getDriver().switchTo().alert();
             return true;
         } catch (NoAlertPresentException e) {
@@ -55,5 +54,4 @@ public class AlertHelper {
         }
         getAlert().sendKeys(text);
     }
-
 }

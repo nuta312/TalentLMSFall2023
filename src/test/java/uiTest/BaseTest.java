@@ -6,13 +6,17 @@ import helper.WebElementHelper;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import pages.AccountAndSettings.BasicSettingsPage;
-import pages.AccountAndSettings.DomainPage;
-import pages.AccountAndSettings.Gamification.*;
-import pages.AccountAndSettings.SubscriptionPage;
-import pages.AccountAndSettings.ThemesPage;
+import pages.AccountAndSettings.*;
+import pages.AccountAndSettings.Gamification.GamificationPage;
+import pages.AccountAndSettings.Gamification.PointsBox;
+import pages.AccountAndSettings.Gamification.BadgesBox;
+import pages.AccountAndSettings.Gamification.LevelsBox;
+import pages.AccountAndSettings.Gamification.RewardsBox;
+import pages.AccountAndSettings.Gamification.LeaderboardBox;
 import pages.LoginPage;
 import pages.Users.UsersPage;
+import static pages.TalentLMS_PAGES.LOGIN;
+import static config.ConfigReader.getValue;
 
 public class BaseTest {
 
@@ -22,6 +26,7 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected BasicSettingsPage basicSettingsPage;
     protected ThemesPage themesPage;
+    protected CertificatesPage certificatesPage;
     protected DomainPage domainPage;
     protected SubscriptionPage subscriptionPage;
     protected GamificationPage gamificationPage;
@@ -32,7 +37,6 @@ public class BaseTest {
     protected LeaderboardBox leaderboardBox;
     protected UsersPage usersPage;
 
-
     @BeforeClass(alwaysRun = true)
     public void setUp() {
         driver = Driver.getDriver();
@@ -42,6 +46,7 @@ public class BaseTest {
         usersPage = new UsersPage();
         basicSettingsPage = new BasicSettingsPage();
         themesPage = new ThemesPage();
+        certificatesPage = new CertificatesPage();
         domainPage = new DomainPage();
         subscriptionPage = new SubscriptionPage();
         gamificationPage = new GamificationPage();
@@ -50,17 +55,15 @@ public class BaseTest {
         levelsBox = new LevelsBox();
         rewardsBox = new RewardsBox();
         leaderboardBox = new LeaderboardBox();
-        browserManager.openByNavigate("https://app.talentlms.com/login");
-        loginPage.enterDomain("fall2023")
-                .enterUsername("nurik9816")
-                .enterPassword("qwerty12345")
+        browserManager.openByNavigate(LOGIN.toString());
+        loginPage.enterDomain(getValue("domain"))
+                .enterUsername(getValue("username"))
+                .enterPassword(getValue("password"))
                 .clickLoginButton();
     }
 
     @AfterClass(alwaysRun = true)
     public void tearDown() {
         Driver.closeDriver();
-
     }
-
 }

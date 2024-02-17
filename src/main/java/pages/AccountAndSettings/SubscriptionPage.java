@@ -10,40 +10,28 @@ public class SubscriptionPage extends BasePage {
     public WebElement planTypeButton;
     @FindBy(xpath = "//span[text()='Standard plan']")
     public WebElement StandardPlanButton;
-
     @FindBy(xpath = "//span[text()='Active plan']")
     public WebElement activePlanButton;
-
     @FindBy(xpath = "//div[@id='s2id_tl-plans-content']")
     public WebElement includeTalentLibraryButton;
-
     @FindBy(xpath = "//span[text()='No']")
     public WebElement NoButton;
-
     @FindBy(xpath = "//div[text()='Yes']")
     public WebElement YesButton;
-
     @FindBy(xpath = "//div[@id='s2id_tl-plans-commitment']")
     public WebElement billedButton;
-
     @FindBy(xpath = "//span[text()='Yearly']")
     public WebElement yearlyButton;
-
     @FindBy(xpath = "//span[text()='Monthly']")
     public WebElement monthlyButton;
-
     @FindBy(xpath = "(//a[contains(@href,'starter')])[2]")
     public WebElement selectStarterPlanButton;
-
     @FindBy(xpath = "(//a[contains(@href,'basic')])[4]")
     public WebElement selectBasicPlanButton;
-
     @FindBy(xpath = "(//a[contains(@href,'plus')])[4]")
     public WebElement selectPlusPlanButton;
-
     @FindBy(xpath = "(//a[contains(@href,'premium')])[2]")
     public WebElement selectPremiumPlanButton;
-
     @FindBy(id = "//a[text()='cancel']")
     public WebElement cancelButton;
 
@@ -72,5 +60,4 @@ public class SubscriptionPage extends BasePage {
         webElementHelper.clickWithScrollToElement(cancelButton);
         return this;
     }
-
 }

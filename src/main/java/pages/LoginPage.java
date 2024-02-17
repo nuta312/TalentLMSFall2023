@@ -5,16 +5,12 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
 
-
     @FindBy(xpath = "(//input[@name='domain'])[1]")
     public WebElement domainInput;
-
     @FindBy(xpath = "//input[@name='login']")
     public WebElement usernameInput;
-
     @FindBy(xpath = "//input[@name='password']")
     public WebElement passwordInput;
-
     @FindBy(xpath = "//input[@value='Log in']")
     public WebElement loginButton;
 
@@ -37,5 +33,4 @@ public class LoginPage extends BasePage {
         webElementHelper.click(loginButton);
         return this;
     }
-
 }

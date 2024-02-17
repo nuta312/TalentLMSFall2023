@@ -47,5 +47,4 @@ public class LevelsBox extends GamificationPage {
         webElementHelper.sendKeys(inputUpgradeLevelEveryBadges, points);
         return this;
     }
-
 }

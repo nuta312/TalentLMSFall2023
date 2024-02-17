@@ -61,5 +61,4 @@ public class BadgesBox extends GamificationPage {
         webElementHelper.click(certificationBadges);
         return this;
     }
-
 }

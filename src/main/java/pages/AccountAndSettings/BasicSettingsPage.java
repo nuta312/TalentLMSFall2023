@@ -1,51 +1,41 @@
 package pages.AccountAndSettings;
 
+import config.ConfigReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 import java.io.File;
 
+import static config.ConfigReader.getValue;
+
 public class BasicSettingsPage extends BasePage {
 
     @FindBy(xpath = "//input[@name='site_description']")
     public WebElement siteDescriptionInput;
-
     @FindBy(xpath = "//input[@name='logo_uploader']")
     public WebElement selectLogoButton;
-
     @FindBy(css = "#tl-crop-modal-logo > div.modal-footer > button")
     public WebElement applyLogoButton;
-
     @FindBy(xpath = "//input[@name='favicon_uploader']")
     public WebElement selectFaviconButton;
-
     @FindBy(css = "#tl-crop-modal-favicon > div.modal-footer > button")
     public WebElement applyFaviconButton;
-
     @FindBy(xpath = "//select[@name='default_language']")
     public WebElement languageButton;
-
     @FindBy(xpath = "//select[@name='default_timezone']")
     public WebElement timeZoneButton;
-
     @FindBy(xpath = "//select[@name='date_format']")
     public WebElement dateFormatButton;
-
     @FindBy(xpath = "//select[@name='time_format']")
     public WebElement timeFormatButton;
-
     @FindBy(xpath = "//select[@name='currency']")
     public WebElement currencyButton;
-
     @FindBy(xpath = "//select[@name='conference_mode']")
     public WebElement conferenceTypeButton;
-
     @FindBy(xpath = "//input[@name='conference_max_users']")
     public WebElement capacityInput;
-
     @FindBy(xpath = "//input[@name='submit']")
     public WebElement saveButton;
-
     @FindBy(xpath = "//div[text()='Basic settings updated successfully']")
     public WebElement successSavingMessage;
 
@@ -56,13 +46,12 @@ public class BasicSettingsPage extends BasePage {
 
     public BasicSettingsPage selectRandomLogo() {
         try {
-            String images = "C:/Users/user/Desktop/projectLogo";
-            File[] filesList = new File(images).listFiles();
+            File[] filesList = new File(getValue("imagesPath")).listFiles();
             File file = filesList[random.nextInt(filesList.length)];
             String absolutePath = file.getAbsolutePath();
             selectLogoButton.sendKeys(absolutePath);
             webElementHelper.click(applyLogoButton);
-        }catch (NullPointerException npe) {
+        } catch (NullPointerException npe) {
             npe.getMessage();
         }
         return this;
@@ -124,5 +113,4 @@ public class BasicSettingsPage extends BasePage {
         webElementHelper.click(saveButton);
         return this;
     }
-
 }

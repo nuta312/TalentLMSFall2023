@@ -131,5 +131,4 @@ public class PointsBox extends GamificationPage {
         webElementHelper.sendKeys(inputEachUpvoteOnDiscussionComments, points);
         return this;
     }
-
 }
