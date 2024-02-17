@@ -1,11 +1,9 @@
 package pages.AccountAndSettings;
 
-import config.ConfigReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 import java.io.File;
-
 import static config.ConfigReader.getValue;
 
 public class BasicSettingsPage extends BasePage {
@@ -39,12 +37,12 @@ public class BasicSettingsPage extends BasePage {
     @FindBy(xpath = "//div[text()='Basic settings updated successfully']")
     public WebElement successSavingMessage;
 
-    public BasicSettingsPage fillUpDescription(String text) {
+    public BasicSettingsPage fillUpDescription(String text){
         webElementHelper.sendKeys(siteDescriptionInput, text);
         return this;
     }
 
-    public BasicSettingsPage selectRandomLogo() {
+    public BasicSettingsPage selectRandomLogo(){
         try {
             File[] filesList = new File(getValue("imagesPath")).listFiles();
             File file = filesList[random.nextInt(filesList.length)];
@@ -57,7 +55,7 @@ public class BasicSettingsPage extends BasePage {
         return this;
     }
 
-    public BasicSettingsPage selectRandomFavicon() throws InterruptedException {
+    public BasicSettingsPage selectRandomFavicon() throws InterruptedException{
         try {
             String images = "C:/Users/user/Desktop/projectLogo";
             File[] filesList = new File(images).listFiles();
@@ -72,44 +70,44 @@ public class BasicSettingsPage extends BasePage {
         return this;
     }
 
-    public BasicSettingsPage selectLanguage() {
+    public BasicSettingsPage selectLanguage(){
         webElementHelper.scrollDownPage();
         dropdownHelper.selectByText(languageButton, "Pусский (Russian)");
         return this;
     }
 
-    public BasicSettingsPage selectTimeZone() {
+    public BasicSettingsPage selectTimeZone(){
         dropdownHelper.selectByText(timeZoneButton, "(GMT +06:00) Almaty");
         return this;
     }
 
-    public BasicSettingsPage selectDateFormat() {
+    public BasicSettingsPage selectDateFormat(){
         dropdownHelper.selectByText(dateFormatButton, "DD/MM/YYYY");
         return this;
     }
 
-    public BasicSettingsPage selectTimeFormat() {
+    public BasicSettingsPage selectTimeFormat(){
         dropdownHelper.selectByText(timeFormatButton, "24-hour");
         return this;
     }
 
-    public BasicSettingsPage selectCurrency() {
+    public BasicSettingsPage selectCurrency(){
         dropdownHelper.selectByText(currencyButton, "Russian Ruble");
         return this;
     }
 
-    public BasicSettingsPage selectConferenceMode() {
+    public BasicSettingsPage selectConferenceMode(){
         webElementHelper.scrollDownPage();
         dropdownHelper.selectByText(conferenceTypeButton, "Zoom Meeting");
         return this;
     }
 
-    public BasicSettingsPage inputCapacity() {
+    public BasicSettingsPage inputCapacity(){
         capacityInput.sendKeys("10");
         return this;
     }
 
-    public BasicSettingsPage clickSaveChanges() {
+    public BasicSettingsPage clickSaveChanges(){
         webElementHelper.click(saveButton);
         return this;
     }

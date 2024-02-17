@@ -9,7 +9,7 @@ import static pages.TalentLMS_PAGES.THEMES;
 public class ThemesTest extends BaseTest {
 
     @Test
-    public void selectRandomThemeTest()  {
+    public void selectRandomThemeTest(){
         browserManager.openByNavigate(THEMES.toString());
         themesPage.selectRandomTheme()
                 .activeThemeButtonClick();

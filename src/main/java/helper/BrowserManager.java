@@ -42,7 +42,7 @@ public class BrowserManager {
         private WebDriver driver;
         private WebDriverWait wait;
 
-        public FrameHelper(WebDriver driver) {
+        public FrameHelper(WebDriver driver){
             this.driver = driver;
             this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         }
@@ -72,12 +72,12 @@ public class BrowserManager {
         private WebDriver driver;
         private WebDriverWait wait;
 
-        public WindowHelper(WebDriver driver) {
+        public WindowHelper(WebDriver driver){
             this.driver = driver;
             this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         }
 
-        public Set<String> getWindowHandles() {
+        public Set<String> getWindowHandles(){
             return driver.getWindowHandles();
         }
 

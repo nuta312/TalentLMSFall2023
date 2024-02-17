@@ -42,12 +42,12 @@ public class PointsBox extends GamificationPage {
     @FindBy(xpath = "//input[contains(@name,'discussion_upvote_comment_points')]")
     public WebElement inputEachUpvoteOnDiscussionComments;
 
-    public PointsBox clickEachLogin (){
+    public PointsBox clickEachLogin(){
         webElementHelper.click(eachLogin);
         return this;
     }
 
-    public PointsBox inputEachLoginPoints (String points){
+    public PointsBox inputEachLoginPoints(String points){
         webElementHelper.sendKeys(inputEachlLogin, points);
         return this;
     }

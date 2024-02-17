@@ -12,13 +12,13 @@ public class WebElementHelper {
 
     Actions actions;
 
-    public WebElementHelper waitForButtonToBeClickAble(WebElement element) {
+    public WebElementHelper waitForButtonToBeClickAble(WebElement element){
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(7))
                 .until(ExpectedConditions.elementToBeClickable(element));
         return this;
     }
 
-    public WebElementHelper waitForElementToBeDisplayed(WebElement element) {
+    public WebElementHelper waitForElementToBeDisplayed(WebElement element){
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(element));
         return this;
     }
@@ -62,7 +62,7 @@ public class WebElementHelper {
     }
 
     public WebElementHelper scrollDownPage(){
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver(); // интерфейс JavascriptExecutor
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollBy(0, 200)");
         return this;
     }

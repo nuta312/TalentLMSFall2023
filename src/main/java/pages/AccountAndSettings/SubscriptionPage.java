@@ -35,7 +35,6 @@ public class SubscriptionPage extends BasePage {
     @FindBy(id = "//a[text()='cancel']")
     public WebElement cancelButton;
 
-
     public SubscriptionPage clickStarterPlanButton(){
         webElementHelper.click(selectStarterPlanButton);
         return this;
@@ -56,7 +55,7 @@ public class SubscriptionPage extends BasePage {
         return this;
     }
 
-    public SubscriptionPage clickCancelButton() {
+    public SubscriptionPage clickCancelButton(){
         webElementHelper.clickWithScrollToElement(cancelButton);
         return this;
     }

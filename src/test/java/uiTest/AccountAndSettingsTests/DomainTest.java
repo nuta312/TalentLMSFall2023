@@ -9,7 +9,7 @@ import static pages.TalentLMS_PAGES.DASHBOARD;
 public class DomainTest extends BaseTest {
 
     @Test(description = "Rename domain name and click cancel button", priority = 0)
-    public void renameDomainNameAndClickCancelTest() {
+    public void renameDomainNameAndClickCancelTest(){
         browserManager.openByNavigate(DOMAIN.toString());
         domainPage.fillUpDomainNameInput("fall2023")
                 .clickCancelButton();
@@ -17,7 +17,7 @@ public class DomainTest extends BaseTest {
     }
 
     @Test(description = "Rename domain name positive test", priority = 1)
-    public void renameDomainNameTest() {
+    public void renameDomainNameTest(){
         browserManager.openByNavigate(DOMAIN.toString());
         domainPage.fillUpDomainNameInput("")
                         .clickChangeDomainButton();

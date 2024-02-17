@@ -5,10 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import pages.BasePage;
-
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 
 public class ThemesPage extends BasePage {
 
@@ -31,28 +29,25 @@ public class ThemesPage extends BasePage {
     @FindBy (xpath = "//option[@value='41']")
     public WebElement modernTheme;
 
-    public ThemesPage selectThemeButton () {
+    public ThemesPage selectThemeButton(){
         themesButton.sendKeys(Keys.ENTER);
         return this;
     }
 
-    public ThemesPage selectRandomTheme () {
+    public ThemesPage selectRandomTheme(){
         selectThemeButton();
         select = new Select(themesButton);
-
         List<WebElement> themesList = select.getOptions();
         List <String> valueList = new LinkedList<>();
-
         for (WebElement e: themesList){
             valueList.add(e.getText());
         }
-        Random random = new Random();
         int randomIndex = random.nextInt(valueList.size());
         themesList.get(randomIndex).click();
         return this;
     }
 
-    public ThemesPage activeThemeButtonClick (){
+    public ThemesPage activeThemeButtonClick(){
         webElementHelper.click(activeThemeButton);
         return this;
     }

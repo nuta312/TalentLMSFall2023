@@ -8,7 +8,7 @@ import static pages.TalentLMS_PAGES.CERTIFICATES;
 public class CertificatesTest extends BaseTest {
 
     @Test(description = "Upload your own certificate and save it as new")
-    public void saveNewCertificateTest() {
+    public void saveNewCertificateTest(){
         browserManager.openByNavigate(CERTIFICATES.toString());
         certificatesPage.uploadOwnCertificate()
                 .clickSaveAsNewButton()

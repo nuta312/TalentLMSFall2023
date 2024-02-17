@@ -18,7 +18,7 @@ public class LevelsBox extends GamificationPage {
     @FindBy(xpath = "//input[contains(@name,'upgrade_level_badges') and @class='tl-gamification-engine-levels']")
     public WebElement inputUpgradeLevelEveryBadges;
 
-    public LevelsBox clickUpgradeLevelPointsCheck (){
+    public LevelsBox clickUpgradeLevelPointsCheck(){
         webElementHelper.click(upgradeLevelPointsCheck);
         return this;
     }
@@ -28,7 +28,7 @@ public class LevelsBox extends GamificationPage {
         return this;
     }
 
-    public LevelsBox clickUpgradeLevelCompletedCoursesCheck (){
+    public LevelsBox clickUpgradeLevelCompletedCoursesCheck(){
         webElementHelper.click(upgradeLevelCompletedCoursesCheck);
         return this;
     }
@@ -38,7 +38,7 @@ public class LevelsBox extends GamificationPage {
         return this;
     }
 
-    public LevelsBox clickUpgradeLevelBadgesCheck (){
+    public LevelsBox clickUpgradeLevelBadgesCheck(){
         webElementHelper.click(upgradeLevelBadgesCheck);
         return this;
     }
