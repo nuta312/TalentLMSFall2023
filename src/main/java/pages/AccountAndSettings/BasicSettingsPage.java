@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 import java.io.File;
+
 import static config.ConfigReader.getValue;
 
 public class BasicSettingsPage extends BasePage {

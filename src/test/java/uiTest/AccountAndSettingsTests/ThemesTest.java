@@ -2,6 +2,7 @@ package uiTest.AccountAndSettingsTests;
 
 import uiTest.BaseTest;
 import org.testng.annotations.Test;
+
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 import static pages.TalentLMS_PAGES.THEMES;

@@ -2,6 +2,7 @@ package uiTest.AccountAndSettingsTests;
 
 import org.testng.annotations.Test;
 import uiTest.BaseTest;
+
 import static org.testng.Assert.assertEquals;
 
 public class UsersTest extends BaseTest {

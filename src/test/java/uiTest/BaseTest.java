@@ -19,6 +19,7 @@ import pages.AccountAndSettings.Gamification.LevelsBox;
 import pages.AccountAndSettings.Gamification.RewardsBox;
 import pages.AccountAndSettings.Gamification.LeaderboardBox;
 import pages.Users.UsersPage;
+
 import static pages.TalentLMS_PAGES.LOGIN;
 import static config.ConfigReader.getValue;
 
