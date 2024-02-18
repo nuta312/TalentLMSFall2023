@@ -57,8 +57,7 @@ public class BasicSettingsPage extends BasePage {
 
     public BasicSettingsPage selectRandomFavicon() throws InterruptedException{
         try {
-            String images = "C:/Users/user/Desktop/projectLogo";
-            File[] filesList = new File(images).listFiles();
+            File[] filesList = new File(getValue("imagesPath")).listFiles();
             File file = filesList[random.nextInt(filesList.length)];
             String absolutePath = file.getAbsolutePath();
             selectFaviconButton.sendKeys(absolutePath);
