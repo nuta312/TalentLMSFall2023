@@ -18,7 +18,6 @@ public class ConfigReader {
             properties = new Properties();
             properties.load(fileInputStream);
             fileInputStream.close();
-
         } catch (IOException e) {
             throw new RuntimeException("File not found");
         }
@@ -26,7 +25,5 @@ public class ConfigReader {
 
     public static String getValue(String key){
         return properties.getProperty(key).trim();
-
     }
-
 }

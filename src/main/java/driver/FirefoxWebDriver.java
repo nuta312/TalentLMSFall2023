@@ -2,7 +2,6 @@ package driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import java.time.Duration;
 
 public class FirefoxWebDriver {
@@ -13,5 +12,4 @@ public class FirefoxWebDriver {
         driver.manage().window().maximize();
         return driver;
     }
-
 }

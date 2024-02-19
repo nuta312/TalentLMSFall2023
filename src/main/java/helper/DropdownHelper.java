@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,7 +14,7 @@ public class DropdownHelper {
     private Select select;
     private WebDriverWait wait;
 
-    public DropdownHelper(WebDriver driver) {
+    public DropdownHelper(WebDriver driver){
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
@@ -46,5 +45,4 @@ public class DropdownHelper {
         }
         return valueList;
     }
-
 }

@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.LinkedList;
 import java.util.Set;
@@ -43,7 +42,7 @@ public class BrowserManager {
         private WebDriver driver;
         private WebDriverWait wait;
 
-        public FrameHelper(WebDriver driver) {
+        public FrameHelper(WebDriver driver){
             this.driver = driver;
             this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         }
@@ -51,7 +50,7 @@ public class BrowserManager {
         public FrameHelper switchToFrame(WebElement element){
             try {
                 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));
-            }catch (TimeoutException e){
+            } catch (TimeoutException e){
                 e.printStackTrace();
             }
             return this;
@@ -73,12 +72,12 @@ public class BrowserManager {
         private WebDriver driver;
         private WebDriverWait wait;
 
-        public WindowHelper(WebDriver driver) {
+        public WindowHelper(WebDriver driver){
             this.driver = driver;
             this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         }
 
-        public Set<String> getWindowHandles() {
+        public Set<String> getWindowHandles(){
             return driver.getWindowHandles();
         }
 
@@ -103,7 +102,5 @@ public class BrowserManager {
                 driver.close();
             }
         }
-
     }
-
 }

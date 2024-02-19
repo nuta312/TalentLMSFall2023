@@ -2,7 +2,6 @@ package driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-
 import java.time.Duration;
 
 public class EdgeWebDriver {
@@ -13,5 +12,4 @@ public class EdgeWebDriver {
         driver.manage().window().maximize();
         return driver;
     }
-
 }

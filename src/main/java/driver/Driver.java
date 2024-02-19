@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 public class Driver {
 
     private static WebDriver driver;
-    private Driver(){
 
+    private Driver(){
     }
 
     public static WebDriver getDriver(){
@@ -40,5 +40,4 @@ public class Driver {
             System.out.println("Error while closing driver");
         }
     }
-
 }
