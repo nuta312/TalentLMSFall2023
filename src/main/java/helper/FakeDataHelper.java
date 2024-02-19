@@ -5,7 +5,7 @@ import com.github.javafaker.Faker;
 
 public class FakeDataHelper {
 
-    static Faker faker = new Faker();
+    public static Faker faker = new Faker();
 
     public static User createNewUserWithFakerData(){
         User user = new User();

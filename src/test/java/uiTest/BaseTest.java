@@ -7,9 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.LoginPage;
+import pages.AccountAndSettings.AccountUsersPage;
 import pages.AccountAndSettings.BasicSettingsPage;
 import pages.AccountAndSettings.ThemesPage;
 import pages.AccountAndSettings.CertificatesPage;
+import pages.AccountAndSettings.EcommercePage;
 import pages.AccountAndSettings.DomainPage;
 import pages.AccountAndSettings.SubscriptionPage;
 import pages.AccountAndSettings.Gamification.GamificationPage;
@@ -28,10 +30,14 @@ public class BaseTest {
     protected WebDriver driver;
     protected WebElementHelper webElementHelper;
     protected BrowserManager browserManager;
+    protected BrowserManager.WindowHelper windowHelper;
+    protected BrowserManager.FrameHelper frameHelper;
     protected LoginPage loginPage;
     protected BasicSettingsPage basicSettingsPage;
+    protected AccountUsersPage accountUsersPage;
     protected ThemesPage themesPage;
     protected CertificatesPage certificatesPage;
+    protected EcommercePage ecommercePage;
     protected DomainPage domainPage;
     protected SubscriptionPage subscriptionPage;
     protected GamificationPage gamificationPage;
@@ -45,13 +51,17 @@ public class BaseTest {
     @BeforeClass(alwaysRun = true)
     public void setUp(){
         driver = Driver.getDriver();
-        browserManager = new BrowserManager(driver);
         webElementHelper = new WebElementHelper();
+        browserManager = new BrowserManager(driver);
+        windowHelper = new BrowserManager.WindowHelper(driver);
+        frameHelper = new BrowserManager.FrameHelper(driver);
         loginPage = new LoginPage();
         usersPage = new UsersPage();
         basicSettingsPage = new BasicSettingsPage();
+        accountUsersPage = new AccountUsersPage();
         themesPage = new ThemesPage();
         certificatesPage = new CertificatesPage();
+        ecommercePage = new EcommercePage();
         domainPage = new DomainPage();
         subscriptionPage = new SubscriptionPage();
         gamificationPage = new GamificationPage();
