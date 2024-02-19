@@ -37,7 +37,7 @@ public class BrowserManager {
         driver.navigate().refresh();
     }
 
-    class FrameHelper {
+    public static class FrameHelper {
 
         private WebDriver driver;
         private WebDriverWait wait;
@@ -67,7 +67,7 @@ public class BrowserManager {
         }
     }
 
-    class WindowHelper {
+    public static class WindowHelper {
 
         private WebDriver driver;
         private WebDriverWait wait;
