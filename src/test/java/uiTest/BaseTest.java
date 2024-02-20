@@ -22,9 +22,9 @@ public class BaseTest {
         webElementHelper = new WebElementHelper();
         loginPage = new LoginPage();
         browserManager.openByNavigate("https://app.talentlms.com/login");
-        loginPage.enterDomain("fall2023")
-                .enterUsername("nurik9816")
-                .enterPassword("qwerty12345")
+        loginPage.enterDomain("asyl2024")
+                .enterUsername("asikosan2014@gmail.com")
+                .enterPassword("asyl2024")
                 .clickLoginButton();
     }
 

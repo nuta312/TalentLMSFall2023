@@ -21,7 +21,7 @@ public class Users {
      * this method allows to take all data from the table and save it to ArrayList
      */
     public static ArrayList<Users> getUsersFromTable(WebDriver driver){
-        List<WebElement> rows = driver.findElements(By.cssSelector(".outter-table-wrapper tr[role=row]"));
+        List<WebElement> rows = driver.findElements(By.xpath("//tbody/tr[@role='row']"));
         ArrayList<Users> users = new ArrayList<>();
         for (WebElement row:rows){
             List<WebElement> cells = row.findElements(By.cssSelector(".tl-align-left"));
