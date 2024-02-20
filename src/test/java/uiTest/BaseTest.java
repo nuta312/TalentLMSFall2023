@@ -14,16 +14,21 @@ import pages.accountAndSettings.CertificatesPage;
 import pages.accountAndSettings.EcommercePage;
 import pages.accountAndSettings.DomainPage;
 import pages.accountAndSettings.SubscriptionPage;
-import pages.accountAndSettings.Gamification.GamificationPage;
-import pages.accountAndSettings.Gamification.PointsBox;
-import pages.accountAndSettings.Gamification.BadgesBox;
-import pages.accountAndSettings.Gamification.LevelsBox;
-import pages.accountAndSettings.Gamification.RewardsBox;
-import pages.accountAndSettings.Gamification.LeaderboardBox;
+import pages.accountAndSettings.gamification.GamificationPage;
+import pages.accountAndSettings.gamification.PointsBox;
+import pages.accountAndSettings.gamification.BadgesBox;
+import pages.accountAndSettings.gamification.LevelsBox;
+import pages.accountAndSettings.gamification.RewardsBox;
+import pages.accountAndSettings.gamification.LeaderboardBox;
+import pages.categories.DeleteCategory;
+import pages.categories.DownloadCategoriesInfo;
+import pages.categories.EditTheCategories;
+import pages.categories.ViewCourseCatalog;
+import pages.categories.CategoriesPage;
+import pages.courses.CoursesPage;
 import pages.users.UsersPage;
 
 import static pages.TalentLMS_PAGES.LOGIN;
-import static config.ConfigReader.getValue;
 
 public class BaseTest {
 
@@ -47,6 +52,12 @@ public class BaseTest {
     protected RewardsBox rewardsBox;
     protected LeaderboardBox leaderboardBox;
     protected UsersPage usersPage;
+    protected CategoriesPage categoriesPage;
+    protected EditTheCategories editTheCategories;
+    protected DeleteCategory deleteCategory;
+    protected DownloadCategoriesInfo downloadCategoriesInfo;
+    protected ViewCourseCatalog viewCourseCatalog;
+    protected CoursesPage coursesPage;
 
     @BeforeClass(alwaysRun = true)
     public void setUp(){
@@ -70,11 +81,14 @@ public class BaseTest {
         levelsBox = new LevelsBox();
         rewardsBox = new RewardsBox();
         leaderboardBox = new LeaderboardBox();
+        categoriesPage = new CategoriesPage();
+        editTheCategories = new EditTheCategories();
+        deleteCategory = new DeleteCategory();
+        downloadCategoriesInfo = new DownloadCategoriesInfo();
+        viewCourseCatalog = new ViewCourseCatalog();
+        coursesPage = new CoursesPage();
         browserManager.openByNavigate(LOGIN.toString());
-        loginPage.enterDomain(getValue("domain"))
-                .enterUsername(getValue("username"))
-                .enterPassword(getValue("password"))
-                .clickLoginButton();
+        loginPage.fillLogin();
     }
 
     @AfterClass(alwaysRun = true)
