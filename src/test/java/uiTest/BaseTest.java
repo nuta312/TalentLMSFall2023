@@ -21,17 +21,17 @@ public class BaseTest {
         browserManager = new BrowserManager(driver);
         webElementHelper = new WebElementHelper();
         loginPage = new LoginPage();
-        browserManager.openByNavigate("https://app.talentlms.com/login");
-        loginPage.enterDomain("fall2023")
-                .enterUsername("nurik9816")
-                .enterPassword("qwerty12345")
+        browserManager.openByNavigate("");
+        loginPage.enterDomain("")
+                .enterUsername("")
+                .enterPassword("")
                 .clickLoginButton();
     }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDown() {
-        Driver.closeDriver();
-
-    }
+//    @AfterClass(alwaysRun = true)
+//    public void tearDown() {
+//        Driver.closeDriver();
+//
+//    }
 
 }
