@@ -90,6 +90,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>smokeSuite.xml</suiteXmlFile>
                         <suiteXmlFile>regressionSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>E2E_suite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <testFailureIgnore>true</testFailureIgnore>
                     <!-- java heap size = Xms2048m = 2GB -->
