@@ -1,5 +1,6 @@
 package uiTest.AccountAndSettingsTests;
 
+import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
 import uiTest.BaseTest;
 
@@ -9,7 +10,8 @@ import static pages.TalentLMS_PAGES.DASHBOARD;
 
 public class DomainTest extends BaseTest {
 
-    @Test(description = "Rename domain name and click cancel button", priority = 0)
+    @Tag("Regress")
+    @Test(description = "Rename domain name and click cancel button")
     public void renameDomainNameAndClickCancelTest(){
         browserManager.openByNavigate(DOMAIN.toString());
         domainPage.fillUpDomainNameInput("fall2023")
@@ -17,7 +19,8 @@ public class DomainTest extends BaseTest {
         assertEquals(DASHBOARD.toString(), "https://fall2023.talentlms.com/dashboard");
     }
 
-    @Test(description = "Rename domain name positive test", priority = 1)
+    @Tag("Regress")
+    @Test(description = "Rename domain name positive test")
     public void renameDomainNameTest(){
         browserManager.openByNavigate(DOMAIN.toString());
         domainPage.fillUpDomainNameInput("")
