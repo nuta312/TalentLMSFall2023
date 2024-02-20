@@ -7,25 +7,34 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.LoginPage;
-import pages.AccountAndSettings.AccountUsersPage;
-import pages.AccountAndSettings.BasicSettingsPage;
-import pages.AccountAndSettings.ThemesPage;
-import pages.AccountAndSettings.CertificatesPage;
-import pages.AccountAndSettings.EcommercePage;
-import pages.AccountAndSettings.DomainPage;
-import pages.AccountAndSettings.SubscriptionPage;
-import pages.AccountAndSettings.Gamification.GamificationPage;
-import pages.AccountAndSettings.Gamification.PointsBox;
-import pages.AccountAndSettings.Gamification.BadgesBox;
-import pages.AccountAndSettings.Gamification.LevelsBox;
-import pages.AccountAndSettings.Gamification.RewardsBox;
-import pages.AccountAndSettings.Gamification.LeaderboardBox;
-import pages.Users.UsersPage;
+import pages.UserTypesPage;
+import pages.accountAndSettings.AccountUsersPage;
+import pages.accountAndSettings.BasicSettingsPage;
+import pages.accountAndSettings.ThemesPage;
+import pages.accountAndSettings.CertificatesPage;
+import pages.accountAndSettings.EcommercePage;
+import pages.accountAndSettings.DomainPage;
+import pages.accountAndSettings.SubscriptionPage;
+import pages.accountAndSettings.gamification.GamificationPage;
+import pages.accountAndSettings.gamification.PointsBox;
+import pages.accountAndSettings.gamification.BadgesBox;
+import pages.accountAndSettings.gamification.LevelsBox;
+import pages.accountAndSettings.gamification.RewardsBox;
+import pages.accountAndSettings.gamification.LeaderboardBox;
+import pages.categories.DeleteCategory;
+import pages.categories.DownloadCategoriesInfo;
+import pages.categories.EditTheCategories;
+import pages.categories.ViewCourseCatalog;
+import pages.categories.CategoriesPage;
+import pages.courses.CoursesPage;
 import pages.reports.ReportsPage;
 import pages.reports.TrainingMatrixPage;
+import pages.users.UsersPage;
+
+
+import java.util.List;
 
 import static pages.TalentLMS_PAGES.LOGIN;
-import static config.ConfigReader.getValue;
 
 public class BaseTest {
 
@@ -51,6 +60,14 @@ public class BaseTest {
     protected UsersPage usersPage;
     protected ReportsPage reportsPage;
     protected TrainingMatrixPage trainingMatrixPage;
+    protected CategoriesPage categoriesPage;
+    protected EditTheCategories editTheCategories;
+    protected DeleteCategory deleteCategory;
+    protected DownloadCategoriesInfo downloadCategoriesInfo;
+    protected ViewCourseCatalog viewCourseCatalog;
+    protected CoursesPage coursesPage;
+    protected UserTypesPage userTypesPage;
+    protected List<String> listUserTypes;
 
     @BeforeClass(alwaysRun = true)
     public void setUp(){
@@ -76,15 +93,20 @@ public class BaseTest {
         leaderboardBox = new LeaderboardBox();
         reportsPage = new ReportsPage();
         trainingMatrixPage = new TrainingMatrixPage();
+        categoriesPage = new CategoriesPage();
+        editTheCategories = new EditTheCategories();
+        deleteCategory = new DeleteCategory();
+        downloadCategoriesInfo = new DownloadCategoriesInfo();
+        viewCourseCatalog = new ViewCourseCatalog();
+        coursesPage = new CoursesPage();
+        userTypesPage = new UserTypesPage();
+
         browserManager.openByNavigate(LOGIN.toString());
-        loginPage.enterDomain(getValue("domain"))
-                .enterUsername(getValue("username"))
-                .enterPassword(getValue("password"))
-                .clickLoginButton();
+        loginPage.fillLogin();
     }
 
     @AfterClass(alwaysRun = true)
     public void tearDown(){
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 }
