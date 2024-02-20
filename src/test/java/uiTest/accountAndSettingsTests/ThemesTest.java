@@ -1,4 +1,4 @@
-package uiTest.AccountAndSettingsTests;
+package uiTest.accountAndSettingsTests;
 
 import uiTest.BaseTest;
 import org.testng.annotations.Test;

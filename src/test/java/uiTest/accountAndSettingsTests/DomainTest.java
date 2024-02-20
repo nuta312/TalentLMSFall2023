@@ -1,4 +1,4 @@
-package uiTest.AccountAndSettingsTests;
+package uiTest.accountAndSettingsTests;
 
 import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;

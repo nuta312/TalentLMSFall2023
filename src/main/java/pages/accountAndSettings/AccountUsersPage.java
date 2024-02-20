@@ -1,4 +1,4 @@
-package pages.AccountAndSettings;
+package pages.accountAndSettings;
 
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.TimeoutException;

@@ -1,4 +1,4 @@
-package pages.AccountAndSettings;
+package pages.accountAndSettings;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

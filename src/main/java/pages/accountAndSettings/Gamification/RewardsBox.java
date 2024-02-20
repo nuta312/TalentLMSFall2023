@@ -1,4 +1,4 @@
-package pages.AccountAndSettings.Gamification;
+package pages.accountAndSettings.Gamification;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

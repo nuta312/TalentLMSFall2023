@@ -1,4 +1,4 @@
-package pages.AccountAndSettings;
+package pages.accountAndSettings;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;

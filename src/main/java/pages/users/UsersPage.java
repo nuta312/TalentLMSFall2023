@@ -1,6 +1,6 @@
-package pages.Users;
+package pages.users;
 
-import Entity.User;
+import entity.User;
 import helper.FakeDataHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
