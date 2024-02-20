@@ -1,6 +1,6 @@
 package helper;
 
-import Entity.User;
+import entity.User;
 import com.github.javafaker.Faker;
 
 public class FakeDataHelper {

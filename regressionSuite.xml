@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="tests">
         <classes>
-            <class name="uiTest.AccountAndSettingsTests.DomainTest">
+            <class name="uiTest.accountAndSettingsTests.DomainTest">
                 <methods>
                     <include name="renameDomainNameAndClickCancelTest"/>
                     <include name="renameDomainNameTest"/>

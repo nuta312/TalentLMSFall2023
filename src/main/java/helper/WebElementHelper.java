@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class WebElementHelper {
 
-    Actions actions;
+    public Actions actions;
 
     public WebElementHelper waitForButtonToBeClickAble(WebElement element){
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(7))
@@ -64,6 +64,12 @@ public class WebElementHelper {
     public WebElementHelper scrollDownPage(){
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollBy(0, 200)");
+        return this;
+    }
+
+    public WebElementHelper scrollDownPageAction(int deltaX, int deltaY){
+        actions = new Actions(Driver.getDriver());
+        actions.scrollByAmount(deltaX,deltaY);
         return this;
     }
 }

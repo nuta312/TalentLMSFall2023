@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static config.ConfigReader.getValue;
+
 public class LoginPage extends BasePage {
 
     @FindBy(xpath = "(//input[@name='domain'])[1]")
@@ -31,6 +33,15 @@ public class LoginPage extends BasePage {
 
     public LoginPage clickLoginButton(){
         webElementHelper.click(loginButton);
+        return this;
+    }
+
+    public LoginPage fillLogin(){
+        webElementHelper
+                .sendKeys(domainInput,getValue("domain"))
+                .sendKeys(usernameInput,getValue("username"))
+                .sendKeys(passwordInput,getValue("password"))
+                .click(loginButton);
         return this;
     }
 }
