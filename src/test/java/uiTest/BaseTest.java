@@ -30,9 +30,8 @@ import pages.courses.CoursesPage;
 import pages.reports.ReportsPage;
 import pages.reports.TrainingMatrixPage;
 import pages.users.UsersPage;
-
-
 import java.util.List;
+import pages.users.UsersPage;
 
 import static pages.TalentLMS_PAGES.LOGIN;
 
@@ -100,7 +99,6 @@ public class BaseTest {
         viewCourseCatalog = new ViewCourseCatalog();
         coursesPage = new CoursesPage();
         userTypesPage = new UserTypesPage();
-
         browserManager.openByNavigate(LOGIN.toString());
         loginPage.fillLogin();
     }
