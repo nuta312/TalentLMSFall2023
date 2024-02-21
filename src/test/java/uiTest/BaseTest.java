@@ -6,8 +6,7 @@ import helper.WebElementHelper;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import pages.LoginPage;
-import pages.UserTypesPage;
+import pages.*;
 import pages.accountAndSettings.AccountUsersPage;
 import pages.accountAndSettings.BasicSettingsPage;
 import pages.accountAndSettings.ThemesPage;
@@ -27,8 +26,7 @@ import pages.categories.EditTheCategories;
 import pages.categories.ViewCourseCatalog;
 import pages.categories.CategoriesPage;
 import pages.courses.CoursesPage;
-import pages.reports.ReportsPage;
-import pages.reports.TrainingMatrixPage;
+import pages.reports.*;
 import pages.users.UsersPage;
 
 
@@ -68,6 +66,11 @@ public class BaseTest {
     protected CoursesPage coursesPage;
     protected UserTypesPage userTypesPage;
     protected List<String> listUserTypes;
+    protected ReportsIconAndLinkPage reportsIconAndLinkPage;
+    protected CoursesUnderReportsPage coursesUnderReportsPage;
+    protected UsersUnderReportsPage usersUnderReportsPage;
+    protected AddUserTypePage addUserTypePage;
+    protected ExportPage exportPage;
 
     @BeforeClass(alwaysRun = true)
     public void setUp(){
@@ -100,6 +103,11 @@ public class BaseTest {
         viewCourseCatalog = new ViewCourseCatalog();
         coursesPage = new CoursesPage();
         userTypesPage = new UserTypesPage();
+        reportsIconAndLinkPage = new ReportsIconAndLinkPage();
+        coursesUnderReportsPage = new CoursesUnderReportsPage();
+        usersUnderReportsPage = new UsersUnderReportsPage();
+        addUserTypePage = new AddUserTypePage();
+        exportPage = new ExportPage();
 
         browserManager.openByNavigate(LOGIN.toString());
         loginPage.fillLogin();
@@ -107,6 +115,6 @@ public class BaseTest {
 
     @AfterClass(alwaysRun = true)
     public void tearDown(){
-        //Driver.closeDriver();
+        Driver.closeDriver();
     }
 }

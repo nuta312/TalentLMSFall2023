@@ -3,82 +3,60 @@ package pages.reports;
 import driver.Driver;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
-import pages.LoginPage;
+import pages.BasePage;
 
 import java.util.List;
 
-public class ReportsPage extends LoginPage {
+public class ReportsPage extends BasePage {
     WebDriver driver= Driver.getDriver();
 
     @FindBy(xpath = "(//div[@class='tl-bold-link']/child::*)[9]")
     public WebElement reportsLink;
-
     @FindBy(xpath = "//a[@title='User reports']")
     public WebElement userReportsLink;
-
     @FindBy(xpath = "//a[text()='Course reports']")
     public WebElement courseReportsLink;
-
     @FindBy(linkText = "Branch reports")
     public WebElement branchReportsLink;
-
     @FindBy(xpath = "//div//div/*[@title='Group reports']")
     public WebElement groupReportsLink;
-
     @FindBy(xpath = "//*[text()='SCORM reports']")
     public WebElement scormReportsLink;
-
     @FindBy(xpath = "//div/child::*[contains(text(),'Test')]")
     public WebElement testReportsLink;
-
     @FindBy(xpath = "//*[@title='Survey reports']")
     public WebElement surveyReportsLink;
 
     @FindBy(xpath = "//*[@title='Assignment reports']")
     public WebElement assignmentReportsLink;
-
     @FindBy(xpath = "//*[text()='ILT reports']")
     public WebElement iltReportsLink;
-
     @FindBy(xpath = "//*[text()='Custom reports']")
     public WebElement customReportsLink;
-
     @FindBy(linkText = "Overview")
     public WebElement overviewLink;
-
     @FindBy(linkText = "Infographics")
     public WebElement infographics;
-
     @FindBy(linkText = "Training matrix")
     public WebElement trainingMatrix;
-
     @FindBy(linkText = "Timeline")
     public WebElement timeLine;
-
     @FindBy(xpath = "//*[@data-period='today']")
     public WebElement todayBtn;
-
     @FindBy(xpath = "//*[@data-period='yesterday']")
     public WebElement yesterdayBtn;
-
     @FindBy(xpath = "//*[@data-period='week']")
     public WebElement weekBtn;
-
     @FindBy(xpath = "//*[@data-period='month']")
     public WebElement monthBtn;
-
     @FindBy(xpath = "//*[@data-period='year']")
     public WebElement yearBtn;
-
     @FindBy(xpath = "//*[@data-period='period']")
     public WebElement periodBtn;
-
     @FindBy(xpath = "//div/child::*[@id='tl-export-system']")
     public WebElement trainingProgress;
-
     @FindBy(xpath = "//a[@title='Reports']")
     public WebElement reportsBtn;
-
     @FindBy (id = "tl-infographic-custom-headtitle-1")
     public WebElement your_training_infographicText;
 
@@ -121,5 +99,4 @@ public class ReportsPage extends LoginPage {
         }
         return this;
     }
-
 }

@@ -18,12 +18,10 @@ public class TrainingMatrixPage extends BasePage {
 
     @FindBy (css = ".tl-matrix-settings-btn")
     public WebElement dropDownBtn;
-
     @FindBy (xpath = "//a[text()='Training matrix']")
     public WebElement trainingMatrixText;
 
-    public TrainingMatrixPage clickAllElements() throws InterruptedException {
-
+    public TrainingMatrixPage clickAllElements(){
         webElementHelper.click(reportsPage.trainingMatrix);
 
         List<WebElement> elements = driver.findElements(By.xpath("//tr[@role='row']//child::th/div/span/span"));
@@ -36,7 +34,6 @@ public class TrainingMatrixPage extends BasePage {
         return this;
     }
 
-
     public TrainingMatrixPage dropDownClick(){
         webElementHelper.click(reportsPage.reportsLink)
                 .click(reportsPage.trainingMatrix)
@@ -48,6 +45,5 @@ public class TrainingMatrixPage extends BasePage {
         }
         webElementHelper.click(dropDownBtn);
         return this;
-
     }
 }
