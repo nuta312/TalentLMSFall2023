@@ -1,9 +1,13 @@
 package pages.reports;
 
 import driver.Driver;
-import org.openqa.selenium.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.FindBy;
-import pages.*;
+import pages.BasePage;
 import java.util.List;
 
 public class ReportsPage extends BasePage {
@@ -88,7 +92,6 @@ public class ReportsPage extends BasePage {
                 Thread.sleep(2000);
                 webElementHelper.click(driver.findElement(By.xpath("//a[@title='Reports']")));
                 Thread.sleep(3000);
-
             }catch (StaleElementReferenceException e){
                 reportsListsOfElements =driver.findElements(By.xpath("//div[@class='tl-content-sidebar tl-reports-content-sidebar']/div"));
                 System.out.println("Элемент устарел. Повторно получен список.");

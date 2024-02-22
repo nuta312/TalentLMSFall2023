@@ -11,8 +11,8 @@ public class ExportTest extends BaseTest {
         exportPage
                 .clickBtnExport()
                 .clickExport()
-                .CsvClick()
-                .ExportClick();
+                .csvClick()
+                .exportClick();
         String actualExportClick=driver.findElement(By.xpath("//a[normalize-space()='Export']")).getText();
         Assert.assertEquals(actualExportClick,"Export");
     }
@@ -23,13 +23,13 @@ public class ExportTest extends BaseTest {
                 .clickBtnExport()
                 .clickExport()
                 .clickExcell()
-                .ExportClick();
+                .exportClick();
     }
 
     @Test(description = "Verify export functionality for cancel  button")
     void clickCancel() {
         exportPage
                 .clickBtnExport()
-                .ClickCancel1();
+                .clickCancel1();
     }
 }

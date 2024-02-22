@@ -7,7 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.*;
+import pages.BasePage;
 import java.util.List;
 
 public class TrainingMatrixPage extends BasePage {
@@ -22,7 +22,6 @@ public class TrainingMatrixPage extends BasePage {
 
     public TrainingMatrixPage clickAllElements(){
         webElementHelper.click(reportsPage.trainingMatrix);
-
         List<WebElement> elements = driver.findElements(By.xpath("//tr[@role='row']//child::th/div/span/span"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         for (int i = 0; i < elements.size(); i++) {

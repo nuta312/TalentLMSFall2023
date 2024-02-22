@@ -1,17 +1,22 @@
 package entity;
 
-import lombok.*;
+import lombok.ToString;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @ToString
 @EqualsAndHashCode
 @Getter
 @Setter
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     private String firstname;
     private String lastname;
     private String emailAddress;
     private String username;
-    private String password;
     private String bio;
 }

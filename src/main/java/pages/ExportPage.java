@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 public class ExportPage extends BasePage {
 
     @FindBy(xpath = "//a[normalize-space()='Export']")
-    public WebElement ExportBtnClick;
+    public WebElement exportBtnClick;
     @FindBy(xpath = "//span[text()='EXCEL']")
-    public WebElement ExportTypeFind;
+    public WebElement exportTypeFind;
     @FindBy (xpath = "(//div[@class='select2-result-label'])[2]")
     public WebElement clickCSV;
     @FindBy(xpath = "(//div[@class='select2-result-label'])[1]")
@@ -19,16 +19,16 @@ public class ExportPage extends BasePage {
     public WebElement clickExportButton;
 
     public ExportPage clickBtnExport(){
-        webElementHelper.click(ExportBtnClick);
+        webElementHelper.click(exportBtnClick);
         return this;
     }
 
     public ExportPage clickExport() {
-        webElementHelper.click(ExportTypeFind);
+        webElementHelper.click(exportTypeFind);
         return this;
     }
 
-    public ExportPage CsvClick() {
+    public ExportPage csvClick() {
         webElementHelper.click(clickCSV);
         return this;
     }
@@ -38,12 +38,12 @@ public class ExportPage extends BasePage {
         return this;
     }
 
-    public ExportPage ClickCancel1(){
+    public ExportPage clickCancel1(){
          webElementHelper.click(clickCancel);
          return this;
     }
 
-    public ExportPage ExportClick(){
+    public ExportPage exportClick(){
         webElementHelper.click(clickExportButton);
         return this;
     }

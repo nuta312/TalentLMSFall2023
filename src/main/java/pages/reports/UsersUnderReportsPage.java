@@ -2,7 +2,7 @@ package pages.reports;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.*;
+import pages.BasePage;
 
 public class UsersUnderReportsPage extends BasePage {
 
