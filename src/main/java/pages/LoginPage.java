@@ -36,7 +36,7 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public LoginPage fillLogin(){
+    public LoginPage doLogin(){
         webElementHelper
                 .sendKeys(domainInput,getValue("domain"))
                 .sendKeys(usernameInput,getValue("username"))

@@ -6,7 +6,6 @@ import helper.WebElementHelper;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import pages.LoginPage;
 import pages.accountAndSettings.AccountUsersPage;
 import pages.accountAndSettings.BasicSettingsPage;
 import pages.accountAndSettings.ThemesPage;
@@ -27,6 +26,17 @@ import pages.categories.ViewCourseCatalog;
 import pages.categories.CategoriesPage;
 import pages.courses.CoursesPage;
 import pages.users.UsersPage;
+import pages.reports.ReportsPage;
+import pages.reports.TrainingMatrixPage;
+import pages.reports.ReportsIconAndLinkPage;
+import pages.reports.CoursesUnderReportsPage;
+import pages.reports.UsersUnderReportsPage;
+import pages.LoginPage;
+import pages.UserTypesPage;
+import pages.AddUserTypePage;
+import pages.ExportPage;
+
+import java.util.List;
 
 import static pages.TalentLMS_PAGES.LOGIN;
 
@@ -58,6 +68,15 @@ public class BaseTest {
     protected DownloadCategoriesInfo downloadCategoriesInfo;
     protected ViewCourseCatalog viewCourseCatalog;
     protected CoursesPage coursesPage;
+    protected ReportsPage reportsPage;
+    protected TrainingMatrixPage trainingMatrixPage;
+    protected UserTypesPage userTypesPage;
+    protected List<String> listUserTypes;
+    protected ReportsIconAndLinkPage reportsIconAndLinkPage;
+    protected CoursesUnderReportsPage coursesUnderReportsPage;
+    protected UsersUnderReportsPage usersUnderReportsPage;
+    protected AddUserTypePage addUserTypePage;
+    protected ExportPage exportPage;
 
     @BeforeClass(alwaysRun = true)
     public void setUp(){
@@ -87,8 +106,16 @@ public class BaseTest {
         downloadCategoriesInfo = new DownloadCategoriesInfo();
         viewCourseCatalog = new ViewCourseCatalog();
         coursesPage = new CoursesPage();
+        reportsPage = new ReportsPage();
+        trainingMatrixPage = new TrainingMatrixPage();
+        userTypesPage = new UserTypesPage();
+        reportsIconAndLinkPage = new ReportsIconAndLinkPage();
+        coursesUnderReportsPage = new CoursesUnderReportsPage();
+        usersUnderReportsPage = new UsersUnderReportsPage();
+        addUserTypePage = new AddUserTypePage();
+        exportPage = new ExportPage();
         browserManager.openByNavigate(LOGIN.toString());
-        loginPage.fillLogin();
+        loginPage.doLogin();
     }
 
     @AfterClass(alwaysRun = true)
