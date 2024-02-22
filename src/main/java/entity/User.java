@@ -1,8 +1,12 @@
 package entity;
 
-import lombok.Data;
+import lombok.*;
 
-@Data
+@ToString
+@EqualsAndHashCode
+@Getter
+@Setter
+@RequiredArgsConstructor
 public class User {
     private String firstname;
     private String lastname;

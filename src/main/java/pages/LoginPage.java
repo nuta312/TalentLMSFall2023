@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import static config.ConfigReader.getValue;
 
 public class LoginPage extends BasePage {
@@ -36,7 +35,7 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public LoginPage fillLogin(){
+    public LoginPage doLogin(){
         webElementHelper
                 .sendKeys(domainInput,getValue("domain"))
                 .sendKeys(usernameInput,getValue("username"))
