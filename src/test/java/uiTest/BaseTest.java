@@ -6,7 +6,6 @@ import helper.WebElementHelper;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import pages.*;
 import pages.accountAndSettings.AccountUsersPage;
 import pages.accountAndSettings.BasicSettingsPage;
 import pages.accountAndSettings.ThemesPage;
@@ -32,6 +31,10 @@ import pages.reports.TrainingMatrixPage;
 import pages.reports.ReportsIconAndLinkPage;
 import pages.reports.CoursesUnderReportsPage;
 import pages.reports.UsersUnderReportsPage;
+import pages.LoginPage;
+import pages.UserTypesPage;
+import pages.AddUserTypePage;
+import pages.ExportPage;
 
 import java.util.List;
 
