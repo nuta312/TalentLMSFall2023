@@ -1,4 +1,4 @@
-package uiTest;
+package uiTest.userTypeTest;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Description;
@@ -9,9 +9,12 @@ import io.qameta.allure.Story;
 import io.qameta.allure.testng.Tag;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import uiTest.BaseTest;
 import java.util.List;
 
-import static pages.TalentLMS_PAGES.USER_TYPES_PAGE;
+import static pages.TalentLMS_PAGES.MY_DOMAIN;
+import static pages.TalentLMS_PAGES.TALENTLMS;
+import static pages.TalentLMS_PAGES.USER_TYPES;
 
 public class UserTypesTest extends BaseTest {
 
@@ -25,8 +28,8 @@ public class UserTypesTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("TL-014")
     @Tag("Negative")
-    public void addDuplicateUserTypeInTableTest(){
-        browserManager.openByNavigate(USER_TYPES_PAGE.toString());
+    public void addDuplicateUserTypeInTableTest() {
+        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + USER_TYPES);
         nameUserType = "duplicate";
         indexUserType = 1;
         userTypesPage.addNotUniqueUserType(nameUserType, indexUserType);
@@ -42,8 +45,8 @@ public class UserTypesTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("TL-014")
     @Tag("Smoke")
-    public void addUserTypeInTableTest(){
-        browserManager.openByNavigate(USER_TYPES_PAGE.toString());
+    public void addUserTypeInTableTest() {
+        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + USER_TYPES);
         nameUserType = "testUserTypeName";
         indexUserType = 2;
         userTypesPage.addUserType(nameUserType, indexUserType);
@@ -58,7 +61,7 @@ public class UserTypesTest extends BaseTest {
     @Story("TL-014")
     @Tag("Smoke")
     public void searchFieldTest() throws InterruptedException {
-        browserManager.openByNavigate(USER_TYPES_PAGE.toString());
+        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + USER_TYPES);
         String searchWord = "admin";
         webElementHelper.sendKeys(userTypesPage.searchField, searchWord);
         Thread.sleep(2000);
@@ -74,8 +77,8 @@ public class UserTypesTest extends BaseTest {
     @Severity(SeverityLevel.MINOR)
     @Story("TL-014")
     @Tag("Smoke")
-    public void filterUserTypeNameInTableUserTypeTest(){
-        browserManager.openByNavigate(USER_TYPES_PAGE.toString());
+    public void filterUserTypeNameInTableUserTypeTest() {
+        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + USER_TYPES);
         List<String> beforeSortUserTypesName;
         List<String> afterSortUserTypesName;
         beforeSortUserTypesName = userTypesPage.getRolesFromTable(driver);
