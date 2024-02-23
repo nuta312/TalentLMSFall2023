@@ -10,6 +10,7 @@ import static config.ConfigReader.getValue;
 public class ChromeWebDriver {
 
     public static WebDriver loadChromeDriver(){
+         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-extensions");
         options.addArguments("--window-size-1920,1080");
