@@ -1,7 +1,6 @@
 package pages.reports;
 
 import driver.Driver;
-import helper.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -14,13 +13,12 @@ public class TrainingMatrixPage extends BasePage {
 
     ReportsPage reportsPage =new ReportsPage();
     WebDriver driver= Driver.getDriver();
-    BrowserManager.WindowHelper windowHelper= new BrowserManager.WindowHelper(driver);
     @FindBy (css = ".tl-matrix-settings-btn")
     public WebElement dropDownBtn;
     @FindBy (xpath = "//a[text()='Training matrix']")
     public WebElement trainingMatrixText;
 
-    public TrainingMatrixPage clickAllElements(){
+    public TrainingMatrixPage clickAllElements() {
         webElementHelper.click(reportsPage.trainingMatrix);
         List<WebElement> elements = driver.findElements(By.xpath("//tr[@role='row']//child::th/div/span/span"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -32,7 +30,7 @@ public class TrainingMatrixPage extends BasePage {
         return this;
     }
 
-    public TrainingMatrixPage dropDownClick(){
+    public TrainingMatrixPage dropDownClick() {
         webElementHelper.click(reportsPage.reportsLink)
                 .click(reportsPage.trainingMatrix)
                 .click(dropDownBtn);

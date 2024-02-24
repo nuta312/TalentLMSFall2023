@@ -56,7 +56,7 @@ public class AccountUsersPage extends BasePage {
     @FindBy(xpath = "//div[@class='form-actions']/span")
     public WebElement cancelButton;
 
-    public AccountUsersPage fillSelectSignUp(){
+    public AccountUsersPage fillSelectSignUp() {
         select = new Select(selectSignUp);
         List<WebElement> options = select.getOptions();
         int randomIndex = random.nextInt(options.size());
@@ -64,7 +64,7 @@ public class AccountUsersPage extends BasePage {
         return this;
     }
 
-    public AccountUsersPage fillSelectDefaultUserType(){
+    public AccountUsersPage fillSelectDefaultUserType() {
         select = new Select(selectDefaultUserType);
         List<WebElement> options = select.getOptions();
         int randomIndex = random.nextInt(options.size());
@@ -72,7 +72,7 @@ public class AccountUsersPage extends BasePage {
         return this;
     }
 
-    public AccountUsersPage fillSelectDefaultGroup(){
+    public AccountUsersPage fillSelectDefaultGroup() {
         select = new Select(selectDefaultGroup);
         List<WebElement> options = select.getOptions();
         int randomIndex = random.nextInt(options.size());
@@ -80,22 +80,22 @@ public class AccountUsersPage extends BasePage {
         return this;
     }
 
-    public AccountUsersPage clickPasswordSetting(){
+    public AccountUsersPage clickPasswordSetting() {
         webElementHelper.click(passwordSetting);
         return this;
     }
 
-    public AccountUsersPage fillCheckboxStrongPasswords(){
+    public AccountUsersPage fillCheckboxStrongPasswords() {
         webElementHelper.click(checkboxStrongPasswords);
         return this;
     }
 
-    public AccountUsersPage fillCheckboxChangePassword(){
+    public AccountUsersPage fillCheckboxChangePassword() {
         webElementHelper.click(checkboxPasswordChange);
         return this;
     }
 
-    public AccountUsersPage fillInputDays(){
+    public AccountUsersPage fillInputDays() {
         try {
             inputDays.click();
             inputDays.sendKeys("12");
@@ -108,17 +108,17 @@ public class AccountUsersPage extends BasePage {
         return this;
     }
 
-    public AccountUsersPage fillCheckboxPasswordChange(){
+    public AccountUsersPage fillCheckboxPasswordChange() {
         webElementHelper.click(checkboxPasswordChange);
         return this;
     }
 
-    public AccountUsersPage fillCheckboxLockAccount(){
+    public AccountUsersPage fillCheckboxLockAccount() {
         webElementHelper.click(checkboxLockAccount);
         return this;
     }
 
-    public AccountUsersPage fillInputFailedAttempts(){
+    public AccountUsersPage fillInputFailedAttempts() {
         try {
             inputFailedAttempts.click();
             webElementHelper.sendKeys(inputFailedAttempts, "5");
@@ -129,27 +129,27 @@ public class AccountUsersPage extends BasePage {
         return this;
     }
 
-    public AccountUsersPage fillInputFailedAttemptsPerMinutes(){
+    public AccountUsersPage fillInputFailedAttemptsPerMinutes() {
         webElementHelper.sendKeys(inputFailedAttemptsPerMinutes, "2");
         return this;
     }
 
-    public AccountUsersPage clickTermOfService(){
+    public AccountUsersPage clickTermOfService() {
         webElementHelper.clickWithScrollToElement(hidenTermOfService);
         return this;
     }
 
-    public AccountUsersPage fillInputText(){
+    public AccountUsersPage fillInputText() {
         webElementHelper.sendKeys(inputText, "best group of the word");
         return this;
     }
 
-    public AccountUsersPage fillVisibleUserFormat(){
+    public AccountUsersPage fillVisibleUserFormat() {
         webElementHelper.waitForElementToBeDisplayed(visibleUserFormat).clickWithScrollToElement(visibleUserFormat);
         return this;
     }
 
-    public AccountUsersPage fillSelectUserName(){
+    public AccountUsersPage fillSelectUserName() {
         Select select = new Select(selectUserName);
         List<WebElement> options = select.getOptions();
         int randomIndexU = random.nextInt(options.size());
@@ -161,12 +161,12 @@ public class AccountUsersPage extends BasePage {
         return this;
     }
 
-    public AccountUsersPage clickOnHidenSocialOptions(){
+    public AccountUsersPage clickOnHidenSocialOptions() {
         webElementHelper.clickWithScrollToElement(hidenSocialOptions);
         return this;
     }
 
-    public AccountUsersPage fillCheckboxSocialMedia(){
+    public AccountUsersPage fillCheckboxSocialMedia() {
         try {
             webElementHelper.waitForButtonToBeClickAble(checkboxSocialMedia);
         }   catch (WebDriverException e){
@@ -175,27 +175,27 @@ public class AccountUsersPage extends BasePage {
         return this;
     }
 
-    public AccountUsersPage fillCheckboxCatalog(){
+    public AccountUsersPage fillCheckboxCatalog() {
         webElementHelper.clickWithScrollToElement(checkboxCatalog);
         return this;
     }
 
-    public AccountUsersPage fillCheckboxLknCertificate(){
+    public AccountUsersPage fillCheckboxLknCertificate() {
         webElementHelper.clickWithScrollToElement(checkboxLknCertificate);
         return this;
     }
 
-    public AccountUsersPage fillCheckboxCourseRating(){
+    public AccountUsersPage fillCheckboxCourseRating() {
         webElementHelper.clickWithScrollToElement(checkboxCourseRating);
         return this;
     }
 
-    public AccountUsersPage clickSaveButton(){
+    public AccountUsersPage clickSaveButton() {
         webElementHelper.click(saveButton);
         return this;
     }
 
-    public AccountUsersPage clickCancelButton(){
+    public AccountUsersPage clickCancelButton() {
         webElementHelper.scrollToElement(cancelButton).click(cancelButton);
         return this;
     }

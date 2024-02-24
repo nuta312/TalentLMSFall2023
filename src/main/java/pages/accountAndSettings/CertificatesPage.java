@@ -40,7 +40,7 @@ public class CertificatesPage extends BasePage {
     @FindBy(xpath = "//div[text()='Operation completed successfully']")
     public WebElement successSaveAsNewMessage;
 
-    public CertificatesPage selectRandomCertificate(){
+    public CertificatesPage selectRandomCertificate() {
         select = new Select(certificateDropdown);
         List<WebElement> listOptions = select.getOptions();
         int randomIndex = random.nextInt(listOptions.size());
@@ -48,7 +48,7 @@ public class CertificatesPage extends BasePage {
         return this;
     }
 
-    public CertificatesPage uploadOwnCertificate(){
+    public CertificatesPage uploadOwnCertificate() {
         try {
             File[] filesList = new File(getValue("imagesPath")).listFiles();
             File file = filesList[random.nextInt(filesList.length)];
@@ -60,7 +60,7 @@ public class CertificatesPage extends BasePage {
         return this;
     }
 
-    public CertificatesPage clickSaveAsNewButton(){
+    public CertificatesPage clickSaveAsNewButton() {
         webElementHelper.click(saveAsNewButton);
         return this;
     }
@@ -70,7 +70,7 @@ public class CertificatesPage extends BasePage {
         return this;
     }
 
-    public CertificatesPage clickSaveCertificateButton(){
+    public CertificatesPage clickSaveCertificateButton() {
         webElementHelper.click(saveCertificateButton);
         return this;
     }

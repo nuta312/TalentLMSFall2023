@@ -9,7 +9,7 @@ public class ReportsIconAndLinkTest extends BaseTest {
 
     @Test(description = "method clicks on the Reports icon, then clicks on Home\n" +
             "and then clicks on the Reports link")
-    void openReportsIconAndLink(){
+    void openReportsIconAndLink() {
         reportsIconAndLinkPage.clickReportsIcon()
                 .clickHomeLink()
                 .clickReportsLink();
