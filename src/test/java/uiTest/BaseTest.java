@@ -32,12 +32,12 @@ import pages.reports.ReportsIconAndLinkPage;
 import pages.reports.CoursesUnderReportsPage;
 import pages.reports.UsersUnderReportsPage;
 import pages.LoginPage;
-import pages.UserTypesPage;
-import pages.AddUserTypePage;
-import pages.ExportPage;
-
+import pages.userTypes.UserTypesPage;
+import pages.userTypes.AddUserTypePage;
+import pages.importExport.ExportPage;
 import java.util.List;
 
+import static pages.TalentLMS_PAGES.MAIN_PAGE;
 import static pages.TalentLMS_PAGES.LOGIN;
 
 public class BaseTest {
@@ -114,7 +114,7 @@ public class BaseTest {
         usersUnderReportsPage = new UsersUnderReportsPage();
         addUserTypePage = new AddUserTypePage();
         exportPage = new ExportPage();
-        browserManager.openByNavigate(LOGIN.toString());
+        driver.get(MAIN_PAGE.toString() + LOGIN);
         loginPage.doLogin();
     }
 

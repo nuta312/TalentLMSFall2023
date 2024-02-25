@@ -42,92 +42,92 @@ public class PointsBox extends GamificationPage {
     @FindBy(xpath = "//input[contains(@name,'discussion_upvote_comment_points')]")
     public WebElement inputEachUpvoteOnDiscussionComments;
 
-    public PointsBox clickEachLogin(){
+    public PointsBox clickEachLogin() {
         webElementHelper.click(eachLogin);
         return this;
     }
 
-    public PointsBox inputEachLoginPoints(String points){
+    public PointsBox inputEachLoginPoints(String points) {
         webElementHelper.sendKeys(inputEachlLogin, points);
         return this;
     }
 
-    public PointsBox clickEachUnitCompletion(){
+    public PointsBox clickEachUnitCompletion() {
         webElementHelper.click(eachUnitCompletion);
         return  this;
     }
 
-    public PointsBox inputEachUnitCompletionPoints(String points){
+    public PointsBox inputEachUnitCompletionPoints(String points) {
         webElementHelper.sendKeys(inputEachUnitCompletion, points);
         return this;
     }
 
-    public PointsBox clickEachCourseCompletion(){
+    public PointsBox clickEachCourseCompletion() {
         webElementHelper.click(eachCourseCompletion);
         return this;
     }
 
-    public PointsBox inputEachCourseCompletionPoints(String points){
+    public PointsBox inputEachCourseCompletionPoints(String points) {
         webElementHelper.sendKeys(inputEachCourseCompletion, points);
         return this;
     }
 
-    public PointsBox clickEachCertificate(){
+    public PointsBox clickEachCertificate() {
         webElementHelper.click(eachCertificate);
         return this;
     }
 
-    public PointsBox inputEachCertificatePoints(String points){
+    public PointsBox inputEachCertificatePoints(String points) {
         webElementHelper.sendKeys(inputEachCertificate, points);
         return this;
     }
 
-    public PointsBox clickEachSuccessfulTest(){
+    public PointsBox clickEachSuccessfulTest() {
         webElementHelper.click(eachSuccessfulTest);
         return this;
     }
 
-    public PointsBox inputEachSuccessfulTestPoints(String points){
+    public PointsBox inputEachSuccessfulTestPoints(String points) {
         webElementHelper.sendKeys(inputEachSuccessfulTest, points);
         return this;
     }
 
-    public PointsBox clickEachSuccessfulAssignment(){
+    public PointsBox clickEachSuccessfulAssignment() {
         webElementHelper.click(eachSuccessfulAssignment);
         return this;
     }
 
-    public PointsBox inputEachSuccessfulAssignmentPoints(String points){
+    public PointsBox inputEachSuccessfulAssignmentPoints(String points) {
         webElementHelper.sendKeys(inputEachSuccessfulAssignment, points);
         return this;
     }
 
-    public PointsBox clickEachSuccessfulILT(){
+    public PointsBox clickEachSuccessfulILT() {
         webElementHelper.click(eachSuccessfulILT);
         return  this;
     }
 
-    public PointsBox inputEachSuccessfulILTPoints(String points){
+    public PointsBox inputEachSuccessfulILTPoints(String points) {
         webElementHelper.sendKeys(inputEachSuccessfulILT, points);
         return this;
     }
 
-    public PointsBox clickEachDiscussionTopicOrComment(){
+    public PointsBox clickEachDiscussionTopicOrComment() {
         webElementHelper.click(eachDiscussionTopicOrComment);
         return  this;
     }
 
-    public PointsBox inputEachDiscussionTopicOrCommentPoints(String points){
+    public PointsBox inputEachDiscussionTopicOrCommentPoints(String points) {
         webElementHelper.sendKeys(inputEachDiscussionTopicOrComment, points);
         return this;
     }
 
-    public PointsBox clickEachUpvoteOnDiscussionComments(){
+    public PointsBox clickEachUpvoteOnDiscussionComments() {
         webElementHelper.click(eachUpvoteOnDiscussionComments);
         return  this;
     }
 
-    public PointsBox inputEachUpvoteOnDiscussionCommentsPoints(String points){
+    public PointsBox inputEachUpvoteOnDiscussionCommentsPoints(String points) {
         webElementHelper.sendKeys(inputEachUpvoteOnDiscussionComments, points);
         return this;
     }

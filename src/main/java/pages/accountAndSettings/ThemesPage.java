@@ -29,12 +29,12 @@ public class ThemesPage extends BasePage {
     @FindBy (xpath = "//option[@value='41']")
     public WebElement modernTheme;
 
-    public ThemesPage selectThemeButton(){
+    public ThemesPage selectThemeButton() {
         themesButton.sendKeys(Keys.ENTER);
         return this;
     }
 
-    public ThemesPage selectRandomTheme(){
+    public ThemesPage selectRandomTheme() {
         selectThemeButton();
         select = new Select(themesButton);
         List<WebElement> themesList = select.getOptions();
@@ -47,7 +47,7 @@ public class ThemesPage extends BasePage {
         return this;
     }
 
-    public ThemesPage activeThemeButtonClick(){
+    public ThemesPage activeThemeButtonClick() {
         webElementHelper.click(activeThemeButton);
         return this;
     }

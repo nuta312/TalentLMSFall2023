@@ -7,7 +7,7 @@ import uiTest.BaseTest;
 public class CoursesUnderReportsTest extends BaseTest {
 
     @Test(description = "method clicks on the Courses link, then clicks on all the course tabs in turn")
-    void clickCoursesUnderReports(){
+    void clickCoursesUnderReports() {
         reportsIconAndLinkPage.clickLinkUnderReports(coursesUnderReportsPage.coursesLink);
         coursesUnderReportsPage.clickAdvancedFeatures();
         browserManager.goBack();

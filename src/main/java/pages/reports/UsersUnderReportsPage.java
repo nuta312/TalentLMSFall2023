@@ -89,14 +89,14 @@ public class UsersUnderReportsPage extends BasePage {
         return this;
     }
 
-    public UsersUnderReportsPage clickFrom(){
+    public UsersUnderReportsPage clickFrom() {
         webElementHelper.click(from);
         webElementHelper.click(getToday);
         return this;
 
     }
 
-    public UsersUnderReportsPage clickTo(){
+    public UsersUnderReportsPage clickTo() {
         webElementHelper.click(to);
         webElementHelper.click(getActiveToday);
         return this;

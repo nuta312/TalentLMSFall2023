@@ -1,6 +1,7 @@
 package pages;
 
 import driver.Driver;
+import helper.BrowserManager;
 import helper.DropdownHelper;
 import helper.WebElementHelper;
 import org.openqa.selenium.support.PageFactory;
@@ -13,6 +14,7 @@ public class BasePage {
 
     public WebElementHelper webElementHelper = new WebElementHelper();
     public DropdownHelper dropdownHelper = new DropdownHelper(Driver.getDriver());
+    public BrowserManager.WindowHelper windowHelper = new BrowserManager.WindowHelper(Driver.getDriver());
     public Random random = new Random();
     public Select select;
     public WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));

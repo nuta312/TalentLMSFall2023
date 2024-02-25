@@ -1,4 +1,4 @@
-package uiTest;
+package uiTest.usersTest;
 
 import org.testng.annotations.Test;
 import uiTest.BaseTest;
@@ -8,7 +8,7 @@ import static org.testng.Assert.assertEquals;
 public class UsersTest extends BaseTest {
 
     @Test(description = "Sign in to browser and choose the Add User field", priority = 0)
-    public void addUserTest(){
+    public void addUserTest() {
         webElementHelper.click(usersPage.homeAddUserBtn);
         usersPage
                 .fillUpUserWithFakerData()
@@ -21,7 +21,7 @@ public class UsersTest extends BaseTest {
     }
 
     @Test(description = "Click on empty fields", priority = 1)
-    public void requiredFieldsMessagesTest(){
+    public void requiredFieldsMessagesTest() {
         webElementHelper.click(usersPage.homeBtn);
         webElementHelper.click(usersPage.homeAddUserBtn);
         usersPage.clickOnAddUserSubmitBtn();

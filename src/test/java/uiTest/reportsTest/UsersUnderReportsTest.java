@@ -9,7 +9,7 @@ public class UsersUnderReportsTest extends BaseTest {
 
     @Test(description = "This method clicks on the Users link, then clicks on a user and\n" +
             "displays  information about that user")
-    void clickUsersUnderReports(){
+    void clickUsersUnderReports() {
         reportsIconAndLinkPage.clickLinkUnderReports(usersUnderReportsPage.usersLink);
         reportsIconAndLinkPage.clickToUser(usersUnderReportsPage.userInfo);
         assertEquals(usersUnderReportsPage.userData.getText(),"Bekeshev Nurzat");
