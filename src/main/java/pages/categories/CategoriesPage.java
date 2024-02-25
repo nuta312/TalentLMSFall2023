@@ -8,7 +8,7 @@ import java.util.List;
 
 import static helper.FakeDataHelper.faker;
 
-public class CategoriesPage extends BasePage{
+public class CategoriesPage extends BasePage {
 
     @FindBy(xpath = "(//div[@class='tl-bold-link'])[3]")
     public WebElement categoriesButton;
@@ -29,7 +29,7 @@ public class CategoriesPage extends BasePage{
     @FindBy(xpath = "//a[@class='brand']")
     public WebElement returnToMainPage;
 
-    public CategoriesPage addCategoriesPage(){
+    public CategoriesPage addCategoriesPage() {
         webElementHelper.click(categoriesButton)
                 .click(addCategoryButton)
                 .sendKeys(nameInput,faker.commerce().department())
@@ -47,7 +47,7 @@ public class CategoriesPage extends BasePage{
         return this;
     }
 
-    public CategoriesPage categoryButtonClick(){
+    public CategoriesPage categoryButtonClick() {
         webElementHelper.click(categoriesButton);
         return this;
     }

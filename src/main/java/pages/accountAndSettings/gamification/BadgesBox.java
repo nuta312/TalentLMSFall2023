@@ -22,42 +22,42 @@ public class BadgesBox extends GamificationPage {
     @FindBy (xpath = "//label[text()='Certification badges (1, 2, 4, 8, 16, 32, 64, 128 certificates)']")
     public WebElement certificationBadges;
 
-    public BadgesBox clickActivityBadges(){
+    public BadgesBox clickActivityBadges() {
         webElementHelper.click(activityBadges);
         return this;
     }
 
-    public BadgesBox clickLearningBadges(){
+    public BadgesBox clickLearningBadges() {
         webElementHelper.click(learningBadges);
         return this;
     }
 
-    public BadgesBox clickTestBadges(){
+    public BadgesBox clickTestBadges() {
         webElementHelper.click(testBadges);
         return this;
     }
 
-    public BadgesBox clickAssignmentBadges(){
+    public BadgesBox clickAssignmentBadges() {
         webElementHelper.click(assignmentBadges);
         return this;
     }
 
-    public BadgesBox clickPerfectionismBadges(){
+    public BadgesBox clickPerfectionismBadges() {
         webElementHelper.click(perfectionismBadges);
         return this;
     }
 
-    public BadgesBox clickSurveyBadges(){
+    public BadgesBox clickSurveyBadges() {
         webElementHelper.click(surveyBadges);
         return this;
     }
 
-    public BadgesBox clickCommunicationBadges(){
+    public BadgesBox clickCommunicationBadges() {
         webElementHelper.click(communicationBadges);
         return this;
     }
 
-    public BadgesBox clickCertificationBadges(){
+    public BadgesBox clickCertificationBadges() {
         webElementHelper.click(certificationBadges);
         return this;
     }

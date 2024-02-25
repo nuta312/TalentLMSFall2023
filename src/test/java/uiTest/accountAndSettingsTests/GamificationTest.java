@@ -3,14 +3,16 @@ package uiTest.accountAndSettingsTests;
 import org.testng.annotations.Test;
 import uiTest.BaseTest;
 
-import static org.testng.Assert.assertEquals;
+import static pages.TalentLMS_PAGES.MY_DOMAIN;
+import static pages.TalentLMS_PAGES.TALENTLMS;
 import static pages.TalentLMS_PAGES.GAMIFICATION;
+import static org.testng.Assert.assertEquals;
 
 public class GamificationTest extends BaseTest {
 
     @Test(description = "Click all switch buttons")
-    public void clickAllSwitchButtons(){
-        browserManager.openByNavigate(GAMIFICATION.toString());
+    public void clickAllSwitchButtons() {
+        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + GAMIFICATION);
         gamificationPage.clickPointsSwitchButton()
                 .clickEnableBadgesSwitchButton()
                 .clickEnableLevelsSwitchButton();
@@ -22,8 +24,8 @@ public class GamificationTest extends BaseTest {
     }
 
     @Test(description = "Click all 'Points' checkboxes")
-    public void clickAllPointsCheckboxes(){
-        browserManager.openByNavigate(GAMIFICATION.toString());
+    public void clickAllPointsCheckboxes() {
+        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + GAMIFICATION);
         pointsBox.clickEachLogin()
                 .clickEachUnitCompletion()
                 .clickEachCourseCompletion()
@@ -38,8 +40,8 @@ public class GamificationTest extends BaseTest {
     }
 
     @Test(description = "Click all 'Badges' checkboxes")
-    public void clickAllBadgesCheckboxes(){
-        browserManager.openByNavigate(GAMIFICATION.toString());
+    public void clickAllBadgesCheckboxes() {
+        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + GAMIFICATION);
         badgesBox.clickActivityBadges()
                 .clickLearningBadges()
                 .clickTestBadges()
@@ -53,8 +55,8 @@ public class GamificationTest extends BaseTest {
     }
 
     @Test(description = "Click all 'Levels' checkboxes")
-    public void clickAllLevelsCheckboxes(){
-        browserManager.openByNavigate(GAMIFICATION.toString());
+    public void clickAllLevelsCheckboxes() {
+        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + GAMIFICATION);
         webElementHelper.scrollDownPage();
         levelsBox.clickUpgradeLevelPointsCheck()
                 .clickUpgradeLevelCompletedCoursesCheck()
@@ -64,8 +66,8 @@ public class GamificationTest extends BaseTest {
     }
 
     @Test(description = "Click all 'Rewards' checkboxes")
-    public void clickAllRewardsCheckboxes(){
-        browserManager.openByNavigate(GAMIFICATION.toString());
+    public void clickAllRewardsCheckboxes() {
+        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + GAMIFICATION);
         webElementHelper.scrollDownPage();
         rewardsBox.clickDiscountPointsCheck()
                 .clickDiscountBadgesCheck()
@@ -75,8 +77,8 @@ public class GamificationTest extends BaseTest {
     }
 
     @Test(description = "Click all 'Rewards' checkboxes")
-    public void clickAllLeaderboardCheckboxes(){
-        browserManager.openByNavigate(GAMIFICATION.toString());
+    public void clickAllLeaderboardCheckboxes() {
+        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + GAMIFICATION);
         webElementHelper.scrollDownPage();
         leaderboardBox.clickLeaderboardLevels()
                 .clickLeaderboardPoints()

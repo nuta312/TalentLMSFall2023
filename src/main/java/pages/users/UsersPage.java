@@ -57,7 +57,7 @@ public class UsersPage extends BasePage {
     @FindBy(xpath = "(//span[@class=\"help-inline\"])[2]")
     public WebElement passwordValidationMessage;
 
-    public UsersPage fillUpUserWithFakerData(){
+    public UsersPage fillUpUserWithFakerData() {
         webElementHelper
                 .sendKeys(firstnameInput, randomUser.getFirstname())
                 .sendKeys(lastnameInput, randomUser.getLastname())
@@ -69,7 +69,7 @@ public class UsersPage extends BasePage {
         return this;
     }
 
-    public UsersPage selectUserType(){
+    public UsersPage selectUserType() {
         webElementHelper.click(userTypesSelectBtn);
         List<WebElement> userTypeDropDown = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy
                 (By.xpath("//div[@id='select2-drop']/ul/li")));
@@ -78,7 +78,7 @@ public class UsersPage extends BasePage {
         return this;
     }
 
-    public UsersPage selectTimeZone(){
+    public UsersPage selectTimeZone() {
         webElementHelper.click(timeZoneSelectBtn);
         List<WebElement> timeZoneDropDown = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy
                 (By.xpath("//div[@id='select2-drop']/ul/li")));
@@ -87,7 +87,7 @@ public class UsersPage extends BasePage {
         return this;
     }
 
-    public UsersPage selectLanguage(){
+    public UsersPage selectLanguage() {
         webElementHelper.click(languageSelectInput);
         List<WebElement> languageDropDown = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy
                 (By.xpath("//div[@id='select2-drop']/ul/li")));
@@ -97,13 +97,13 @@ public class UsersPage extends BasePage {
         return this;
     }
 
-    public UsersPage clickOnExcludeFromEmailsCheckbox(){
+    public UsersPage clickOnExcludeFromEmailsCheckbox() {
         webElementHelper.scrollToElement(excludeFromEmailsCheckbox);
         webElementHelper.click(excludeFromEmailsCheckbox);
         return this;
     }
 
-    public UsersPage clickOnAddUserSubmitBtn(){
+    public UsersPage clickOnAddUserSubmitBtn() {
         webElementHelper.scrollToElement(activeCheckbox)
                 .click(activeCheckbox);
         webElementHelper.scrollToElement(addUserSubmitBtn);

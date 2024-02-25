@@ -92,7 +92,7 @@ public class ReportsPage extends BasePage {
                 Thread.sleep(2000);
                 webElementHelper.click(driver.findElement(By.xpath("//a[@title='Reports']")));
                 Thread.sleep(3000);
-            }catch (StaleElementReferenceException e){
+            } catch (StaleElementReferenceException e) {
                 reportsListsOfElements =driver.findElements(By.xpath("//div[@class='tl-content-sidebar tl-reports-content-sidebar']/div"));
                 System.out.println("Элемент устарел. Повторно получен список.");
                 i--;

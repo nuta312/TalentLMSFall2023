@@ -29,47 +29,47 @@ public class CoursesUnderReportsPage extends BasePage {
     @FindBy(xpath = "//h3[@class='tl-table-no-data-title']")
     public WebElement assertText;
 
-    public CoursesUnderReportsPage clickAdvancedFeatures(){
+    public CoursesUnderReportsPage clickAdvancedFeatures() {
         webElementHelper.click(advancedFeatures);
         return this;
     }
 
-    public CoursesUnderReportsPage clickContentAndTLMS(){
+    public CoursesUnderReportsPage clickContentAndTLMS() {
         webElementHelper.click(contentAndTLMS);
         return this;
     }
 
-    public CoursesUnderReportsPage clickEmployeeTraining(){
+    public CoursesUnderReportsPage clickEmployeeTraining() {
         webElementHelper.click(employeeTraining);
         return this;
     }
 
-    public CoursesUnderReportsPage clickGettingWithStarting(){
+    public CoursesUnderReportsPage clickGettingWithStarting() {
         webElementHelper.click(gettingWithStartingAndLearning);
         return this;
     }
 
-    public CoursesUnderReportsPage clickGiveYourCourseAName(){
+    public CoursesUnderReportsPage clickGiveYourCourseAName() {
         webElementHelper.click(giveYourCourseAName);
         return this;
     }
 
-    public CoursesUnderReportsPage clickIntroductionToTLMS(){
+    public CoursesUnderReportsPage clickIntroductionToTLMS() {
         webElementHelper.click(introductionToTLMS);
         return this;
     }
 
-    public CoursesUnderReportsPage clickWhatIsTLMSLibrary(){
+    public CoursesUnderReportsPage clickWhatIsTLMSLibrary() {
         webElementHelper.click(whatIsTLMSLibrary);
         return this;
     }
 
-    public CoursesUnderReportsPage clickScormTab(){
+    public CoursesUnderReportsPage clickScormTab() {
         webElementHelper.click(scormTab);
         return this;
     }
 
-    public CoursesUnderReportsPage clickNestedWhatIsTLMSLibrary(){
+    public CoursesUnderReportsPage clickNestedWhatIsTLMSLibrary() {
         webElementHelper.click(whatIsTLMSLibraryNested);
         return this;
     }

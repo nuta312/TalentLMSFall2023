@@ -24,47 +24,47 @@ public class RewardsBox extends GamificationPage {
     @FindBy (xpath = "//input[contains(@name,'discount_level_value')]")
     public WebElement inputDiscountLevelValue;
 
-    public RewardsBox clickDiscountPointsCheck(){
+    public RewardsBox clickDiscountPointsCheck() {
         webElementHelper.click(discountPointsCheck);
         return this;
     }
 
-    public RewardsBox inputDiscountPointsPercentage(String points){
+    public RewardsBox inputDiscountPointsPercentage(String points) {
         webElementHelper.sendKeys(inputDiscountPointsPercentage, points);
         return this;
     }
 
-    public RewardsBox inputDiscountPointsValue(String points){
+    public RewardsBox inputDiscountPointsValue(String points) {
         webElementHelper.sendKeys(inputDiscountPointsValue, points);
         return this;
     }
 
-    public RewardsBox clickDiscountBadgesCheck(){
+    public RewardsBox clickDiscountBadgesCheck() {
         webElementHelper.click(discountBadgesCheck);
         return this;
     }
 
-    public RewardsBox inputDiscountBadgesPercentage(String points){
+    public RewardsBox inputDiscountBadgesPercentage(String points) {
         webElementHelper.sendKeys(inputDiscountBadgesPercentage, points);
         return this;
     }
 
-    public RewardsBox inputDiscountBadgesValue(String points){
+    public RewardsBox inputDiscountBadgesValue(String points) {
         webElementHelper.sendKeys(inputDiscountBadgesValue, points);
         return this;
     }
 
-    public RewardsBox clickDiscountLevelCheck(){
+    public RewardsBox clickDiscountLevelCheck() {
         webElementHelper.click(discountLevelCheck);
         return this;
     }
 
-    public RewardsBox inputDiscountLevelPercentage(String points){
+    public RewardsBox inputDiscountLevelPercentage(String points) {
         webElementHelper.sendKeys(inputDiscountLevelPercentage, points);
         return this;
     }
 
-    public RewardsBox inputDiscountLevelValue(String points){
+    public RewardsBox inputDiscountLevelValue(String points) {
         webElementHelper.sendKeys(inputDiscountLevelValue, points);
         return this;
     }
