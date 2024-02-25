@@ -45,12 +45,14 @@ public class UserTypesTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("TL-014")
     @Tag("Smoke")
-    public void addUserTypeInTableTest() {
+    public void addUserTypeInTableTest(){
         browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + USER_TYPES);
         nameUserType = "testUserTypeName";
         indexUserType = 2;
         userTypesPage.addUserType(nameUserType, indexUserType);
-        Assert.assertEquals(userTypesPage.checkUserInTable(driver, nameUserType), true);
+        userTypesPage.addUserType("Men", indexUserType);
+        userTypesPage.removeTestsUsersTypes(driver);
+        Assert.assertEquals(userTypesPage.checkUserInTable(nameUserType), true);
     }
 
     @Test
@@ -65,7 +67,7 @@ public class UserTypesTest extends BaseTest {
         String searchWord = "admin";
         webElementHelper.sendKeys(userTypesPage.searchField, searchWord);
         Thread.sleep(2000);
-        listUserTypes = userTypesPage.getRolesFromTable(driver);
+        listUserTypes = userTypesPage.getRolesFromTable();
         userTypesPage.searchFieldClear();
         Assert.assertEquals(userTypesPage.countingRowsInTable(listUserTypes, searchWord) == listUserTypes.size(), true);
     }
@@ -81,9 +83,9 @@ public class UserTypesTest extends BaseTest {
         browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + USER_TYPES);
         List<String> beforeSortUserTypesName;
         List<String> afterSortUserTypesName;
-        beforeSortUserTypesName = userTypesPage.getRolesFromTable(driver);
+        beforeSortUserTypesName = userTypesPage.getRolesFromTable();
         webElementHelper.click(userTypesPage.filterUserTypeNameInTableUserType);
-        afterSortUserTypesName = userTypesPage.getRolesFromTable(driver);
+        afterSortUserTypesName = userTypesPage.getRolesFromTable();
         Assert.assertEquals(userTypesPage.checkFilterUserTypeNameInTableUserType(beforeSortUserTypesName, afterSortUserTypesName), true);
     }
 }

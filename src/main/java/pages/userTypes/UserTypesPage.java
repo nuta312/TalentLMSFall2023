@@ -1,6 +1,7 @@
 package pages.userTypes;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,6 +14,7 @@ import java.util.List;
 public class UserTypesPage extends BasePage {
 
     private int countRowsInTableUserTypes;
+    private List<String> listAddTestUserTypes = new ArrayList<>();
 
     @FindBy(xpath = "//input[@id='user_type_name']")
     public WebElement nameUserTypeField;
@@ -38,10 +40,14 @@ public class UserTypesPage extends BasePage {
     public List<WebElement> rowsTableUserTypes;
     @FindBy(xpath = "//td[@class=' tl-align-left']")
     public List<WebElement> cellsNameTableUserTypes;
-    @FindBy(xpath = "//i[@class='icon-remove icon-grid']")
-    public List<WebElement> removeBtnUserTypesTable;
-    @FindBy(xpath = "//div[@class='tl-table-operations-trigger touchable']")
-    public List<WebElement> optionBtnUserTypesTable;
+    @FindBy(xpath = "//td[@class=' tl-align-center tl-table-operations-cell']")
+    public List<WebElement> iconOption;
+    @FindBy(xpath = "//div[@class='select2-container tl-select2']")
+    public WebElement fieldChangeUserWhenDeleting;
+    @FindBy(xpath = "//div[@class='select2-result-label']")
+    public List<WebElement> selectsChangeUserWhenDeleting;
+    @FindBy(xpath = "//a[@class='btn btn-danger']")
+    public WebElement removeBtn;
 
     public void addUserTypeBtnClick() {
         webElementHelper.click(addUserTypeBtn);
@@ -56,8 +62,8 @@ public class UserTypesPage extends BasePage {
         searchField.sendKeys(Keys.ENTER);
     }
 
-    public boolean checkUserInTable(WebDriver driver, String  userNameType) {
-        for(String nameType : getRolesFromTable(driver)){
+    public boolean checkUserInTable(String  userNameType) {
+        for(String nameType : getRolesFromTable()){
             if(nameType.toLowerCase().equals(userNameType.toLowerCase())){
                 return true;
             }
@@ -71,6 +77,7 @@ public class UserTypesPage extends BasePage {
     }
 
     public void addUserType (String userTypeName, int  indexPermission) {
+        listAddTestUserTypes.add(userTypeName);
         addUserTypeBtnClick();
         fillUpNameUserType(userTypeName);
         choiceUserTypes(indexPermission);
@@ -129,18 +136,65 @@ public class UserTypesPage extends BasePage {
         }
     }
 
-    public ArrayList<String> getRolesFromTable(WebDriver driver){
+    public ArrayList<String> getRolesFromTable(){
         String nameType;
         ArrayList<String> roles = new ArrayList<>();
-        countRowsInTableUserTypes = 0;
-        for(WebElement row : rowsTableUserTypes){
-            if(countRowsInTableUserTypes >= rowsTableUserTypes.size() - 1){
+        boolean retry;
+        int attempts;
+        for(int i = 0; i < rowsTableUserTypes.size(); i++){
+            retry = true;
+            attempts = 0;
+            if(i >= rowsTableUserTypes.size() - 1){
                 break;
             }
-            nameType = cellsNameTableUserTypes.get(countRowsInTableUserTypes).getText();
-            countRowsInTableUserTypes++;
-            roles.add(nameType);
+            while (retry && attempts < 10) {
+                try {
+                    nameType = cellsNameTableUserTypes.get(i).getText();
+                    roles.add(nameType);
+                    retry = false;
+                } catch (StaleElementReferenceException e) {
+                    attempts++;
+                }
+            }
         }
         return roles;
+    }
+
+    public int findIndexUserNameInTable(WebDriver driver, String  userNameType){
+        int sizeTable = getRolesFromTable().size();
+        List<String> listUserTypes = getRolesFromTable();
+        for(int i = 0; i < sizeTable; i++){
+            if(listUserTypes.get(i).equals(userNameType)){
+                return i;
+            }
+        }
+        return 0;
+    }
+
+    public void removeTestsUsersTypes(WebDriver driver){
+        int index;
+        boolean retry;
+        int attempts;
+        for(int i = 0; i < listAddTestUserTypes.size(); i++) {
+                index = findIndexUserNameInTable(driver, listAddTestUserTypes.get(i));
+                if(listAddTestUserTypes.get(i).equals(getRolesFromTable().get(index))){
+                    retry = true;
+                    attempts = 0;
+                    while (retry && attempts < 10) {
+                        try {
+                            webElementHelper.waitForButtonToBeClickAble(iconOption.get(index));
+                            webElementHelper.moveToElement(iconOption.get(index));
+                            webElementHelper.click(iconOption.get(index));
+                            webElementHelper.click(fieldChangeUserWhenDeleting);
+                            webElementHelper.click(selectsChangeUserWhenDeleting.get(1));
+                            webElementHelper.click(removeBtn);
+                            retry = false;
+                        } catch (StaleElementReferenceException e) {
+                            attempts++;
+                        }
+                    }
+                }
+        }
+        listAddTestUserTypes.clear();
     }
 }
