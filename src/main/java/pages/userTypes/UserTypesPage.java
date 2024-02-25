@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -77,12 +76,20 @@ public class UserTypesPage extends BasePage {
     }
 
     public void addUserType (String userTypeName, int  indexPermission) {
-        listAddTestUserTypes.add(userTypeName);
-        addUserTypeBtnClick();
-        fillUpNameUserType(userTypeName);
-        choiceUserTypes(indexPermission);
-        choosePermission(indexPermission);
-        saveBtnClick();
+        if(!listAddTestUserTypes.contains(userTypeName)) {
+            listAddTestUserTypes.add(userTypeName);
+            addUserTypeBtnClick();
+            fillUpNameUserType(userTypeName);
+            choiceUserTypes(indexPermission);
+            choosePermission(indexPermission);
+            saveBtnClick();
+        } else{
+            addUserTypeBtnClick();
+            fillUpNameUserType(userTypeName);
+            choiceUserTypes(indexPermission);
+            choosePermission(indexPermission);
+            saveBtnClick();
+        }
     }
 
     public boolean checkFilterUserTypeNameInTableUserType(List<String> beforeSortUserTypesName, List<String> afterSortUserTypesName) {
@@ -182,12 +189,12 @@ public class UserTypesPage extends BasePage {
                     attempts = 0;
                     while (retry && attempts < 10) {
                         try {
-                            webElementHelper.waitForButtonToBeClickAble(iconOption.get(index));
-                            webElementHelper.moveToElement(iconOption.get(index));
-                            webElementHelper.click(iconOption.get(index));
-                            webElementHelper.click(fieldChangeUserWhenDeleting);
-                            webElementHelper.click(selectsChangeUserWhenDeleting.get(1));
-                            webElementHelper.click(removeBtn);
+                            webElementHelper.waitForButtonToBeClickAble(iconOption.get(index))
+                                            .moveToElement(iconOption.get(index))
+                                            .click(iconOption.get(index))
+                                            .click(fieldChangeUserWhenDeleting)
+                                            .click(selectsChangeUserWhenDeleting.get(1))
+                                            .click(removeBtn);
                             retry = false;
                         } catch (StaleElementReferenceException e) {
                             attempts++;

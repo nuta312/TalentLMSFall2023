@@ -74,8 +74,8 @@ public class WebElementHelper {
     }
 
     public WebElementHelper moveToElement(WebElement element){
-        Actions action = new Actions(Driver.getDriver());
-        action.moveToElement(element).perform();
+        actions = new Actions(Driver.getDriver());
+        actions.moveToElement(element).perform();
         return this;
     }
 }
