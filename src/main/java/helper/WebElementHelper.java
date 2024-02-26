@@ -72,4 +72,10 @@ public class WebElementHelper {
         actions.scrollByAmount(deltaX,deltaY);
         return this;
     }
+
+    public WebElementHelper moveToElement(WebElement element){
+        actions = new Actions(Driver.getDriver());
+        actions.moveToElement(element).perform();
+        return this;
+    }
 }
