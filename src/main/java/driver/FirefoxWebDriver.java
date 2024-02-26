@@ -9,7 +9,7 @@ import static config.ConfigReader.getValue;
 
 public class FirefoxWebDriver {
 
-    public static WebDriver loadFirefoxWebDriver(){
+    public static WebDriver loadFirefoxWebDriver() {
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--disable-extensions");
         options.addArguments("--window-size-1920,1080");

@@ -1,5 +1,6 @@
 package uiTest.accountAndSettingsTests;
 
+import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
 import uiTest.BaseTest;
 
@@ -14,6 +15,7 @@ import static org.testng.Assert.assertEquals;
 
 public class SubscriptionTest extends BaseTest {
 
+    @Tag("Smoke")
     @Test(description = "Select 'Starter plan' on Subscription page and assert urls", groups = {"Subscriptions"}, priority = 0)
     public void clickStarterPlanButtonTest() {
         browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + SUBSCRIPTION);
@@ -22,6 +24,7 @@ public class SubscriptionTest extends BaseTest {
         browserManager.goBack();
     }
 
+    @Tag("Smoke")
     @Test(description = "Select 'Basic plan' on Subscription page", groups = {"Subscriptions"}, priority = 1)
     public void clickBasicPlanButtonTest() {
         subscriptionPage.clickBasicPlanButton();
@@ -29,6 +32,7 @@ public class SubscriptionTest extends BaseTest {
         browserManager.goBack();
     }
 
+    @Tag("Smoke")
     @Test(description = "Select 'Plus plan' on Subscription page", groups = {"Subscriptions"}, priority = 2)
     public void clickPlusPlanButtonTest() {
         subscriptionPage.clickPlusPlanButton();
@@ -36,6 +40,7 @@ public class SubscriptionTest extends BaseTest {
         browserManager.goBack();
     }
 
+    @Tag("Smoke")
     @Test(description = "Select 'Premium plan' on Subscription page", groups = {"Subscriptions"}, priority = 3)
     public void clickPremiumPlanButtonTest() {
         subscriptionPage.clickPremiumPlanButton();

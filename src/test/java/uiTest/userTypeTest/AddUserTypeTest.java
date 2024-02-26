@@ -1,5 +1,6 @@
 package uiTest.userTypeTest;
 
+import io.qameta.allure.testng.Tag;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import uiTest.BaseTest;
@@ -8,6 +9,7 @@ import static org.testng.Assert.assertEquals;
 
 public class AddUserTypeTest extends BaseTest {
 
+    @Tag("Smoke")
     @Test(description = "Add a user type.Type user role defaults with the assert")
     void addUserTypeTest() {
         addUserTypePage.clickAddUserType()
@@ -61,6 +63,7 @@ public class AddUserTypeTest extends BaseTest {
         assertEquals(actualNotDefinedAnyPermissionsForThisUserTypeMess, "You have not defined any permissions for this user type");
     }
 
+    @Tag("Smoke")
     @Test(description = "Add the Instructor user type and existing permissions to Instructor")
     void addUserTypeInstructorTest() {
         addUserTypePage.clickAddUserType()
