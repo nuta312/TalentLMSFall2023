@@ -3,9 +3,9 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="tests">
         <classes>
-            <class name="uiTest.accountAndSettingsTests.DomainTest">
+            <class name="uiTest.coursesTest.CoursesTest">
                 <methods>
-                    <include name="renameDomainNameAndClickCancelTest"/>
+                    <include name="add"/>
                     <include name="renameDomainNameTest"/>
                 </methods>
             </class>
