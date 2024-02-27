@@ -1,8 +1,8 @@
-package uiTest;
+package uiTest.usersTest;
 
 import org.testng.annotations.Test;
 import pages.users.UsersPage;
-
+import uiTest.BaseTest;
 import static org.testng.Assert.assertEquals;
 
 public class UsersTest extends BaseTest {
@@ -31,7 +31,7 @@ public class UsersTest extends BaseTest {
     }
 
     @Test(description = "Click on empty fields", priority = 1)
-    public void requiredFieldsMessagesTest(){
+    public void requiredFieldsMessagesTest() {
         webElementHelper.click(usersPage.homeBtn);
         webElementHelper.click(usersPage.homeAddUserBtn);
         usersPage.clickOnAddUserSubmitBtn();

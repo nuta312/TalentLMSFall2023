@@ -7,10 +7,10 @@ public class Driver {
 
     private static WebDriver driver;
 
-    private Driver(){
+    private Driver() {
     }
 
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver() {
         if (driver == null){
             switch (ConfigReader.getValue("browser").toLowerCase()){
                 case "chrome":
@@ -29,14 +29,14 @@ public class Driver {
         return driver;
     }
 
-    public static void closeDriver(){
+    public static void closeDriver() {
         try {
             if (driver!=null){
                 driver.close();
                 driver.quit();
                 driver=null;
             }
-        }catch (Exception e){
+        }catch (Exception e) {
             System.out.println("Error while closing driver");
         }
     }

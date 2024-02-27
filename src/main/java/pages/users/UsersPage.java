@@ -59,23 +59,19 @@ public class UsersPage extends BasePage {
     public WebElement emailAddressValidationMessage;
     @FindBy(xpath = "(//span[@class='help-inline'])[2]")
     public WebElement passwordValidationMessage;
-
     @FindBy(xpath = "//a[@id='tl-confirm-continue']")
     public WebElement confirmDeletePopUp;
-
-    public UsersPage fillUpUserWithFakerData(){
+    public UsersPage fillUpUserWithFakerData() {
         webElementHelper
                 .sendKeys(firstnameInput, randomUser.getFirstname())
                 .sendKeys(lastnameInput, randomUser.getLastname())
                 .sendKeys(emailInput, randomUser.getEmailAddress())
                 .sendKeys(usernameInput, randomUser.getUsername());
         passwordInput.sendKeys("TestTest123!");
-        webElementHelper
-                .sendKeys(bioInput, randomUser.getBio());
         return this;
     }
 
-    public UsersPage selectUserType(){
+    public UsersPage selectUserType() {
         webElementHelper.click(userTypesSelectBtn);
         List<WebElement> userTypeDropDown = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy
                 (By.xpath("//div[@id='select2-drop']/ul/li")));
@@ -84,7 +80,7 @@ public class UsersPage extends BasePage {
         return this;
     }
 
-    public UsersPage selectTimeZone(){
+    public UsersPage selectTimeZone() {
         webElementHelper.click(timeZoneSelectBtn);
         List<WebElement> timeZoneDropDown = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy
                 (By.xpath("//div[@id='select2-drop']/ul/li")));
@@ -93,7 +89,7 @@ public class UsersPage extends BasePage {
         return this;
     }
 
-    public UsersPage selectLanguage(){
+    public UsersPage selectLanguage() {
         webElementHelper.click(languageSelectInput);
         List<WebElement> languageDropDown = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy
                 (By.xpath("//div[@id='select2-drop']/ul/li")));
@@ -103,13 +99,13 @@ public class UsersPage extends BasePage {
         return this;
     }
 
-    public UsersPage clickOnExcludeFromEmailsCheckbox(){
+    public UsersPage clickOnExcludeFromEmailsCheckbox() {
         webElementHelper.scrollToElement(excludeFromEmailsCheckbox);
         webElementHelper.click(excludeFromEmailsCheckbox);
         return this;
     }
 
-    public UsersPage clickOnAddUserSubmitBtn(){
+    public UsersPage clickOnAddUserSubmitBtn() {
         webElementHelper.scrollToElement(activeCheckbox)
                 .click(activeCheckbox);
         webElementHelper.scrollToElement(addUserSubmitBtn);
@@ -135,7 +131,7 @@ public class UsersPage extends BasePage {
             String registration = row.get(0).getText();
             System.out.println("Rows: " + rows.getText());
 
-            usersList.add(new User(user, email, userType, registration, "bio"));
+            usersList.add(new User(user, email, userType, registration));
         }
         return usersList;
     }

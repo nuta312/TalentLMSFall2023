@@ -1,14 +1,17 @@
-package uiTest;
+package uiTest.userTypeTest;
 
+import io.qameta.allure.testng.Tag;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import uiTest.BaseTest;
 
 import static org.testng.Assert.assertEquals;
 
 public class AddUserTypeTest extends BaseTest {
 
+    @Tag("Smoke")
     @Test(description = "Add a user type.Type user role defaults with the assert")
-    void addUserTypeTest()  {
+    void addUserTypeTest() {
         addUserTypePage.clickAddUserType()
                        .fillUpNameInput()
                        .arrowClick()
@@ -24,7 +27,7 @@ public class AddUserTypeTest extends BaseTest {
     }
 
     @Test(description = "Add a user type with an existing name")
-    void addUserTypeTest2()  {
+    void addUserTypeTest2() {
         addUserTypePage.clickAddUserType()
                        .fillUpNameInput1()
                        .arrowClick()
@@ -36,7 +39,7 @@ public class AddUserTypeTest extends BaseTest {
     }
 
     @Test(description = "Add the Instructor user type as the default user type - Administrator role, Instructor permissions")
-    void addUserTypeTest3(){
+    void addUserTypeTest3() {
         addUserTypePage.clickAddUserType()
                        .fillUpInstructorNameInput()
                        .arrowClick()
@@ -48,7 +51,7 @@ public class AddUserTypeTest extends BaseTest {
     }
 
     @Test(description = "Without adding the default user type and role for the administrator user type")
-    void addUserTypeTest4(){
+    void addUserTypeTest4() {
         addUserTypePage .clickAddUserType();
         webElementHelper.scrollToElement(addUserTypePage.saveBtn);
         addUserTypePage .saveButton();
@@ -60,6 +63,7 @@ public class AddUserTypeTest extends BaseTest {
         assertEquals(actualNotDefinedAnyPermissionsForThisUserTypeMess, "You have not defined any permissions for this user type");
     }
 
+    @Tag("Smoke")
     @Test(description = "Add the Instructor user type and existing permissions to Instructor")
     void addUserTypeInstructorTest() {
         addUserTypePage.clickAddUserType()

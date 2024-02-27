@@ -14,30 +14,30 @@ public class DropdownHelper {
     private Select select;
     private WebDriverWait wait;
 
-    public DropdownHelper(WebDriver driver){
+    public DropdownHelper(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public DropdownHelper selectByText(WebElement element, String text){
+    public DropdownHelper selectByText(WebElement element, String text) {
         select = new Select(element);
         select.selectByVisibleText(text);
         return this;
     }
 
-    public DropdownHelper selectByIndex(WebElement element, int index){
+    public DropdownHelper selectByIndex(WebElement element, int index) {
         select = new Select(element);
         select.selectByIndex(index);
         return this;
     }
 
-    public DropdownHelper selectByValue(WebElement element, String value){
+    public DropdownHelper selectByValue(WebElement element, String value) {
         select = new Select(element);
         select.selectByValue(value);
         return this;
     }
 
-    public List<String> getAllDropdownValues(WebElement element){
+    public List<String> getAllDropdownValues(WebElement element) {
         List<WebElement> elementList = select.getOptions();
         List<String> valueList = new LinkedList<String>();
         for (WebElement e : elementList){

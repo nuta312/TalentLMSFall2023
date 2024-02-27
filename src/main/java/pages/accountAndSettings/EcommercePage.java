@@ -101,7 +101,7 @@ public class EcommercePage extends BasePage {
     @FindBy(xpath = "//div[text()='E-commerce settings updated successfully']")
     public WebElement ecommerceSuccessMessage;
 
-    public EcommercePage clickSelect(){
+    public EcommercePage clickSelect() {
         webElementHelper.click(inputSelect);
         return this;
     }
@@ -112,111 +112,111 @@ public class EcommercePage extends BasePage {
         return this;
     }
 
-    public EcommercePage fillUpPayPalEmailAddress(){
+    public EcommercePage fillUpPayPalEmailAddress() {
         inputAddressPayPal.sendKeys(faker.internet().emailAddress());
         return this;
     }
 
-    public EcommercePage clickStripe(){
+    public EcommercePage clickStripe() {
         webElementHelper.scrollToElement(inputStripe);
         webElementHelper.click(inputStripe);
         return this;
     }
 
-    public EcommercePage clickConnectWithStripeButton(){
+    public EcommercePage clickConnectWithStripeButton() {
         webElementHelper.click(connectWithStripeButton);
         return this;
     }
 
-    public EcommercePage clickSelectYour(){
+    public EcommercePage clickSelectYour() {
         webElementHelper.scrollToElement(inputSelectYour);
         webElementHelper.click(inputSelectYour);
         return this;
 
     }
 
-    public EcommercePage clickSubscription(){
+    public EcommercePage clickSubscription() {
         webElementHelper.scrollToElement(inputSubscription);
         webElementHelper.click(inputSubscription);
         return this;
     }
 
-    public EcommercePage clickDiscounts(){
+    public EcommercePage clickDiscounts() {
         webElementHelper.scrollToElement(inputDiscounts);
         webElementHelper.click(inputDiscounts);
         return this;
     }
 
-    public EcommercePage clickDiscountsCheckMark(){
+    public EcommercePage clickDiscountsCheckMark() {
         webElementHelper.click(inputDiscountsCheckMark);
         return this;
     }
 
-    public EcommercePage clickDiscountsPercent(){
+    public EcommercePage clickDiscountsPercent() {
         webElementHelper.sendKeys(inputDiscountPercent, "30");
         return this;
     }
 
-    public EcommercePage clickInvoices(){
+    public EcommercePage clickInvoices() {
         webElementHelper.click(inputInvoices);
         return this;
     }
 
-    public EcommercePage clickInvoicesCheckMark(){
+    public EcommercePage clickInvoicesCheckMark() {
         webElementHelper.click(inputInvoicesCheckMark);
         return this;
     }
 
-    public EcommercePage invoicesText(){
+    public EcommercePage invoicesText() {
         webElementHelper.sendKeys(inputInvoicesText, "Add your business info here. This info will be added to end-user invoices.");
         return this;
     }
 
-    public EcommercePage clickCoupons(){
+    public EcommercePage clickCoupons() {
         webElementHelper.scrollToElement(clickCouponsText);
         webElementHelper.click(clickCouponsText);
         return this;
     }
 
-    public EcommercePage clickCouponsAdd(){
+    public EcommercePage clickCouponsAdd() {
         webElementHelper.scrollToElement(clickAddCouponBtn);
         webElementHelper.click(clickAddCouponBtn);
         return this;
     }
 
-    public EcommercePage inputCode(){
+    public EcommercePage inputCode() {
         webElementHelper.sendKeys(inputCode1, "234567789977");
         return this;
     }
 
-    public EcommercePage inputFrom(){
+    public EcommercePage inputFrom() {
         webElementHelper.click(inputFrom1);
         return this;
     }
 
-    public EcommercePage inputFrom20(){
+    public EcommercePage inputFrom20() {
         webElementHelper.scrollToElement(inputFrom20);
         webElementHelper.click(inputFrom20);
         return this;
     }
 
-    public EcommercePage clickTo(){
+    public EcommercePage clickTo() {
         webElementHelper.click(clickToField);
         return this;
     }
 
-    public EcommercePage clickToCalendar(){
+    public EcommercePage clickToCalendar() {
         webElementHelper.scrollToElement(clickCalendarDayTo);
         webElementHelper.click(clickCalendarDayTo);
         return this;
     }
 
-    public EcommercePage inputPercentage(){
+    public EcommercePage inputPercentage() {
         webElementHelper.sendKeys(inputPercentageOff, "30");
         return this;
     }
 
-    public EcommercePage inputAdd(){
+    public EcommercePage inputAdd() {
         webElementHelper.click(clickAddCoupon);
         return this;
 

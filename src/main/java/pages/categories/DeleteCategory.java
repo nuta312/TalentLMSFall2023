@@ -15,7 +15,7 @@ public class DeleteCategory extends BasePage {
     @FindBy(xpath = "//a[@id='tl-confirm-submit']")
     public WebElement deleteButtonClick;
 
-    public DeleteCategory removeCategory(){
+    public DeleteCategory removeCategory() {
         webElementHelper.actions = new Actions(Driver.getDriver());
         webElementHelper.actions.moveToElement(navigateMouse).build().perform();
         webElementHelper.click(deleteButton)

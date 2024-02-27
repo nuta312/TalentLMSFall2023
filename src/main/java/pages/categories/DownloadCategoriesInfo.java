@@ -9,7 +9,7 @@ public class DownloadCategoriesInfo extends BasePage {
     @FindBy(xpath = "//i[@class='icon-download tl-icon19']")
     public WebElement downloadButton;
 
-    public DownloadCategoriesInfo clickToInstall(){
+    public DownloadCategoriesInfo clickToInstall() {
         webElementHelper.click(downloadButton);
         return this;
     }

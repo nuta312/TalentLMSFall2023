@@ -16,31 +16,31 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//input[@value='Log in']")
     public WebElement loginButton;
 
-    public LoginPage enterDomain(String domain){
+    public LoginPage enterDomain(String domain) {
         webElementHelper.sendKeys(domainInput, domain);
         return this;
     }
 
-    public LoginPage enterUsername(String text){
+    public LoginPage enterUsername(String text) {
         webElementHelper.sendKeys(usernameInput, text);
         return this;
     }
 
-    public LoginPage enterPassword(String password){
+    public LoginPage enterPassword(String password) {
         webElementHelper.sendKeys(passwordInput, password);
         return this;
     }
 
-    public LoginPage clickLoginButton(){
+    public LoginPage clickLoginButton() {
         webElementHelper.click(loginButton);
         return this;
     }
 
-    public LoginPage doLogin(){
+    public LoginPage doLogin() {
         webElementHelper
-                .sendKeys(domainInput,getValue("domain"))
-                .sendKeys(usernameInput,getValue("username"))
-                .sendKeys(passwordInput,getValue("password"))
+                .sendKeys(domainInput, getValue("domain"))
+                .sendKeys(usernameInput, getValue("username"))
+                .sendKeys(passwordInput, getValue("password"))
                 .click(loginButton);
         return this;
     }

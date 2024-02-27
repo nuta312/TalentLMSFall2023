@@ -13,16 +13,16 @@ public class AlertHelper {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public AlertHelper(WebDriver driver){
+    public AlertHelper(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public Alert getAlert(){
+    public Alert getAlert() {
         return driver.switchTo().alert();
     }
 
-    public boolean isAlertPresent(){
+    public boolean isAlertPresent() {
         try {
             Driver.getDriver().switchTo().alert();
             return true;
@@ -31,7 +31,7 @@ public class AlertHelper {
         }
     }
 
-    public void acceptAlert(){
+    public void acceptAlert() {
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(7)).until(ExpectedConditions.alertIsPresent());
         if (!isAlertPresent()){
             return;
@@ -39,7 +39,7 @@ public class AlertHelper {
         getAlert().accept();
     }
 
-    public void dismissAlert(){
+    public void dismissAlert() {
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(7))
                 .until(ExpectedConditions.alertIsPresent());
         if (!isAlertPresent()){
@@ -48,7 +48,7 @@ public class AlertHelper {
         getAlert().dismiss();
     }
 
-    public void sendKeysAlert(String text){
+    public void sendKeysAlert(String text) {
         if (!isAlertPresent()){
             return;
         }
