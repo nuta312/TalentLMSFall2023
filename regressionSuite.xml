@@ -17,6 +17,32 @@
                     <include name="selectRandomThemeTest"/>
                 </methods>
             </class>
+            <class name="uiTest.accountAndSettingsTests.AccountUsersTest">
+                <methods>
+                    <include name="usersIndexPageCancelTest"/>
+                </methods>
+            </class>
+            <class name="uiTest.accountAndSettingsTests.BasicSettingsTest">
+                <methods>
+                    <include name="fillUpBasicSettingsTest"/>
+                </methods>
+            </class>
+            <class name="uiTest.accountAndSettingsTests.DomainTest">
+                <methods>
+                    <include name="renameDomainNameAndClickCancelTest"/>
+                    <include name="renameDomainNameTest"/>
+                </methods>
+            </class>
+            <class name="uiTest.accountAndSettingsTests.EcommerceTest">
+                <methods>
+                    <include name="connectStripeTest"/>
+                </methods>
+            </class>
+            <class name="uiTest.accountAndSettingsTests.ThemesTest">
+                <methods>
+                    <include name="selectRandomThemeTest"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
