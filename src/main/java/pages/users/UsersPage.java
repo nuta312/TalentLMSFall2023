@@ -1,12 +1,14 @@
 package pages.users;
 
+import driver.Driver;
 import entity.User;
 import helper.FakeDataHelper;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class UsersPage extends BasePage {
@@ -57,17 +59,19 @@ public class UsersPage extends BasePage {
     @FindBy(xpath = "(//span[@class=\"help-inline\"])[2]")
     public WebElement passwordValidationMessage;
 
-    public UsersPage fillUpUserWithFakerData() {
+    public UsersPage fillUpUserWithFakerData(){
         webElementHelper
                 .sendKeys(firstnameInput, randomUser.getFirstname())
                 .sendKeys(lastnameInput, randomUser.getLastname())
                 .sendKeys(emailInput, randomUser.getEmailAddress())
                 .sendKeys(usernameInput, randomUser.getUsername());
         passwordInput.sendKeys("TestTest123!");
+        webElementHelper
+                .sendKeys(bioInput, randomUser.getBio());
         return this;
     }
 
-    public UsersPage selectUserType() {
+    public UsersPage selectUserType(){
         webElementHelper.click(userTypesSelectBtn);
         List<WebElement> userTypeDropDown = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy
                 (By.xpath("//div[@id='select2-drop']/ul/li")));
@@ -76,7 +80,7 @@ public class UsersPage extends BasePage {
         return this;
     }
 
-    public UsersPage selectTimeZone() {
+    public UsersPage selectTimeZone(){
         webElementHelper.click(timeZoneSelectBtn);
         List<WebElement> timeZoneDropDown = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy
                 (By.xpath("//div[@id='select2-drop']/ul/li")));
@@ -85,7 +89,7 @@ public class UsersPage extends BasePage {
         return this;
     }
 
-    public UsersPage selectLanguage() {
+    public UsersPage selectLanguage(){
         webElementHelper.click(languageSelectInput);
         List<WebElement> languageDropDown = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy
                 (By.xpath("//div[@id='select2-drop']/ul/li")));
@@ -95,17 +99,85 @@ public class UsersPage extends BasePage {
         return this;
     }
 
-    public UsersPage clickOnExcludeFromEmailsCheckbox() {
+    public UsersPage clickOnExcludeFromEmailsCheckbox(){
         webElementHelper.scrollToElement(excludeFromEmailsCheckbox);
         webElementHelper.click(excludeFromEmailsCheckbox);
         return this;
     }
 
-    public UsersPage clickOnAddUserSubmitBtn() {
+    public UsersPage clickOnAddUserSubmitBtn(){
         webElementHelper.scrollToElement(activeCheckbox)
                 .click(activeCheckbox);
         webElementHelper.scrollToElement(addUserSubmitBtn);
         webElementHelper.click(addUserSubmitBtn);
         return this;
     }
+    public static ArrayList<User> getUsersFromTable(WebDriver driver){
+
+        List<WebElement> usersRows = driver.findElements(By.xpath("//table[@id='tl-users-grid']"));
+        ArrayList<User> usersList = new ArrayList<>();
+        for (WebElement rows : usersRows){
+
+            //for sorting
+            WebElement registrationSortBtn = driver.findElement(By.xpath("//th[text()='Registration']"));
+            registrationSortBtn.click();
+
+            List<WebElement> row = rows.findElements(By.xpath("//tbody/tr[@role='row']"));
+            String user = row.get(0).getText();
+            String email = row.get(0).getText();
+            String userType = row.get(0).getText();
+            String registration = row.get(0).getText();
+            System.out.println("Rows: " + rows.getText());
+
+            usersList.add(new User(user, email, userType, registration, "bio"));
+
+
+            // for deleting new added user:
+//            WebElement lastAddedUser = driver.findElement(By.xpath("(//tr[@role='row'])[2]"));
+//            WebElement lastAddedUserCheckbox = driver.findElement(By.xpath("(//input[@type='checkbox'])[2]"));
+//            lastAddedUserCheckbox.click();
+//            WebElement massActionsBtn = driver.findElement(By.xpath("//a[@class='btn dropdown-toggle']"));
+//            massActionsBtn.click();
+//            WebElement deleteBtn = driver.findElement(By.xpath("//a[@data-mode='delete']"));
+//            deleteBtn.click();
+//            WebElement deletePopUp = driver.findElement(By.xpath("//a[@id='submit-mass-action']"));
+//            deletePopUp.click();
+
+        }
+        return usersList;
+    }
+
+    // for deleting new added user:
+    public UsersPage deleteLastAddedUser() throws InterruptedException {
+        // Get the last added user row
+        WebElement lastAddedUser = driver.findElement(By.xpath("(//tr[@role='row'])[2]"));
+
+        // Check the checkbox for the last added user
+        WebElement lastAddedUserCheckbox = lastAddedUser.findElement(By.xpath(".//input[@type='checkbox']"));
+        lastAddedUserCheckbox.click();
+
+        // Open mass actions menu
+        WebElement massActionsBtn = driver.findElement(By.xpath("//a[@class='btn dropdown-toggle']"));
+        massActionsBtn.click();
+
+        // Select the delete option from mass actions menu
+        // Confirm the deletion in the pop-up
+        WebElement deletePopUp =driver.findElement(By.xpath("//div[@class='modal-footer']/a[1]"));
+        webElementHelper.click(deletePopUp);
+        Thread.sleep(5000);
+
+        // Try to hide the modal backdrop (if it exists)
+        try {
+            WebElement modalBackdrop = driver.findElement(By.xpath("//tr[@class='even']//input[@value='on']"));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].style.display='none';", modalBackdrop);
+        } catch (NoSuchElementException e) {
+            // Modal backdrop not found, continue
+        }
+
+        return this;
+    }
+    public UsersPage deleteLastAddedUser2(){
+        WebElement cliktoUser = driver.findElement(By.xpath("//tr[@class='even']//input[@value='on']"));
+        return this;
+}
 }

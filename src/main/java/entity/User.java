@@ -18,4 +18,7 @@ public class User {
     private String lastname;
     private String emailAddress;
     private String username;
-}
+private String Bio;
+
+    }
+

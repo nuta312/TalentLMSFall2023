@@ -6,17 +6,19 @@
     </listeners>
     <test verbose="2" preserve-order="true" name="tests">
         <classes>
+            <class name="uiTest.accountAndSettingsTests.EcommerceTest">
+                <methods>
+
+                    <include name="connectStripeTest"/>
+                </methods>
+            </class>
             <class name="uiTest.accountAndSettingsTests.DomainTest">
                 <methods>
                     <include name="renameDomainNameAndClickCancelTest"/>
                     <include name="renameDomainNameTest"/>
                 </methods>
             </class>
-            <class name="uiTest.accountAndSettingsTests.ThemesTest">
-                <methods>
-                    <include name="selectRandomThemeTest"/>
-                </methods>
-            </class>
+
         </classes>
     </test>
 </suite>
