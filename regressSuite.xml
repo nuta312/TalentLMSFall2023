@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Ezel project 1/TalentLMSFall2023">
+        <classes>
+            <class name="uiTest.importExportTest.ImportTest">
+                <methods>
+                    <include name="enterImportByImportReff"/>
+                    <include name="SampleFileDownload"/>
+                    <include name="testFileUploadPositive"/>
+                    <include name="testFileUploadAndSubmitPositive"/>
+                    <include name="testViewCheatsheet"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
