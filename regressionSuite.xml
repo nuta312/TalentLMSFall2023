@@ -7,9 +7,25 @@
                 <methods>
                     <include name="clickExportButtons"/>
                     <include name="clickExcell"/>
-                    <include name="clickCancel"/>
                 </methods>
             </class>
+            <class name="uiTest.AccountAndSettingsTests.GamificationTest">
+                <methods>
+                    <include name="clickAllSwitchButtons"/>
+                    <include name="clickAllPointsCheckboxes"/>
+                    <include name="clickAllBadgesCheckboxes"/>
+                    <include name="clickAllLevelsCheckboxes"/>
+                    <include name="clickAllRewardsCheckboxes"/>
+                    <include name="clickAllLeaderboardCheckboxes"/>
+                </methods>
+            </class>
+            <class name="uiTest.AccountAndSettingsTests.EcommerceTest">
+            <methods>
+            <include name="connectStripeTest"/>
+
+            </methods>
+            </class>
+
         </classes>
     </test>
 </suite>

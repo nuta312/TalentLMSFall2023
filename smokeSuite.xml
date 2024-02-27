@@ -8,6 +8,30 @@
                 <include name="selectRandomThemeTest"/>
             </methods>
             </class>
+            <class name="uiTest.AccountAndSettingsTests.SubscriptionTest">
+                <methods>
+                    <include name="clickStarterPlanButtonTest"/>
+                    <include name="clickBasicPlanButtonTest"/>
+                    <include name="clickPlusPlanButtonTest"/>
+                    <include name="clickPremiumPlanButtonTest"/>
+                </methods>
+            </class>
+
+            <class name="uiTest.AccountAndSettingsTests.DomainTest">
+            <methods>
+            <include name="renameDomainNameAndClickCancelTest"/>
+            <include name="renameDomainNameTest"/>
+
+            </methods>
+            </class>
+
+            <class name="java.security.cert.Certificate">
+            <methods>
+            <include name="saveNewCertificateTest"/>
+
+            </methods>
+            </class>
+
         </classes>
     </test>
 </suite>
