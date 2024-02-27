@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+
     <test verbose="2" preserve-order="true" name="tests">
         <classes>
-            <class name="uiTest.ExportTest">
+            <class name="uiTest.AccountAndSettingsTests.DomainTest">
                 <methods>
-                    <include name="clickExportButtons"/>
-                    <include name="clickExcell"/>
+                    <include name="renameDomainNameAndClickCancelTest"/>
+                    <include name="renameDomainNameTest"/>
                 </methods>
             </class>
-            <class name="uiTest.AccountAndSettingsTests.GamificationTest">
+            <class name="uiTest.AccountAndSettingsTests.ThemesTest">
                 <methods>
-                    <include name="clickAllSwitchButtons"/>
-                    <include name="clickAllPointsCheckboxes"/>
-                    <include name="clickAllBadgesCheckboxes"/>
-                    <include name="clickAllLevelsCheckboxes"/>
-                    <include name="clickAllRewardsCheckboxes"/>
-                    <include name="clickAllLeaderboardCheckboxes"/>
+                    <include name="selectRandomThemeTest"/>
                 </methods>
-            </class>
-            <class name="uiTest.AccountAndSettingsTests.EcommerceTest">
+            </class> <class name="uiTest.AccountAndSettingsTests.EcommerceTest">
             <methods>
-            <include name="connectStripeTest"/>
-
+                <include name="connectStripeTest"/>
             </methods>
-            </class>
-
+        </class>
         </classes>
     </test>
 </suite>

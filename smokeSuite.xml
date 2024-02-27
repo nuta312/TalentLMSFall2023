@@ -1,37 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+
     <test verbose="2" preserve-order="true" name="tests">
         <classes>
-            <class name="uiTest.AccountAndSettingsTests.ThemesTest">
-            <methods>
-                <include name="selectRandomThemeTest"/>
-            </methods>
-            </class>
-            <class name="uiTest.AccountAndSettingsTests.SubscriptionTest">
+            <class name="uiTest.ExportTest">
                 <methods>
-                    <include name="clickStarterPlanButtonTest"/>
-                    <include name="clickBasicPlanButtonTest"/>
-                    <include name="clickPlusPlanButtonTest"/>
-                    <include name="clickPremiumPlanButtonTest"/>
+                    <include name="lickExportButtons"/>
+                    <include name="clickExcell"/>
+                    <include name="clickCancel"/>
                 </methods>
             </class>
-
-            <class name="uiTest.AccountAndSettingsTests.DomainTest">
-            <methods>
-            <include name="renameDomainNameAndClickCancelTest"/>
-            <include name="renameDomainNameTest"/>
-
-            </methods>
-            </class>
-
-            <class name="java.security.cert.Certificate">
-            <methods>
-            <include name="saveNewCertificateTest"/>
-
-            </methods>
-            </class>
-
         </classes>
     </test>
 </suite>
