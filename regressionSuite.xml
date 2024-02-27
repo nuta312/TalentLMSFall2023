@@ -16,7 +16,11 @@
                 <methods>
                     <include name="selectRandomThemeTest"/>
                 </methods>
-            </class>
+            </class> <class name="uiTest.coursesTest.CoursesTest">
+            <methods>
+                <include name="add"/>
+            </methods>
+        </class>
         </classes>
     </test>
 </suite>
