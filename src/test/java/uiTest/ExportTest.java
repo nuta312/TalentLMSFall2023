@@ -1,54 +1,39 @@
 package uiTest;
-
-
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.ExportPage;
-
 
 
 public class ExportTest extends BaseTest {
-
-    private ExportPage exportPage;
-
-
-    @Test
+    @Test(description = "Verify export functionality for Csv  files")
     void clickExportButtons() {
-        browserManager.openByNavigate("https://app.talentlms.com/login");
-        loginPage.enterDomain("nur123")
-                .enterUsername("nuraiym123")
-                .enterPassword("123Hamza");
         exportPage
                 .clickBtnExport()
                 .clickExport()
                 .CsvClick()
                 .ExportClick();
+
+String actualExportClick=driver.findElement(By.xpath("//a[normalize-space()='Export']")).getText();
+Assert.assertEquals(actualExportClick,"Export");
+
     }
-
-
-    /**
-     * проверка теста
-     */
-
-
     @Test(description = "Verify export functionality for excell  files")
     void clickExcell() {
-
-
         exportPage
                 .clickBtnExport()
                 .clickExport()
                 .clickExcell()
                 .ExportClick();
-    }
 
-    @Test
+    }
+    @Test(description = "Verify export functionality for cancel  button")
     void clickCancel() {
         exportPage
                 .clickBtnExport()
                 .ClickCancel1();
 
-    }
 
+    }
 }
 
 

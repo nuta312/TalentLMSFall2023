@@ -1,18 +1,11 @@
 package pages;
-
-
-import driver.Driver;
 import helper.WebElementHelper;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-
 public class ExportPage extends BasePage {
 
 
-    public ExportPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+
 
 WebElementHelper webElementHelper = new WebElementHelper();
 
@@ -32,8 +25,6 @@ WebElementHelper webElementHelper = new WebElementHelper();
    @FindBy(xpath = "(//input[@class='btn btn-primary'])[1]")
      public WebElement clickExportButton;
 
-    @FindBy(xpath = "//div[@class='tl-onboarding-end-item  tl-onboarding-end-item--disabled']")
-    public WebElement clickDashBoardButton;
 
      public ExportPage clickBtnExport(){
          webElementHelper.click(ExportBtnClick);
@@ -59,10 +50,8 @@ WebElementHelper webElementHelper = new WebElementHelper();
         webElementHelper.click(clickExportButton);
         return this;
     }
-    public ExportPage clickDashBoard (){
-        webElementHelper.click(clickDashBoardButton);
-        return this;
-    }
 
     }
+
+
 

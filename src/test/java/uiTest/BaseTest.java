@@ -6,6 +6,8 @@ import helper.WebElementHelper;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import pages.BasePage;
+import pages.ExportPage;
 import pages.LoginPage;
 import pages.AccountAndSettings.AccountUsersPage;
 import pages.AccountAndSettings.BasicSettingsPage;
@@ -47,6 +49,8 @@ public class BaseTest {
     protected RewardsBox rewardsBox;
     protected LeaderboardBox leaderboardBox;
     protected UsersPage usersPage;
+    protected ExportPage exportPage;
+
 
     @BeforeClass(alwaysRun = true)
     public void setUp(){
@@ -70,13 +74,13 @@ public class BaseTest {
         levelsBox = new LevelsBox();
         rewardsBox = new RewardsBox();
         leaderboardBox = new LeaderboardBox();
+        exportPage = new ExportPage();
         browserManager.openByNavigate(LOGIN.toString());
         loginPage.enterDomain(getValue("domain"))
                 .enterUsername(getValue("username"))
                 .enterPassword(getValue("password"))
                 .clickLoginButton();
     }
-
     @AfterClass(alwaysRun = true)
     public void tearDown(){
         Driver.closeDriver();
