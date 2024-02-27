@@ -19,6 +19,16 @@
                     <include name="saveNewCertificateTest"/>
                 </methods>
             </class>
+            <class name="uiTest.accountAndSettingsTests.GamificationTest">
+                <methods>
+                    <include name="clickAllSwitchButtons"/>
+                    <include name="clickAllPointsCheckboxes"/>
+                    <include name="clickAllBadgesCheckboxes"/>
+                    <include name="clickAllLevelsCheckboxes"/>
+                    <include name="clickAllRewardsCheckboxes"/>
+                    <include name="clickAllLeaderboardCheckboxes"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
