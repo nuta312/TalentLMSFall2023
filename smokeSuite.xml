@@ -14,6 +14,11 @@
                     <include name="clickPremiumPlanButtonTest"/>
                 </methods>
             </class>
+            <class name="uiTest.accountAndSettingsTests.CertificatesTest">
+                <methods>
+                    <include name="saveNewCertificateTest"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

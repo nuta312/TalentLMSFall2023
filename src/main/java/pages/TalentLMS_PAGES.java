@@ -1,5 +1,4 @@
 package pages;
-
 import static config.ConfigReader.getValue;
 
 public enum TalentLMS_PAGES {
