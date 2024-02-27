@@ -35,17 +35,15 @@ public class ImportTest extends BaseTest {
         importPage.importLink.click();
         String filePath = ConfigReader.getValue("filepath") + "/Import-Samples.xls";
         importPage.downloadFile(driver, filePath);
-        Thread.sleep(5000);
         WebElement successMessage = driver.findElement(By.xpath("//div[@class='note success text-success' and contains(text(), 'Upload complete. Click the import button to proceed.')]"));
         Assert.assertNotNull(successMessage);
     }
 
     @Test(description = "upload valid file,check 'description' field, check 'Import' btn")
-    void testFileUploadAndSubmitPositive() throws InterruptedException {
+    void testFileUploadAndSubmitPositive() {
         importPage.importLink.click();
         String filePath = ConfigReader.getValue("filepath") + "/Import-Samples.xls";
         importPage.downloadFile(driver, filePath);
-        Thread.sleep(5000);
         WebElement successMessage = driver.findElement(By.xpath("//div[@class='note success text-success' and contains(text(), 'Upload complete. Click the import button to proceed.')]"));
         Assert.assertNotNull(successMessage);
         System.out.println(importPage.importDescriptionInput.getText());
@@ -54,7 +52,6 @@ public class ImportTest extends BaseTest {
         importPage.clickImportButton();
         WebElementHelper importResults = new WebElementHelper().waitForElementToBeDisplayed(importPage.importResults);
         Assert.assertNotNull(importResults);
-        Thread.sleep(5000);
     }
 
 
