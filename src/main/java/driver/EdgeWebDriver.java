@@ -9,7 +9,7 @@ import static config.ConfigReader.getValue;
 
 public class EdgeWebDriver {
 
-    public static WebDriver loadEdgeDriver(){
+    public static WebDriver loadEdgeDriver() {
         EdgeOptions options = new EdgeOptions();
         options.addArguments("--disable-extensions");
         options.addArguments("--window-size-1920,1080");

@@ -1,5 +1,6 @@
 package uiTest.accountAndSettingsTests;
 
+import io.qameta.allure.testng.Tag;
 import uiTest.BaseTest;
 import org.testng.annotations.Test;
 
@@ -11,6 +12,7 @@ import static org.testng.Assert.assertTrue;
 
 public class ThemesTest extends BaseTest {
 
+    @Tag("Regress")
     @Test
     public void selectRandomThemeTest() {
         browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + THEMES);

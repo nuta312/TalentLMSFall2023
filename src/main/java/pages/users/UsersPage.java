@@ -64,8 +64,6 @@ public class UsersPage extends BasePage {
                 .sendKeys(emailInput, randomUser.getEmailAddress())
                 .sendKeys(usernameInput, randomUser.getUsername());
         passwordInput.sendKeys("TestTest123!");
-        webElementHelper
-                .sendKeys(bioInput, randomUser.getBio());
         return this;
     }
 

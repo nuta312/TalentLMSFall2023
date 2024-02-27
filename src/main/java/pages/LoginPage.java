@@ -38,9 +38,9 @@ public class LoginPage extends BasePage {
 
     public LoginPage doLogin() {
         webElementHelper
-                .sendKeys(domainInput,getValue("domain"))
-                .sendKeys(usernameInput,getValue("username"))
-                .sendKeys(passwordInput,getValue("password"))
+                .sendKeys(domainInput, getValue("domain"))
+                .sendKeys(usernameInput, getValue("username"))
+                .sendKeys(passwordInput, getValue("password"))
                 .click(loginButton);
         return this;
     }

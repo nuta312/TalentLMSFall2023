@@ -3,6 +3,7 @@ package pages;
 import static config.ConfigReader.getValue;
 
 public enum TalentLMS_PAGES {
+
     MAIN_PAGE("https://www.talentlms.com"),
     MY_DOMAIN("https://" + getValue("domain")),
     TALENTLMS(".talentlms.com"),

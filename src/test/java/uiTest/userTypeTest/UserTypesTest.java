@@ -36,6 +36,8 @@ public class UserTypesTest extends BaseTest {
         String actualResult = userTypesPage.warningTextTypeNameRepeated.getText().trim();
         String expectedResult = "A user type with this name already exists";
         Assert.assertEquals(actualResult, expectedResult);
+        browserManager.goBack();
+        userTypesPage.removeTestsUsersTypes(driver);
     }
 
     @Test
@@ -45,12 +47,14 @@ public class UserTypesTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("TL-014")
     @Tag("Smoke")
-    public void addUserTypeInTableTest() {
+    public void addUserTypeInTableTest(){
         browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + USER_TYPES);
         nameUserType = "testUserTypeName";
         indexUserType = 2;
         userTypesPage.addUserType(nameUserType, indexUserType);
-        Assert.assertEquals(userTypesPage.checkUserInTable(driver, nameUserType), true);
+        userTypesPage.addUserType("Men", indexUserType);
+        Assert.assertTrue(userTypesPage.checkUserInTable(nameUserType));
+        userTypesPage.removeTestsUsersTypes(driver);
     }
 
     @Test
@@ -60,14 +64,21 @@ public class UserTypesTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Story("TL-014")
     @Tag("Smoke")
-    public void searchFieldTest() throws InterruptedException {
+    public void searchFieldTest(){
         browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + USER_TYPES);
+        int attempts = 0;
         String searchWord = "admin";
         webElementHelper.sendKeys(userTypesPage.searchField, searchWord);
-        Thread.sleep(2000);
-        listUserTypes = userTypesPage.getRolesFromTable(driver);
+        while(attempts < 10){
+            listUserTypes = userTypesPage.getRolesFromTable();
+            if(userTypesPage.countingRowsInTable(listUserTypes, searchWord) == listUserTypes.size()){
+                break;
+            }
+            attempts++;
+        }
         userTypesPage.searchFieldClear();
-        Assert.assertEquals(userTypesPage.countingRowsInTable(listUserTypes, searchWord) == listUserTypes.size(), true);
+        Assert.assertTrue(userTypesPage.countingRowsInTable(listUserTypes, searchWord) == listUserTypes.size());
+        userTypesPage.removeTestsUsersTypes(driver);
     }
 
     @Test
@@ -81,9 +92,9 @@ public class UserTypesTest extends BaseTest {
         browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + USER_TYPES);
         List<String> beforeSortUserTypesName;
         List<String> afterSortUserTypesName;
-        beforeSortUserTypesName = userTypesPage.getRolesFromTable(driver);
+        beforeSortUserTypesName = userTypesPage.getRolesFromTable();
         webElementHelper.click(userTypesPage.filterUserTypeNameInTableUserType);
-        afterSortUserTypesName = userTypesPage.getRolesFromTable(driver);
-        Assert.assertEquals(userTypesPage.checkFilterUserTypeNameInTableUserType(beforeSortUserTypesName, afterSortUserTypesName), true);
+        afterSortUserTypesName = userTypesPage.getRolesFromTable();
+        Assert.assertTrue(userTypesPage.checkFilterUserTypeNameInTableUserType(beforeSortUserTypesName, afterSortUserTypesName));
     }
 }
