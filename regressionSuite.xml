@@ -6,15 +6,13 @@
     </listeners>
     <test verbose="2" preserve-order="true" name="tests">
         <classes>
-            <class name="uiTest.accountAndSettingsTests.DomainTest">
+            <class name="uiTest.importExportTest.ImportTest">
                 <methods>
-                    <include name="renameDomainNameAndClickCancelTest"/>
-                    <include name="renameDomainNameTest"/>
-                </methods>
-            </class>
-            <class name="uiTest.accountAndSettingsTests.ThemesTest">
-                <methods>
-                    <include name="selectRandomThemeTest"/>
+                    <include name="enterImportByImportReff"/>
+                    <include name="SampleFileDownload"/>
+                    <include name="testFileUploadPositive"/>
+                    <include name="testFileUploadAndSubmitPositive"/>
+                    <include name="testViewCheatsheet"/>
                 </methods>
             </class>
         </classes>
