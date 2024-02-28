@@ -30,20 +30,45 @@ public class ImportTest extends BaseTest {
         boolean fileExists = Files.exists(path);
        Assert.assertTrue(fileExists, "Файл не был скачан успешно");
     }
+//    @Test(description = "Upload valid file in 'Drop a csv or excel file here or browse' field")
+//    void testFileUploadPositive() throws InterruptedException {
+//        importPage.importLink.click();
+//        String filePath = ConfigReader.getValue("filepath") + "/Import-Samples.xls";
+//        importPage.uploadFile(driver, filePath);
+//        WebElement successMessage = driver.findElement(By.xpath("//div[@class='note success text-success' and contains(text(), 'Upload complete. Click the import button to proceed.')]"));
+//        Assert.assertNotNull(successMessage);
+//    }
+//
+//    @Test(description = "upload valid file,check 'description' field, check 'Import' btn")
+//    void testFileUploadAndSubmitPositive() {
+//        importPage.importLink.click();
+//        String filePath = ConfigReader.getValue("filepath") + "/Import-Samples.xls";
+//        importPage.uploadFile(driver, filePath);
+//        WebElement successMessage = driver.findElement(By.xpath("//div[@class='note success text-success' and contains(text(), 'Upload complete. Click the import button to proceed.')]"));
+//        Assert.assertNotNull(successMessage);
+//        System.out.println(importPage.importDescriptionInput.getText());
+//        WebElement modifyData = importPage.importDescriptionInput;
+//        Assert.assertFalse(modifyData.getText().isEmpty());
+//        importPage.clickImportButton();
+//        WebElementHelper importResults = new WebElementHelper().waitForElementToBeDisplayed(importPage.importResults);
+//        Assert.assertNotNull(importResults);
+//    }
+
+
     @Test(description = "Upload valid file in 'Drop a csv or excel file here or browse' field")
     void testFileUploadPositive() throws InterruptedException {
         importPage.importLink.click();
-        String filePath = ConfigReader.getValue("filepath") + "/Import-Samples.xls";
-        importPage.downloadFile(driver, filePath);
+        String filepath = "Import-Samples (1).xls"; // Путь к ресурсу в проекте
+        importPage.uploadFile(driver, filepath);
         WebElement successMessage = driver.findElement(By.xpath("//div[@class='note success text-success' and contains(text(), 'Upload complete. Click the import button to proceed.')]"));
         Assert.assertNotNull(successMessage);
     }
 
-    @Test(description = "upload valid file,check 'description' field, check 'Import' btn")
+    @Test(description = "upload valid file, check 'description' field, check 'Import' btn")
     void testFileUploadAndSubmitPositive() {
         importPage.importLink.click();
-        String filePath = ConfigReader.getValue("filepath") + "/Import-Samples.xls";
-        importPage.downloadFile(driver, filePath);
+        String filepath = "Import-Samples (1).xls"; // Путь к ресурсу в проекте
+        importPage.uploadFile(driver, filepath);
         WebElement successMessage = driver.findElement(By.xpath("//div[@class='note success text-success' and contains(text(), 'Upload complete. Click the import button to proceed.')]"));
         Assert.assertNotNull(successMessage);
         System.out.println(importPage.importDescriptionInput.getText());
