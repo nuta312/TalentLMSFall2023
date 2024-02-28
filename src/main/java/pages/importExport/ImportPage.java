@@ -49,7 +49,8 @@ public class ImportPage extends BasePage {
 
     public void clickSampleExcelFile(WebDriver driver) {
         WebElementHelper webElementHelper = new WebElementHelper();
-        webElementHelper.clickWithScrollToElement(sampleExcelFileIcon);
+        //webElementHelper.clickWithScrollToElement(sampleExcelFileIcon);
+        sampleExcelFileIcon.click();
     }
 
     public void clickViewCheatsheetButton() {
