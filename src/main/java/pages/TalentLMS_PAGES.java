@@ -22,7 +22,8 @@ public enum TalentLMS_PAGES {
     BASIC_PLAN("/account/subscription_selectplan/plan:basic-annual-c2022,mode:upgrade"),
     PLUS_PLAN("/account/subscription_selectplan/plan:plus-annual-c2022,mode:upgrade"),
     PREMIUM_PLAN("/account/subscription_selectplan/plan:premium-annual-c2022,mode:upgrade"),
-    USER_TYPES("/acl/index");
+    USER_TYPES("/acl/index"),
+    USER_REPORTS("/reports/user");
     public final String URL;
 
     TalentLMS_PAGES(String URL){

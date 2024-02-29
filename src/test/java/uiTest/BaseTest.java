@@ -5,6 +5,7 @@ import helper.BrowserManager;
 import helper.WebElementHelper;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import pages.accountAndSettings.AccountUsersPage;
 import pages.accountAndSettings.BasicSettingsPage;
@@ -25,12 +26,8 @@ import pages.categories.EditTheCategories;
 import pages.categories.ViewCourseCatalog;
 import pages.categories.CategoriesPage;
 import pages.courses.CoursesPage;
+import pages.reports.*;
 import pages.users.UsersPage;
-import pages.reports.ReportsPage;
-import pages.reports.TrainingMatrixPage;
-import pages.reports.ReportsIconAndLinkPage;
-import pages.reports.CoursesUnderReportsPage;
-import pages.reports.UsersUnderReportsPage;
 import pages.LoginPage;
 import pages.userTypes.UserTypesPage;
 import pages.userTypes.AddUserTypePage;
@@ -44,6 +41,7 @@ public class BaseTest {
 
     protected WebDriver driver;
     protected WebElementHelper webElementHelper;
+
     protected BrowserManager browserManager;
     protected BrowserManager.WindowHelper windowHelper;
     protected BrowserManager.FrameHelper frameHelper;
@@ -77,6 +75,7 @@ public class BaseTest {
     protected UsersUnderReportsPage usersUnderReportsPage;
     protected AddUserTypePage addUserTypePage;
     protected ExportPage exportPage;
+    protected UserReportsPage userReportsPage;
 
     @BeforeClass(alwaysRun = true)
     public void setUp(){
@@ -116,6 +115,7 @@ public class BaseTest {
         exportPage = new ExportPage();
         driver.get(MAIN_PAGE.toString() + LOGIN);
         loginPage.doLogin();
+        userReportsPage = new UserReportsPage();
     }
 
     @AfterClass(alwaysRun = true)

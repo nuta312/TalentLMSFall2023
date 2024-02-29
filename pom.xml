@@ -23,7 +23,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.17.0</version>
+            <version>4.18.1</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
@@ -61,6 +61,12 @@
             <version>1.9.19</version>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.1.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -71,9 +77,9 @@
                 <version>3.8.0</version>
                 <configuration>
                     <!--suppress UnresolvedMavenProperty -->
-                    <source>9</source>
+                    <source>16</source>
                     <!--suppress UnresolvedMavenProperty -->
-                    <target>9</target>
+                    <target>16</target>
                 </configuration>
             </plugin>
             <plugin>
