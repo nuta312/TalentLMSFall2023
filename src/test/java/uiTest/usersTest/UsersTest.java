@@ -32,7 +32,6 @@ public class UsersTest extends BaseTest {
 
     @Test(description = "Click on empty fields", priority = 1)
     public void requiredFieldsMessagesTest() {
-        webElementHelper.click(usersPage.homeBtn);
         webElementHelper.click(usersPage.homeAddUserBtn);
         usersPage.clickOnAddUserSubmitBtn();
         assertEquals(usersPage.nameIsRequiredMessage.getText(), "'First name' is required");
