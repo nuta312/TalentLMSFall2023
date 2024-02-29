@@ -8,7 +8,11 @@ import static org.testng.Assert.assertEquals;
 public class UsersTest extends BaseTest {
 
     @Test(description = "Sign in to browser and choose the Add User field", priority = 0)
+<<<<<<< HEAD
     public void addUserTest() throws InterruptedException {
+=======
+    public void addUserTest() {
+>>>>>>> 726a091ac1e07d8caaa791ad6c230885cad1227a
         webElementHelper.click(usersPage.homeAddUserBtn);
         usersPage
                 .fillUpUserWithFakerData();

@@ -6,10 +6,10 @@
     </listeners>
     <test verbose="2" preserve-order="true" name="tests">
         <classes>
-            <class name="uiTest.coursesTest.CoursesTest">
+            <class name="uiTest.usersTest.UsersTest">
                 <methods>
-                    <include name="add"/>
-                    <include name="renameDomainNameTest"/>
+                    <include name="addUserTest"/>
+                    <include name="requiredFieldsMessagesTest"/>
                 </methods>
             </class>
             <class name="uiTest.accountAndSettingsTests.ThemesTest">
