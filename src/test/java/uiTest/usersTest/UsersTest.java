@@ -35,7 +35,6 @@ public class UsersTest extends BaseTest {
         webElementHelper.click(usersPage.homeBtn);
         webElementHelper.click(usersPage.homeAddUserBtn);
         webElementHelper.jsClick(usersPage.addUserSubmitBtn);
-        // usersPage.clickOnAddUserSubmitBtn();
         assertEquals(usersPage.nameIsRequiredMessage.getText(), "'First name' is required");
         assertEquals(usersPage.lastNameIsRequiredMessage.getText(), "'Last name' is required");
         assertEquals(usersPage.userNameMessage.getText(), "'Username' is required");
