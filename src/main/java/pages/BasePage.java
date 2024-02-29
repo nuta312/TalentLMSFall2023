@@ -17,7 +17,7 @@ public class BasePage {
     public WebElementHelper webElementHelper = new WebElementHelper();
     public DropdownHelper dropdownHelper = new DropdownHelper(Driver.getDriver());
     public BrowserManager.WindowHelper windowHelper = new BrowserManager.WindowHelper(Driver.getDriver());
-    public static Random random = new Random();
+    public Random random = new Random();
     public Select select;
     public WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 

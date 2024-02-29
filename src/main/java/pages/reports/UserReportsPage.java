@@ -164,14 +164,19 @@ public class UserReportsPage extends BasePage {
     @Step("Sort user type data")
     public static List<String> sortUserTypeData(List<String> getColumnData) {
         List<String> customOrder = Arrays.asList("SuperAdmin", "Admin-Type", "Trainer-Type", "Learner-Type", "Instructor");
-        return getColumnData.stream()
-                .filter(customOrder::contains)
-                .sorted(Comparator.comparingInt(customOrder::indexOf))
-                .toList();
+        List<String> list = new ArrayList<>();
+        for (String getColumnDatum : getColumnData) {
+            if (customOrder.contains(getColumnDatum)) {
+                list.add(getColumnDatum);
+            }
+        }
+        list.sort(Comparator.comparingInt(customOrder::indexOf));
+        return list;
     }
 
     @Step("Select text from table for search")
     public static String selectTextFromTableForSearch(List<String> getColumnData) {
+        Random random = new Random();
         return getColumnData.get(random.nextInt(getColumnData.size())).substring(3);
     }
 

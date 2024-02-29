@@ -41,7 +41,6 @@ public class BaseTest {
 
     protected WebDriver driver;
     protected WebElementHelper webElementHelper;
-
     protected BrowserManager browserManager;
     protected BrowserManager.WindowHelper windowHelper;
     protected BrowserManager.FrameHelper frameHelper;
