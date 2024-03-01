@@ -41,7 +41,7 @@ public class ImportTest extends BaseTest {
 @Test(description = "Upload valid file in 'Drop a csv or excel file here or browse' field")
 void testFileUploadPositive() throws InterruptedException {
     importPage.importLink.click();
-    String fileURL = "https://github.com/nuta312/TalentLMSFall2023/blob/EzelBranch/src/main/resources/Import-Samples%20(1).xls";
+    String fileURL = "https://github.com/nuta312/TalentLMSFall2023/blob/EzelBranch/src/main/resources/Import-Samples%20.xls";
     importPage.uploadFile(driver, fileURL);
     WebElement successMessage = driver.findElement(By.xpath("//div[@class='note success text-success' and contains(text(), 'Upload complete. Click the import button to proceed.')]"));
     Assert.assertNotNull(successMessage);
