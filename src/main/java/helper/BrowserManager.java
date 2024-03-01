@@ -13,27 +13,27 @@ public class BrowserManager {
 
     private WebDriver driver;
 
-    public BrowserManager(WebDriver driver){
+    public BrowserManager(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void openByNavigate(final String URL){
+    public void openByNavigate(final String URL) {
         driver.navigate().to(URL);
     }
 
-    public void openByGet(final String URL){
+    public void openByGet(final String URL) {
         driver.get(URL);
     }
 
-    public void goBack(){
+    public void goBack() {
         driver.navigate().back();
     }
 
-    public void goForward(){
+    public void goForward() {
         driver.navigate().forward();
     }
 
-    public void refreshThePage(){
+    public void refreshThePage() {
         driver.navigate().refresh();
     }
 
@@ -42,12 +42,12 @@ public class BrowserManager {
         private WebDriver driver;
         private WebDriverWait wait;
 
-        public FrameHelper(WebDriver driver){
+        public FrameHelper(WebDriver driver) {
             this.driver = driver;
             this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         }
 
-        public FrameHelper switchToFrame(WebElement element){
+        public FrameHelper switchToFrame(WebElement element) {
             try {
                 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));
             } catch (TimeoutException e){
@@ -56,12 +56,12 @@ public class BrowserManager {
             return this;
         }
 
-        public FrameHelper switchToParentFrame(WebElement element){
+        public FrameHelper switchToParentFrame(WebElement element) {
             driver.switchTo().parentFrame();
             return this;
         }
 
-        public FrameHelper switchToFrameByIndex(int index){
+        public FrameHelper switchToFrameByIndex(int index) {
             driver.switchTo().frame(index);
             return this;
         }
@@ -72,16 +72,16 @@ public class BrowserManager {
         private WebDriver driver;
         private WebDriverWait wait;
 
-        public WindowHelper(WebDriver driver){
+        public WindowHelper(WebDriver driver) {
             this.driver = driver;
             this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         }
 
-        public Set<String> getWindowHandles(){
+        public Set<String> getWindowHandles() {
             return driver.getWindowHandles();
         }
 
-        public void switchToWindow(int index){
+        public void switchToWindow(int index) {
             LinkedList<String> windowsId = new LinkedList<>(getWindowHandles());
             if (index < 0 || index > windowsId.size()) {
                 throw new IllegalArgumentException("You provide wrong index " + index);
@@ -89,12 +89,12 @@ public class BrowserManager {
             driver.switchTo().window(windowsId.get(index));
         }
 
-        public void switchToParent(){
+        public void switchToParent() {
             LinkedList<String> windowsId = new LinkedList<>(getWindowHandles());
             driver.switchTo().window(windowsId.get(0));
         }
 
-        public void switchToParentWithChildClose(){
+        public void switchToParentWithChildClose() {
             switchToParent();
             LinkedList<String> windowsId = new LinkedList<>(getWindowHandles());
             for (int i = 0; i < windowsId.size(); i++){

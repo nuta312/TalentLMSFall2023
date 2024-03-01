@@ -39,77 +39,77 @@ public class GamificationPage extends BasePage {
     @FindBy(xpath = "//div[text()='Gamification settings updated successfully']")
     public WebElement successUpdateMessage;
 
-    public GamificationPage clickPointsSwitchButton(){
+    public GamificationPage clickPointsSwitchButton() {
         webElementHelper.click(pointsSwitchButton);
         return this;
     }
 
-    public GamificationPage clickGamificationSwitchButton(){
+    public GamificationPage clickGamificationSwitchButton() {
         webElementHelper.click(gamificationSwitchButton);
         return this;
     }
 
-    public GamificationPage clickEnableBadgesSwitchButton(){
+    public GamificationPage clickEnableBadgesSwitchButton() {
         webElementHelper.click(badgesSwitchButton);
         return this;
     }
 
-    public GamificationPage clickEnableLevelsSwitchButton(){
+    public GamificationPage clickEnableLevelsSwitchButton() {
         webElementHelper.click(levelsSwitchButton);
         return this;
     }
 
-    public GamificationPage clickEnableRewardsSwitchButton(){
+    public GamificationPage clickEnableRewardsSwitchButton() {
         webElementHelper.click(rewardsSwitchButton);
         return this;
     }
 
-    public GamificationPage clickEnableLeaderboardSwitchButton(){
+    public GamificationPage clickEnableLeaderboardSwitchButton() {
         webElementHelper.click(leaderboardSwitchButton);
         return this;
     }
 
-    public GamificationPage clickSaveGamificationButton(){
+    public GamificationPage clickSaveGamificationButton() {
         webElementHelper.click(saveButton);
         return this;
     }
 
-    public GamificationPage clickCancelButton(){
+    public GamificationPage clickCancelButton() {
         webElementHelper.click(cancelButton);
         return this;
     }
 
-    public GamificationPage clickResetToDefaultButton(){
+    public GamificationPage clickResetToDefaultButton() {
         webElementHelper.click(resetToDefaultSettingsButton);
         return this;
     }
 
-    public GamificationPage clickResetStatisticsButton(){
+    public GamificationPage clickResetStatisticsButton() {
         webElementHelper.click(resetStatisticsButton);
         return this;
     }
 
-    public GamificationPage clickWindowResetButton(){
+    public GamificationPage clickWindowResetButton() {
         webElementHelper.click(windowResetButton);
         return this;
     }
 
-    public GamificationPage selectAllStatisticsButton(){
+    public GamificationPage selectAllStatisticsButton() {
         webElementHelper.click(selectAllStatistics);
         return this;
     }
 
-    public GamificationPage selectPointsButton(){
+    public GamificationPage selectPointsButton() {
         webElementHelper.click(selectPoints);
         return this;
     }
 
-    public GamificationPage selectBadgesButton(){
+    public GamificationPage selectBadgesButton() {
         webElementHelper.click(selectBadges);
         return this;
     }
 
-    public GamificationPage selectLevelsButton(){
+    public GamificationPage selectLevelsButton() {
         webElementHelper.click(selectLevels);
         return this;
     }

@@ -23,17 +23,17 @@ public class ReportsIconAndLinkPage extends BasePage {
         return this;
     }
 
-    public ReportsIconAndLinkPage clickLinkUnderReports(WebElement element){
+    public ReportsIconAndLinkPage clickLinkUnderReports(WebElement element) {
         webElementHelper.click(element);
         return this;
     }
 
-    public ReportsIconAndLinkPage clickHomeLink(){
+    public ReportsIconAndLinkPage clickHomeLink() {
         webElementHelper.click(homeClick);
         return this;
     }
 
-    public void clickToUser(WebElement element){
+    public void clickToUser(WebElement element) {
         webElementHelper.click(element);
     }
 }

@@ -21,32 +21,32 @@ public class DomainPage extends BasePage {
     @FindBy(xpath = "//div[text()='Domain name changed']")
     public WebElement successRenameDomainMessage;
 
-    public DomainPage fillUpDomainNameInput(String domain){
+    public DomainPage fillUpDomainNameInput(String domain) {
         webElementHelper.sendKeys(domainNameInput, domain);
         return this;
     }
 
-    public DomainPage clickChangeDomainButton(){
+    public DomainPage clickChangeDomainButton() {
         webElementHelper.click(changeDomainNameButton);
         return this;
     }
 
-    public DomainPage clickCancelButton(){
+    public DomainPage clickCancelButton() {
         webElementHelper.click(cancelButton);
         return this;
     }
 
-    public DomainPage clickMapCustomDomainButton(){
+    public DomainPage clickMapCustomDomainButton() {
         webElementHelper.click(mapCustomDomainButton);
         return this;
     }
 
-    public DomainPage clickUpgradeButton(){
+    public DomainPage clickUpgradeButton() {
         webElementHelper.click(upgradeButton);
         return this;
     }
 
-    public DomainPage clickBackToDomainNameButton(){
+    public DomainPage clickBackToDomainNameButton() {
         webElementHelper.click(backToDomainNameButton);
         return this;
     }
