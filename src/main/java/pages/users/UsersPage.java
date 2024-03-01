@@ -155,8 +155,6 @@ public class UsersPage extends BasePage {
         WebElement deletePopUp = driver.findElement(By.xpath("//a[@id='submit-mass-action']"));   // //div[@class='modal-footer']/a[1]
         webElementHelper.click(deletePopUp);
         Thread.sleep(5000);
-
         return this;
-
     }
 }

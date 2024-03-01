@@ -10,6 +10,8 @@
                 <methods>
                     <include name="clickStarterPlanButtonTest"/>
                     <include name="clickBasicPlanButtonTest"/>
+                    <include name="clickPlusPlanButtonTest"/>
+                    <include name="clickPremiumPlanButtonTest"/>
                 </methods>
             </class>
         </classes>

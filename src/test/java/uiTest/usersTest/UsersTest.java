@@ -35,13 +35,10 @@ public class UsersTest extends BaseTest {
 //        webElementHelper.click(usersPage.homeBtn);
         webElementHelper.click(usersPage.homeAddUserBtn);
         Thread.sleep(3000);
-            webElementHelper.click(usersPage.homeBtn);
-            webElementHelper.click(usersPage.homeAddUserBtn);
-            webElementHelper.jsClick(usersPage.addUserSubmitBtn);
-            assertEquals(usersPage.nameIsRequiredMessage.getText(), "'First name' is required");
-            assertEquals(usersPage.lastNameIsRequiredMessage.getText(), "'Last name' is required");
-            assertEquals(usersPage.userNameMessage.getText(), "'Username' is required");
-            assertEquals(usersPage.emailMessage.getText(), "'Email address' is required");
-        }
+        webElementHelper.jsClick(usersPage.addUserSubmitBtn);
+        assertEquals(usersPage.nameIsRequiredMessage.getText(), "'First name' is required");
+        assertEquals(usersPage.lastNameIsRequiredMessage.getText(), "'Last name' is required");
+        assertEquals(usersPage.userNameMessage.getText(), "'Username' is required");
+        assertEquals(usersPage.emailMessage.getText(), "'Email address' is required");
     }
-
+}

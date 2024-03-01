@@ -22,6 +22,11 @@
                     <include name="selectRandomThemeTest"/>
                 </methods>
             </class>
+            <class name="uiTest.accountAndSettingsTests.ThemesTest">
+                <methods>
+                    <include name="selectRandomThemeTest"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
