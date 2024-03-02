@@ -7,6 +7,7 @@ public class CoursesTest extends BaseTest {
 
     @Test
     void add() {
+
         coursesPage.addCourse();
     }
 }

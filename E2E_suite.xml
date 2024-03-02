@@ -1,7 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+    <listeners>
+        <listener class-name="listener.ScreenshotListener"></listener>
+    </listeners>
     <test verbose="2" preserve-order="true" name="tests">
-        <classes></classes>
+        <classes>
+            <class name="uiTest.categoryTest.CategoryTest">
+                <methods>
+                    <include name="addNewCategory"/>
+                    <include name="updateCategory"/>
+                    <include name="removeTheCategory"/>
+                    <include name="saveAsCSVFileOfCategory"/>
+                    <include name="catalogClickButton"/>
+                </methods>
+            </class>
+            <class name="uiTest.coursesTest.CoursesTest">
+                <methods>
+                    <include name="add"/>
+                </methods>
+            </class>
+            <class name="uiTest.importExportTest.ExportTest">
+                <methods>
+                    <include name="clickExportButtons"/>
+                    <include name="clickExcell"/>
+                    <include name="clickCancel"/>
+                </methods>
+            </class>
+            <class name="uiTest.reportsTest.CoursesUnderReportsTest">
+                <methods>
+                    <include name="clickCoursesUnderReports"/>
+                </methods>
+            </class>
+            <class name="uiTest.reportsTest.ReportsIconAndLinkTest">
+                <methods>
+                    <include name="openReportsIconAndLink"/>
+                </methods>
+            </class>
+            <class name="uiTest.reportsTest.ReportsTest">
+                <methods>
+                    <include name="checkTheText"/>
+                    <include name="infographicsClick"/>
+                    <include name="trainingMatrixTest"/>
+                    <include name="test78"/>
+                    <include name="test"/>
+                </methods>
+            </class>
+        </classes>
     </test>
 </suite>
