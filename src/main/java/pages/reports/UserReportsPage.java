@@ -43,7 +43,6 @@ public class UserReportsPage extends BasePage {
     @FindBy(xpath = "//a[@id='tl-export-user']")
     public WebElement exportInExcelBtn;
 
-
     public UserReportsPage goToTheCustomReportsPage() {
         browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + USER_REPORTS);
         return this;
@@ -129,10 +128,8 @@ public class UserReportsPage extends BasePage {
     @Step("Save column name data")
     public static List<String> saveColumnNameData(WebElement tableRows, String columnFromTheTable) {
         List<String> initialDataValues = new ArrayList<>();
-
         try {
             List<WebElement> initialData = tableRows.findElements(By.xpath(columnFromTheTable));
-
             initialDataValues = initialData.stream()
                     .map(WebElement::getText)
                     .filter(text -> !text.equals("d. digitalnomad"))
@@ -140,24 +137,20 @@ public class UserReportsPage extends BasePage {
                     .collect(Collectors.toList());
         } catch (StaleElementReferenceException e) {
         }
-
         return initialDataValues;
     }
 
     @Step("Save column name type data")
     public static List<String> saveColumnNameTypeData(WebElement tableRows, String columnFromTheTable) {
         List<String> initialDataValues = new ArrayList<>();
-
         try {
             List<WebElement> initialData = tableRows.findElements(By.xpath(columnFromTheTable));
-
             initialData.stream()
                     .map(WebElement::getText)
                     .filter(text -> !text.equals("d. digitalnomad"))
                     .forEach(initialDataValues::add);
         } catch (StaleElementReferenceException e) {
         }
-
         return initialDataValues;
     }
 
