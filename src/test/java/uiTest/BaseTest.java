@@ -25,6 +25,7 @@ import pages.categories.EditTheCategories;
 import pages.categories.ViewCourseCatalog;
 import pages.categories.CategoriesPage;
 import pages.courses.CoursesPage;
+import pages.groups.GroupsPage;
 import pages.users.UsersPage;
 import pages.reports.ReportsPage;
 import pages.reports.TrainingMatrixPage;
@@ -77,6 +78,7 @@ public class BaseTest {
     protected UsersUnderReportsPage usersUnderReportsPage;
     protected AddUserTypePage addUserTypePage;
     protected ExportPage exportPage;
+    protected GroupsPage groupsPage;
 
     @BeforeClass(alwaysRun = true)
     public void setUp(){
@@ -114,6 +116,7 @@ public class BaseTest {
         usersUnderReportsPage = new UsersUnderReportsPage();
         addUserTypePage = new AddUserTypePage();
         exportPage = new ExportPage();
+        groupsPage = new GroupsPage();
         driver.get(MAIN_PAGE.toString() + LOGIN);
         loginPage.doLogin();
     }
