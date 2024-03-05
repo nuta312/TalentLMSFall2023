@@ -22,6 +22,7 @@
                     <include name="clickPremiumPlanButtonTest"/>
                 </methods>
             </class>
+            <class name="uiTest.groupTest.GroupTest"></class>
         </classes>
     </test>
 </suite>

@@ -28,6 +28,8 @@ import pages.categories.CategoriesPage;
 import pages.courses.CoursesPage;
 import pages.reports.CoursesUnderReportsPage;
 import pages.reports.ReportsIconAndLinkPage;
+import pages.groups.GroupsPage;
+import pages.users.UsersPage;
 import pages.reports.ReportsPage;
 import pages.reports.TrainingMatrixPage;
 import pages.reports.UserReportsPage;
@@ -80,6 +82,7 @@ public class BaseTest {
     protected AddUserTypePage addUserTypePage;
     protected ExportPage exportPage;
     protected UserReportsPage userReportsPage;
+    protected GroupsPage groupsPage;
 
     @BeforeClass(alwaysRun = true)
     public void setUp(){
@@ -117,6 +120,7 @@ public class BaseTest {
         usersUnderReportsPage = new UsersUnderReportsPage();
         addUserTypePage = new AddUserTypePage();
         exportPage = new ExportPage();
+        groupsPage = new GroupsPage();
         driver.get(MAIN_PAGE.toString() + LOGIN);
         loginPage.doLogin();
         userReportsPage = new UserReportsPage();
