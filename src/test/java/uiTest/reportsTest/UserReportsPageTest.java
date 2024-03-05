@@ -18,7 +18,7 @@ import static pages.reports.UserReportsPage.*;
 public class UserReportsPageTest extends BaseTest {
 
     @Test()
-    @Feature("Sorting")
+    @Feature("Sorting.")
     @Description("Verify user tables sorting after clicking user column sort button")
     @Epic("SCRUM-12")
     @Owner("Urmat")
