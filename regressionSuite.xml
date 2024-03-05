@@ -17,6 +17,11 @@
                     <include name="selectRandomThemeTest"/>
                 </methods>
             </class>
+            <class name="uiTest.reportsTest.UserReportsPageTest">
+                <methods>
+                    <include name="user_profile_and_progress_on_click"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

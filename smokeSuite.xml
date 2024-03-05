@@ -14,6 +14,14 @@
                     <include name="clickPremiumPlanButtonTest"/>
                 </methods>
             </class>
+            <class name="uiTest.reportsTest.UserReportsPageTest">
+                <methods>
+                    <include name="verify_user_table_sorting_after_clicking_user_column_sort_button"/>
+                    <include name="verify_user_type_table_sorting_after_clicking_user_column_sort_button"/>
+                    <include name="Testing_of_table_search_functionality"/>
+                    <include name="clickPremiumPlanButtonTest"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
