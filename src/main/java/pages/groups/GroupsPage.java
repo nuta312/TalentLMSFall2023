@@ -32,6 +32,26 @@ public class GroupsPage extends BasePage {
     @FindBy(xpath = "//div[@class='toast toast-success']//div[@class='toast-message']")
     public WebElement messageAfterCreateGroup;
 
+    /**
+     * edit xpath
+     */
+    @FindBy(xpath = "(//td[@class=' tl-align-center tl-table-operations-cell'])[1]//i[@alt='Edit']")
+    public WebElement hiddenEditButton;
+    @FindBy(xpath = "//div[@class='form-actions']/input")
+    public WebElement updateButton;
+    @FindBy(xpath = "//div[@class='toast toast-success']//div[@class='toast-message']")
+    public WebElement messageAfterUpdateGroup;
+
+    /**
+     * delete xpath
+     */
+    @FindBy(xpath = "(//td[@class=' tl-align-center tl-table-operations-cell'])[1]")
+    public WebElement navigateMouse;
+    @FindBy(xpath = "(//td[@class=' tl-align-center tl-table-operations-cell'])[1]//i[@alt='Delete']")
+    public WebElement hiddenDeleteButton;
+    @FindBy(xpath = "//a[@id='tl-confirm-submit']")
+    public WebElement deleteButton;
+
     public GroupsPage addGroup() {
         webElementHelper.click(groupButton)
                 .click(addGroupButton)
@@ -42,35 +62,19 @@ public class GroupsPage extends BasePage {
                 .click(priceButton)
                 .sendKeys(priceInput, "1500")
                 .click(addNewGroup);
-
         return this;
     }
+
     public GroupsPage backToMainGroupPageList(){
         webElementHelper.click(backToGroupPage);
         return this;
     }
+
     public void navigateMouse(){
         webElementHelper.actions = new Actions(getDriver());
         webElementHelper.actions.moveToElement(navigateMouse).build().perform();
     }
-    /**
-     * edit xpath
-     */
-    @FindBy(xpath = "(//td[@class=' tl-align-center tl-table-operations-cell'])[1]//i[@alt='Edit']")
-    public WebElement hiddenEditButton;
-    @FindBy(xpath = "//div[@class='form-actions']/input")
-    public WebElement updateButton;
-    @FindBy(xpath = "//div[@class='toast toast-success']//div[@class='toast-message']")
-    public WebElement messageAfterUpdateGroup;
-    /**
-     * delete xpath
-     */
-    @FindBy(xpath = "(//td[@class=' tl-align-center tl-table-operations-cell'])[1]")
-    public WebElement navigateMouse;
-    @FindBy(xpath = "(//td[@class=' tl-align-center tl-table-operations-cell'])[1]//i[@alt='Delete']")
-    public WebElement hiddenDeleteButton;
-    @FindBy(xpath = "//a[@id='tl-confirm-submit']")
-    public WebElement deleteButton;
+
     public GroupsPage updateGroup(){
         navigateMouse();
         webElementHelper.click(hiddenEditButton)
@@ -78,6 +82,7 @@ public class GroupsPage extends BasePage {
                 .click(updateButton);
         return this;
     }
+
     public GroupsPage deleteGroup(){
         navigateMouse();
         webElementHelper.click(hiddenDeleteButton)

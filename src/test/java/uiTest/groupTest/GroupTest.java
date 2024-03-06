@@ -10,18 +10,20 @@ import static org.testng.Assert.assertEquals;
 public class GroupTest extends BaseTest {
 
     @Test(priority = 1)
-    void addGroupTest(){
+    void addGroupTest() {
         groupsPage.addGroup();
         assertEquals(groupsPage.messageAfterCreateGroup.getText(),"Success! New group created.");
         groupsPage.backToMainGroupPageList();
     }
+
     @Test(priority = 2)
-    void updateGroupTest(){
+    void updateGroupTest() {
         groupsPage.updateGroup();
         assertEquals(groupsPage.messageAfterUpdateGroup.getText(),"Success! Group updated.");
     }
+
     @Test(priority = 3)
-    void deleteGroupTest(){
+    void deleteGroupTest() {
         groupsPage.deleteGroup();
     }
 }

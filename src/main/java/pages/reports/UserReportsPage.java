@@ -7,14 +7,22 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
-import static pages.TalentLMS_PAGES.*;
+import static pages.TalentLMS_PAGES.MY_DOMAIN;
+import static pages.TalentLMS_PAGES.TALENTLMS;
+import static pages.TalentLMS_PAGES.USER_REPORTS;
+
 
 public class UserReportsPage extends BasePage {
+
     public static String columnNameFromTheTable = "//tbody//tr//td[@class=' tl-align-left']";
     public static String columnUserTypeFromTheTable = "//tbody//tr//td[@class=' tl-align-left hidden-phone']";
 
