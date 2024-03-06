@@ -1,13 +1,15 @@
 package pages;
 
+import lombok.Getter;
+
 import static config.ConfigReader.getValue;
 
+@Getter
 public enum TalentLMS_PAGES {
 
-    MAIN_PAGE("https://www.talentlms.com"),
+    LOGIN_PAGE("https://" + getValue("domain") + ".talentlms.com/index"),
     MY_DOMAIN("https://" + getValue("domain")),
     TALENTLMS(".talentlms.com"),
-    LOGIN("/login"),
     DASHBOARD("/dashboard"),
     USERS("/user/index"),
     BASIC_SETTINGS("/account/basic_index"),
@@ -28,10 +30,5 @@ public enum TalentLMS_PAGES {
 
     TalentLMS_PAGES(String URL){
         this.URL = URL;
-    }
-
-    @Override
-    public String toString() {
-        return URL;
     }
 }

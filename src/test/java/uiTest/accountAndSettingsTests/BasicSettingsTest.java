@@ -1,5 +1,6 @@
 package uiTest.accountAndSettingsTests;
 
+import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
 import uiTest.BaseTest;
 
@@ -11,9 +12,10 @@ import static org.testng.Assert.assertEquals;
 public class BasicSettingsTest extends BaseTest {
 
     @Test(description = "Changing basic settings")
+    @Tag("Regression")
     public void fillUpBasicSettingsTest() throws InterruptedException {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + BASIC_SETTINGS);
-        basicSettingsPage.fillUpDescription("123")
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + BASIC_SETTINGS.getURL());
+        talentLmsInitPages.basicSettingsPage.fillUpDescription("123")
                 .selectRandomLogo()
                 .selectRandomFavicon()
                 .selectLanguage()
@@ -24,6 +26,6 @@ public class BasicSettingsTest extends BaseTest {
                 .selectConferenceMode()
                 .inputCapacity()
                 .clickSaveChanges();
-        assertEquals(basicSettingsPage.successSavingMessage.getText(), "Basic settings updated successfully");
+        assertEquals(talentLmsInitPages.basicSettingsPage.successSavingMessage.getText(), "Basic settings updated successfully");
     }
 }

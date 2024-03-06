@@ -82,7 +82,34 @@ public class CoursesPage extends BasePage {
     public WebElement backToCoursePage;
     @FindBy(xpath = "(//td[@class=' tl-align-center tl-grid-checkbox-wrapper hidden-phone'])[1]")
     public WebElement navigateMouseToPage;
+
+    /**
+     * delete xpath
+     */
+    @FindBy(xpath = "(//td[@class=' tl-align-center tl-table-operations-cell'])[1]//i[3]")
+    public WebElement hiddenDeleteButton;
+    @FindBy(xpath = "//a[@id='tl-confirm-submit']")
+    public WebElement deleteButton;
+
+    /**
+     * clonePage xpath
+     */
+    @FindBy(xpath = "(//td[@class=' tl-align-center tl-table-operations-cell'])[1]//a/i")
+    public WebElement hiddenCloneButton;
+    @FindBy(xpath = "//a[@id='tl-clone-modal-confirm-submit']")
+    public WebElement cloneButton;
+
+    /**
+     * edit xpath
+     */
+    @FindBy(xpath = "(//td[@class=' tl-align-center tl-table-operations-cell'])[1]//i[2]")
+    public WebElement hiddenEditButton;
+    @FindBy(xpath = "//div[@class='form-actions']//input")
+    public WebElement updateCourseButton;
+    @FindBy(xpath = "//div[@class='toast toast-success']//div[@class='toast-message']")
+    public WebElement messageAfterEditCourse;
     public String courseTitle = faker.name().title();
+
     public CoursesPage addCourse() {
         webElementHelper
                 .click(clickCourses)
@@ -154,43 +181,24 @@ public class CoursesPage extends BasePage {
                 .click(clickToSave);
         return this;
     }
+
     public CoursesPage clickToCoursePart(){
         webElementHelper.click(backToCoursePage);
         return this;
     }
+
     public void navigateMouse(){
         webElementHelper.actions = new Actions(getDriver());
         webElementHelper.actions.moveToElement(navigateMouseToPage).build().perform();
     }
-    /**
-     * delete xpath
-     */
-    @FindBy(xpath = "(//td[@class=' tl-align-center tl-table-operations-cell'])[1]//i[3]")
-    public WebElement hiddenDeleteButton;
-    @FindBy(xpath = "//a[@id='tl-confirm-submit']")
-    public WebElement deleteButton;
-    /**
-     * clonePage xpath
-     */
-    @FindBy(xpath = "(//td[@class=' tl-align-center tl-table-operations-cell'])[1]//a/i")
-    public WebElement hiddenCloneButton;
-    @FindBy(xpath = "//a[@id='tl-clone-modal-confirm-submit']")
-    public WebElement cloneButton;
-    /**
-     * edit xpath
-     */
-    @FindBy(xpath = "(//td[@class=' tl-align-center tl-table-operations-cell'])[1]//i[2]")
-    public WebElement hiddenEditButton;
-    @FindBy(xpath = "//div[@class='form-actions']//input")
-    public WebElement updateCourseButton;
-    @FindBy(xpath = "//div[@class='toast toast-success']//div[@class='toast-message']")
-    public WebElement messageAfterEditCourse;
+
     public CoursesPage removeCourse() {
         navigateMouse();
         webElementHelper.click(hiddenDeleteButton)
                 .click(deleteButton);
         return this;
     }
+
     public CoursesPage cloneTheCourse() {
         navigateMouse();
         webElementHelper.click(hiddenCloneButton)
@@ -198,6 +206,7 @@ public class CoursesPage extends BasePage {
         getDriver().navigate().refresh();
         return this;
     }
+
     public CoursesPage editCourse(){
         navigateMouse();
         webElementHelper.click(hiddenEditButton)

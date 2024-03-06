@@ -1,5 +1,6 @@
 package uiTest.accountAndSettingsTests;
 
+import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
 import uiTest.BaseTest;
 
@@ -11,22 +12,24 @@ import static org.testng.Assert.assertEquals;
 public class GamificationTest extends BaseTest {
 
     @Test(description = "Click all switch buttons")
+    @Tag("Regression")
     public void clickAllSwitchButtons() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + GAMIFICATION);
-        gamificationPage.clickPointsSwitchButton()
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + GAMIFICATION.getURL());
+        talentLmsInitPages.gamificationPage.clickPointsSwitchButton()
                 .clickEnableBadgesSwitchButton()
                 .clickEnableLevelsSwitchButton();
         webElementHelper.scrollDownPage();
-        gamificationPage.clickEnableRewardsSwitchButton()
+        talentLmsInitPages.gamificationPage.clickEnableRewardsSwitchButton()
                         .clickEnableLeaderboardSwitchButton();
-        gamificationPage.clickSaveGamificationButton();
-        assertEquals(gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
+        talentLmsInitPages.gamificationPage.clickSaveGamificationButton();
+        assertEquals(talentLmsInitPages.gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
     }
 
     @Test(description = "Click all 'Points' checkboxes")
+    @Tag("Regression")
     public void clickAllPointsCheckboxes() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + GAMIFICATION);
-        pointsBox.clickEachLogin()
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + GAMIFICATION.getURL());
+        talentLmsInitPages.pointsBox.clickEachLogin()
                 .clickEachUnitCompletion()
                 .clickEachCourseCompletion()
                 .clickEachCertificate()
@@ -35,14 +38,15 @@ public class GamificationTest extends BaseTest {
                 .clickEachSuccessfulILT()
                 .clickEachDiscussionTopicOrComment()
                 .clickEachUpvoteOnDiscussionComments();
-        gamificationPage.clickSaveGamificationButton();
-        assertEquals(gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
+        talentLmsInitPages.gamificationPage.clickSaveGamificationButton();
+        assertEquals(talentLmsInitPages.gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
     }
 
     @Test(description = "Click all 'Badges' checkboxes")
+    @Tag("Regression")
     public void clickAllBadgesCheckboxes() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + GAMIFICATION);
-        badgesBox.clickActivityBadges()
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + GAMIFICATION.getURL());
+        talentLmsInitPages.badgesBox.clickActivityBadges()
                 .clickLearningBadges()
                 .clickTestBadges()
                 .clickAssignmentBadges()
@@ -50,42 +54,45 @@ public class GamificationTest extends BaseTest {
                 .clickSurveyBadges()
                 .clickCommunicationBadges()
                 .clickCertificationBadges();
-        gamificationPage.clickSaveGamificationButton();
-        assertEquals(gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
+        talentLmsInitPages.gamificationPage.clickSaveGamificationButton();
+        assertEquals(talentLmsInitPages.gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
     }
 
     @Test(description = "Click all 'Levels' checkboxes")
+    @Tag("Regression")
     public void clickAllLevelsCheckboxes() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + GAMIFICATION);
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + GAMIFICATION.getURL());
         webElementHelper.scrollDownPage();
-        levelsBox.clickUpgradeLevelPointsCheck()
+        talentLmsInitPages.levelsBox.clickUpgradeLevelPointsCheck()
                 .clickUpgradeLevelCompletedCoursesCheck()
                 .clickUpgradeLevelBadgesCheck();
-        gamificationPage.clickSaveGamificationButton();
-        assertEquals(gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
+        talentLmsInitPages.gamificationPage.clickSaveGamificationButton();
+        assertEquals(talentLmsInitPages.gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
     }
 
     @Test(description = "Click all 'Rewards' checkboxes")
+    @Tag("Regression")
     public void clickAllRewardsCheckboxes() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + GAMIFICATION);
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + GAMIFICATION.getURL());
         webElementHelper.scrollDownPage();
-        rewardsBox.clickDiscountPointsCheck()
+        talentLmsInitPages.rewardsBox.clickDiscountPointsCheck()
                 .clickDiscountBadgesCheck()
                 .clickDiscountLevelCheck();
-        gamificationPage.clickSaveGamificationButton();
-        assertEquals(gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
+        talentLmsInitPages.gamificationPage.clickSaveGamificationButton();
+        assertEquals(talentLmsInitPages.gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
     }
 
     @Test(description = "Click all 'Rewards' checkboxes")
+    @Tag("Regression")
     public void clickAllLeaderboardCheckboxes() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + GAMIFICATION);
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + GAMIFICATION.getURL());
         webElementHelper.scrollDownPage();
-        leaderboardBox.clickLeaderboardLevels()
+        talentLmsInitPages.leaderboardBox.clickLeaderboardLevels()
                 .clickLeaderboardPoints()
                 .clickLeaderboardBadges()
                 .clickLeaderboardCourses()
                 .clickLeaderboardCertifications();
-        gamificationPage.clickSaveGamificationButton();
-        assertEquals(gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
+        talentLmsInitPages.gamificationPage.clickSaveGamificationButton();
+        assertEquals(talentLmsInitPages.gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
     }
 }

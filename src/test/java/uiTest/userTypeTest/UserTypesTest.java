@@ -7,11 +7,12 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import io.qameta.allure.testng.Tag;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import uiTest.BaseTest;
 import java.util.List;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 import static pages.TalentLMS_PAGES.MY_DOMAIN;
 import static pages.TalentLMS_PAGES.TALENTLMS;
 import static pages.TalentLMS_PAGES.USER_TYPES;
@@ -27,17 +28,17 @@ public class UserTypesTest extends BaseTest {
     @Owner("Timur")
     @Severity(SeverityLevel.CRITICAL)
     @Story("TL-014")
-    @Tag("Negative")
+    @Tag("Regression")
     public void addDuplicateUserTypeInTableTest() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + USER_TYPES);
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + USER_TYPES.getURL());
         nameUserType = "duplicate";
         indexUserType = 1;
-        userTypesPage.addNotUniqueUserType(nameUserType, indexUserType);
-        String actualResult = userTypesPage.warningTextTypeNameRepeated.getText().trim();
+        talentLmsInitPages.userTypesPage.addNotUniqueUserType(nameUserType, indexUserType);
+        String actualResult = talentLmsInitPages.userTypesPage.warningTextTypeNameRepeated.getText().trim();
         String expectedResult = "A user type with this name already exists";
-        Assert.assertEquals(actualResult, expectedResult);
+        assertEquals(actualResult, expectedResult);
         browserManager.goBack();
-        userTypesPage.removeTestsUsersTypes(driver);
+        talentLmsInitPages.userTypesPage.removeTestsUsersTypes(driver);
     }
 
     @Test
@@ -46,15 +47,15 @@ public class UserTypesTest extends BaseTest {
     @Owner("Timur")
     @Severity(SeverityLevel.CRITICAL)
     @Story("TL-014")
-    @Tag("Smoke")
+    @Tag("Regression")
     public void addUserTypeInTableTest(){
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + USER_TYPES);
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + USER_TYPES.getURL());
         nameUserType = "testUserTypeName";
         indexUserType = 2;
-        userTypesPage.addUserType(nameUserType, indexUserType);
-        userTypesPage.addUserType("Men", indexUserType);
-        Assert.assertTrue(userTypesPage.checkUserInTable(nameUserType));
-        userTypesPage.removeTestsUsersTypes(driver);
+        talentLmsInitPages.userTypesPage.addUserType(nameUserType, indexUserType);
+        talentLmsInitPages.userTypesPage.addUserType("Men", indexUserType);
+        assertTrue(talentLmsInitPages.userTypesPage.checkUserInTable(nameUserType));
+        talentLmsInitPages.userTypesPage.removeTestsUsersTypes(driver);
     }
 
     @Test
@@ -63,22 +64,22 @@ public class UserTypesTest extends BaseTest {
     @Owner("Timur")
     @Severity(SeverityLevel.NORMAL)
     @Story("TL-014")
-    @Tag("Smoke")
+    @Tag("Regression")
     public void searchFieldTest(){
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + USER_TYPES);
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + USER_TYPES.getURL());
         int attempts = 0;
         String searchWord = "admin";
-        webElementHelper.sendKeys(userTypesPage.searchField, searchWord);
+        webElementHelper.sendKeys(talentLmsInitPages.userTypesPage.searchField, searchWord);
         while(attempts < 10){
-            listUserTypes = userTypesPage.getRolesFromTable();
-            if(userTypesPage.countingRowsInTable(listUserTypes, searchWord) == listUserTypes.size()){
+            talentLmsInitPages.listUserTypes = talentLmsInitPages.userTypesPage.getRolesFromTable();
+            if(talentLmsInitPages.userTypesPage.countingRowsInTable(talentLmsInitPages.listUserTypes, searchWord) == talentLmsInitPages.listUserTypes.size()){
                 break;
             }
             attempts++;
         }
-        userTypesPage.searchFieldClear();
-        Assert.assertTrue(userTypesPage.countingRowsInTable(listUserTypes, searchWord) == listUserTypes.size());
-        userTypesPage.removeTestsUsersTypes(driver);
+        talentLmsInitPages.userTypesPage.searchFieldClear();
+        assertTrue(talentLmsInitPages.userTypesPage.countingRowsInTable(talentLmsInitPages.listUserTypes, searchWord) == talentLmsInitPages.listUserTypes.size());
+        talentLmsInitPages.userTypesPage.removeTestsUsersTypes(driver);
     }
 
     @Test
@@ -87,14 +88,14 @@ public class UserTypesTest extends BaseTest {
     @Owner("Timur")
     @Severity(SeverityLevel.MINOR)
     @Story("TL-014")
-    @Tag("Smoke")
+    @Tag("Regression")
     public void filterUserTypeNameInTableUserTypeTest() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + USER_TYPES);
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + USER_TYPES.getURL());
         List<String> beforeSortUserTypesName;
         List<String> afterSortUserTypesName;
-        beforeSortUserTypesName = userTypesPage.getRolesFromTable();
-        webElementHelper.click(userTypesPage.filterUserTypeNameInTableUserType);
-        afterSortUserTypesName = userTypesPage.getRolesFromTable();
-        Assert.assertTrue(userTypesPage.checkFilterUserTypeNameInTableUserType(beforeSortUserTypesName, afterSortUserTypesName));
+        beforeSortUserTypesName = talentLmsInitPages.userTypesPage.getRolesFromTable();
+        webElementHelper.click(talentLmsInitPages.userTypesPage.filterUserTypeNameInTableUserType);
+        afterSortUserTypesName = talentLmsInitPages.userTypesPage.getRolesFromTable();
+        assertTrue(talentLmsInitPages.userTypesPage.checkFilterUserTypeNameInTableUserType(beforeSortUserTypesName, afterSortUserTypesName));
     }
 }

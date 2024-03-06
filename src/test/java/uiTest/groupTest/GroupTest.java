@@ -10,20 +10,23 @@ import static org.testng.Assert.assertEquals;
 public class GroupTest extends BaseTest {
 
     @Test(priority = 1)
-    void addGroupTest() {
-        groupsPage.addGroup();
-        assertEquals(groupsPage.messageAfterCreateGroup.getText(),"Success! New group created.");
-        groupsPage.backToMainGroupPageList();
+    @Tag("Regression")
+    public void addGroupTest() {
+        talentLmsInitPages.groupsPage.addGroup();
+        assertEquals(talentLmsInitPages.groupsPage.messageAfterCreateGroup.getText(),"Success! New group created.");
+        talentLmsInitPages.groupsPage.backToMainGroupPageList();
     }
 
     @Test(priority = 2)
-    void updateGroupTest() {
-        groupsPage.updateGroup();
-        assertEquals(groupsPage.messageAfterUpdateGroup.getText(),"Success! Group updated.");
+    @Tag("Regression")
+    public void updateGroupTest() {
+        talentLmsInitPages.groupsPage.updateGroup();
+        assertEquals(talentLmsInitPages.groupsPage.messageAfterUpdateGroup.getText(),"Success! Group updated.");
     }
 
     @Test(priority = 3)
-    void deleteGroupTest() {
-        groupsPage.deleteGroup();
+    @Tag("Regression")
+    public void deleteGroupTest() {
+        talentLmsInitPages.groupsPage.deleteGroup();
     }
 }

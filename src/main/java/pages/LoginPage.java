@@ -15,6 +15,12 @@ public class LoginPage extends BasePage {
     public WebElement passwordInput;
     @FindBy(xpath = "//input[@value='Log in']")
     public WebElement loginButton;
+    @FindBy(xpath = "//input[@name='login']")
+    public WebElement usernameInputWithoutDomain;
+    @FindBy(xpath = "//input[@type='password']")
+    public WebElement passwordInputWithoutDomain;
+    @FindBy(xpath = "//input[@name='submit']")
+    public WebElement loginButtonWithoutDomain;
 
     public LoginPage enterDomain(String domain) {
         webElementHelper.sendKeys(domainInput, domain);
@@ -37,6 +43,14 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage doLogin() {
+        webElementHelper
+                .sendKeys(usernameInputWithoutDomain, getValue("username"))
+                .sendKeys(passwordInputWithoutDomain, getValue("password"))
+                .click(loginButtonWithoutDomain);
+        return this;
+    }
+
+    public LoginPage doLoginWithDomain() {
         webElementHelper
                 .sendKeys(domainInput, getValue("domain"))
                 .sendKeys(usernameInput, getValue("username"))

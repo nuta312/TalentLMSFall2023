@@ -15,35 +15,35 @@ import static org.testng.Assert.assertEquals;
 
 public class SubscriptionTest extends BaseTest {
 
-    @Tag("Smoke")
     @Test(description = "Select 'Starter plan' on Subscription page and assert urls", groups = {"Subscriptions"}, priority = 0)
+    @Tag("Smoke")
     public void clickStarterPlanButtonTest() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + SUBSCRIPTION);
-        subscriptionPage.clickStarterPlanButton();
-        assertEquals(MY_DOMAIN.toString() + TALENTLMS + STARTER_PLAN, "https://fall2023.talentlms.com/account/subscription_selectplan/plan:starter-annual-c2022,mode:upgrade");
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + SUBSCRIPTION.getURL());
+        talentLmsInitPages.subscriptionPage.clickStarterPlanButton();
+        assertEquals(MY_DOMAIN.getURL() + TALENTLMS.getURL() + STARTER_PLAN.getURL(), "https://fall2023dg.talentlms.com/account/subscription_selectplan/plan:starter-annual-c2022,mode:upgrade");
         browserManager.goBack();
     }
 
-    @Tag("Smoke")
     @Test(description = "Select 'Basic plan' on Subscription page", groups = {"Subscriptions"}, priority = 1)
+    @Tag("Smoke")
     public void clickBasicPlanButtonTest() {
-        subscriptionPage.clickBasicPlanButton();
-        assertEquals(MY_DOMAIN.toString() + TALENTLMS + BASIC_PLAN, "https://fall2023.talentlms.com/account/subscription_selectplan/plan:basic-annual-c2022,mode:upgrade");
+        talentLmsInitPages.subscriptionPage.clickBasicPlanButton();
+        assertEquals(MY_DOMAIN.getURL() + TALENTLMS.getURL() + BASIC_PLAN.getURL(), "https://fall2023dg.talentlms.com/account/subscription_selectplan/plan:basic-annual-c2022,mode:upgrade");
         browserManager.goBack();
     }
 
-    @Tag("Smoke")
     @Test(description = "Select 'Plus plan' on Subscription page", groups = {"Subscriptions"}, priority = 2)
+    @Tag("Smoke")
     public void clickPlusPlanButtonTest() {
-        subscriptionPage.clickPlusPlanButton();
-        assertEquals(MY_DOMAIN.toString() + TALENTLMS + PLUS_PLAN, "https://fall2023.talentlms.com/account/subscription_selectplan/plan:plus-annual-c2022,mode:upgrade");
+        talentLmsInitPages.subscriptionPage.clickPlusPlanButton();
+        assertEquals(MY_DOMAIN.getURL() + TALENTLMS.getURL() + PLUS_PLAN.getURL(), "https://fall2023dg.talentlms.com/account/subscription_selectplan/plan:plus-annual-c2022,mode:upgrade");
         browserManager.goBack();
     }
 
-    @Tag("Smoke")
     @Test(description = "Select 'Premium plan' on Subscription page", groups = {"Subscriptions"}, priority = 3)
+    @Tag("Smoke")
     public void clickPremiumPlanButtonTest() {
-        subscriptionPage.clickPremiumPlanButton();
-        assertEquals(MY_DOMAIN.toString() + TALENTLMS + PREMIUM_PLAN, "https://fall2023.talentlms.com/account/subscription_selectplan/plan:premium-annual-c2022,mode:upgrade");
+        talentLmsInitPages.subscriptionPage.clickPremiumPlanButton();
+        assertEquals(MY_DOMAIN.getURL() + TALENTLMS.getURL() + PREMIUM_PLAN.getURL(), "https://fall2023dg.talentlms.com/account/subscription_selectplan/plan:premium-annual-c2022,mode:upgrade");
     }
 }

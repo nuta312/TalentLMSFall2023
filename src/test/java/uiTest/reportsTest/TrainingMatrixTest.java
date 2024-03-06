@@ -1,5 +1,6 @@
 package uiTest.reportsTest;
 
+import io.qameta.allure.testng.Tag;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import uiTest.BaseTest;
@@ -11,21 +12,24 @@ import static pages.TalentLMS_PAGES.DASHBOARD;
 public class TrainingMatrixTest extends BaseTest {
 
     @Test(description = "Click all elements of courses ")
+    @Tag("Regression")
     public void courseElementsClick() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + DASHBOARD);
-        trainingMatrixPage.clickAllElements();
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + DASHBOARD.getURL());
+        talentLmsInitPages.trainingMatrixPage.clickAllElements();
     }
 
     @Test (description = "Dropdown checkbox check")
-    public void checkBoxsTest () {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + DASHBOARD);
-        trainingMatrixPage.dropDownClick();
+    @Tag("Regression")
+    public void checkBoxsTest() {
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + DASHBOARD.getURL());
+        talentLmsInitPages.trainingMatrixPage.dropDownClick();
     }
 
     @Test (description = "Assert the text")
+    @Tag("Regression")
     public void checkTheText() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + DASHBOARD);
-        webElementHelper.click(reportsPage.trainingMatrix);
-        Assert.assertEquals(trainingMatrixPage.trainingMatrixText.getText(),"Training matrix");
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + DASHBOARD.getURL());
+        webElementHelper.click(talentLmsInitPages.reportsPage.trainingMatrix);
+        Assert.assertEquals(talentLmsInitPages.trainingMatrixPage.trainingMatrixText.getText(),"Training matrix");
     }
 }

@@ -6,30 +6,33 @@ import uiTest.BaseTest;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-@Tag("Smoke")
 public class CoursesTest extends BaseTest {
 
     @Test(priority = 1)
-    void addTest() {
-        coursesPage.addCourse();
-        assertEquals("Success! New course created. Now, add users or add content to it.", coursesPage.messageAfterCreateCourse.getText());
-        coursesPage.clickToCoursePart();
+    @Tag("Smoke")
+    public void addTest() {
+        talentLmsInitPages.coursesPage.addCourse();
+        assertEquals("Success! New course created. Now, add users or add content to it.", talentLmsInitPages.coursesPage.messageAfterCreateCourse.getText());
+        talentLmsInitPages.coursesPage.clickToCoursePart();
     }
 
     @Test(priority = 3)
-    void cloneTest() {
-        coursesPage.cloneTheCourse();
+    @Tag("Smoke")
+    public void cloneTest() {
+        talentLmsInitPages.coursesPage.cloneTheCourse();
         removeTest();
     }
 
     @Test(priority = 2)
-    void editTest() {
-        coursesPage.editCourse();
-        assertEquals("Success! Course updated.", coursesPage.messageAfterEditCourse.getText());
+    @Tag("Smoke")
+    public void editTest() {
+        talentLmsInitPages.coursesPage.editCourse();
+        assertEquals("Success! Course updated.", talentLmsInitPages.coursesPage.messageAfterEditCourse.getText());
     }
 
     @Test(priority = 4)
-    void removeTest() {
-        coursesPage.removeCourse();
+    @Tag("Smoke")
+    public void removeTest() {
+        talentLmsInitPages.coursesPage.removeCourse();
     }
 }
