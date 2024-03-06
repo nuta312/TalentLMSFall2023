@@ -1,0 +1,107 @@
+package uiTest;
+
+import org.testng.annotations.BeforeClass;
+import pages.BasePage;
+import pages.LoginPage;
+import pages.users.UsersPage;
+import pages.groups.GroupsPage;
+import pages.accountAndSettings.AccountUsersPage;
+import pages.accountAndSettings.BasicSettingsPage;
+import pages.accountAndSettings.ThemesPage;
+import pages.accountAndSettings.CertificatesPage;
+import pages.accountAndSettings.EcommercePage;
+import pages.accountAndSettings.DomainPage;
+import pages.accountAndSettings.SubscriptionPage;
+import pages.accountAndSettings.gamification.GamificationPage;
+import pages.accountAndSettings.gamification.PointsBox;
+import pages.accountAndSettings.gamification.BadgesBox;
+import pages.accountAndSettings.gamification.LevelsBox;
+import pages.accountAndSettings.gamification.RewardsBox;
+import pages.accountAndSettings.gamification.LeaderboardBox;
+import pages.categories.DeleteCategory;
+import pages.categories.DownloadCategoriesInfo;
+import pages.categories.EditTheCategories;
+import pages.categories.ViewCourseCatalog;
+import pages.categories.CategoriesPage;
+import pages.courses.CoursesPage;
+import pages.reports.CoursesUnderReportsPage;
+import pages.reports.ReportsIconAndLinkPage;
+import pages.reports.ReportsPage;
+import pages.reports.TrainingMatrixPage;
+import pages.reports.UserReportsPage;
+import pages.reports.UsersUnderReportsPage;
+import pages.userTypes.UserTypesPage;
+import pages.userTypes.AddUserTypePage;
+import pages.importExport.ExportPage;
+import java.util.List;
+
+public class TalentLmsInitPages {
+
+    public LoginPage loginPage;
+    public BasicSettingsPage basicSettingsPage;
+    public AccountUsersPage accountUsersPage;
+    public ThemesPage themesPage;
+    public CertificatesPage certificatesPage;
+    public EcommercePage ecommercePage;
+    public DomainPage domainPage;
+    public SubscriptionPage subscriptionPage;
+    public GamificationPage gamificationPage;
+    public PointsBox pointsBox;
+    public BadgesBox badgesBox;
+    public LevelsBox levelsBox;
+    public RewardsBox rewardsBox;
+    public LeaderboardBox leaderboardBox;
+    public UsersPage usersPage;
+    public CategoriesPage categoriesPage;
+    public EditTheCategories editTheCategories;
+    public DeleteCategory deleteCategory;
+    public DownloadCategoriesInfo downloadCategoriesInfo;
+    public ViewCourseCatalog viewCourseCatalog;
+    public CoursesPage coursesPage;
+    public ReportsPage reportsPage;
+    public TrainingMatrixPage trainingMatrixPage;
+    public UserTypesPage userTypesPage;
+    public List<String> listUserTypes;
+    public ReportsIconAndLinkPage reportsIconAndLinkPage;
+    public CoursesUnderReportsPage coursesUnderReportsPage;
+    public UsersUnderReportsPage usersUnderReportsPage;
+    public AddUserTypePage addUserTypePage;
+    public ExportPage exportPage;
+    public UserReportsPage userReportsPage;
+    public GroupsPage groupsPage;
+
+    @BeforeClass(alwaysRun = true)
+    public void initPages() {
+        loginPage = new LoginPage();
+        usersPage = new UsersPage();
+        basicSettingsPage = new BasicSettingsPage();
+        accountUsersPage = new AccountUsersPage();
+        themesPage = new ThemesPage();
+        certificatesPage = new CertificatesPage();
+        ecommercePage = new EcommercePage();
+        domainPage = new DomainPage();
+        subscriptionPage = new SubscriptionPage();
+        gamificationPage = new GamificationPage();
+        pointsBox =  new PointsBox();
+        badgesBox = new BadgesBox();
+        levelsBox = new LevelsBox();
+        rewardsBox = new RewardsBox();
+        leaderboardBox = new LeaderboardBox();
+        categoriesPage = new CategoriesPage();
+        editTheCategories = new EditTheCategories();
+        deleteCategory = new DeleteCategory();
+        downloadCategoriesInfo = new DownloadCategoriesInfo();
+        viewCourseCatalog = new ViewCourseCatalog();
+        coursesPage = new CoursesPage();
+        reportsPage = new ReportsPage();
+        trainingMatrixPage = new TrainingMatrixPage();
+        userTypesPage = new UserTypesPage();
+        reportsIconAndLinkPage = new ReportsIconAndLinkPage();
+        coursesUnderReportsPage = new CoursesUnderReportsPage();
+        usersUnderReportsPage = new UsersUnderReportsPage();
+        addUserTypePage = new AddUserTypePage();
+        exportPage = new ExportPage();
+        groupsPage = new GroupsPage();
+        userReportsPage = new UserReportsPage();
+    }
+}

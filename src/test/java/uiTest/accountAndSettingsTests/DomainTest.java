@@ -12,21 +12,21 @@ import static org.testng.Assert.assertEquals;
 
 public class DomainTest extends BaseTest {
 
-    @Tag("Regress")
     @Test(description = "Rename domain name and click cancel button")
+    @Tag("Regression")
     public void renameDomainNameAndClickCancelTest() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + DOMAIN);
-        domainPage.fillUpDomainNameInput("fall2023dg")
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + DOMAIN.getURL());
+        talentLmsInitPages.domainPage.fillUpDomainNameInput("fall2023dg")
                 .clickCancelButton();
-        assertEquals(MY_DOMAIN.toString() + TALENTLMS + DASHBOARD, "https://fall2023dg.talentlms.com/dashboard");
+        assertEquals(MY_DOMAIN.getURL() + TALENTLMS.getURL() + DASHBOARD.getURL(), "https://fall2023dg.talentlms.com/dashboard");
     }
 
-    @Tag("Regress")
     @Test(description = "Rename domain name positive test")
+    @Tag("Regression")
     public void renameDomainNameTest() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + DOMAIN);
-        domainPage.fillUpDomainNameInput("")
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + DOMAIN.getURL());
+        talentLmsInitPages.domainPage.fillUpDomainNameInput("")
                         .clickChangeDomainButton();
-        assertEquals(domainPage.successRenameDomainMessage.getText(), "Domain name changed");
+        assertEquals(talentLmsInitPages.domainPage.successRenameDomainMessage.getText(), "Domain name changed");
     }
 }

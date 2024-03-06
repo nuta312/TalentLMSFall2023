@@ -6,10 +6,40 @@
     </listeners>
     <test verbose="2" preserve-order="true" name="tests">
         <classes>
+            <class name="uiTest.accountAndSettingsTests.AccountUsersTest">
+                <methods>
+                    <include name="usersIndexPageCancelTest"/>
+                </methods>
+            </class>
+            <class name="uiTest.accountAndSettingsTests.BasicSettingsTest">
+                <methods>
+                    <include name="fillUpBasicSettingsTest"/>
+                </methods>
+            </class>
+            <class name="uiTest.accountAndSettingsTests.CertificatesTest">
+                <methods>
+                    <include name="saveNewCertificateTest"/>
+                </methods>
+            </class>
             <class name="uiTest.accountAndSettingsTests.DomainTest">
                 <methods>
                     <include name="renameDomainNameAndClickCancelTest"/>
                     <include name="renameDomainNameTest"/>
+                </methods>
+            </class>
+            <class name="uiTest.accountAndSettingsTests.EcommerceTest">
+                <methods>
+                    <include name="connectStripeTest"/>
+                </methods>
+            </class>
+            <class name="uiTest.accountAndSettingsTests.GamificationTest">
+                <methods>
+                    <include name="clickAllSwitchButtons"/>
+                    <include name="clickAllPointsCheckboxes"/>
+                    <include name="clickAllBadgesCheckboxes"/>
+                    <include name="clickAllLevelsCheckboxes"/>
+                    <include name="clickAllRewardsCheckboxes"/>
+                    <include name="clickAllLeaderboardCheckboxes"/>
                 </methods>
             </class>
             <class name="uiTest.accountAndSettingsTests.ThemesTest">
@@ -17,9 +47,73 @@
                     <include name="selectRandomThemeTest"/>
                 </methods>
             </class>
-            <class name="uiTest.reportsTest.UserReportsPageTest">
+            <class name="uiTest.categoryTest.CategoryTest">
                 <methods>
-                    <include name="user_profile_and_progress_on_click"/>
+                    <include name="addNewCategory"/>
+                    <include name="updateCategory"/>
+                    <include name="removeTheCategory"/>
+                    <include name="saveAsCSVFileOfCategory"/>
+                    <include name="catalogClickButton"/>
+                </methods>
+            </class>
+            <class name="uiTest.groupTest.GroupTest">
+                <methods>
+                    <include name="addGroupTest"/>
+                    <include name="updateGroupTest"/>
+                    <include name="deleteGroupTest"/>
+                </methods>
+            </class>
+            <class name="uiTest.importExportTest.ExportTest">
+                <methods>
+                    <include name="clickCancelTest"/>
+                    <include name="clickExcellTest"/>
+                    <include name="clickExportButtonsTest"/>
+                </methods>
+            </class>
+            <class name="uiTest.reportsTest.CoursesUnderReportsTest">
+                <methods>
+                    <include name="clickCoursesUnderReportsTest"/>
+                </methods>
+            </class>
+            <class name="uiTest.reportsTest.ReportsIconAndLinkTest">
+                <methods>
+                    <include name="openReportsIconAndLinkTest"/>
+                </methods>
+            </class>
+            <class name="uiTest.reportsTest.ReportsTest">
+                <methods>
+                    <include name="checkTheText"/>
+                    <include name="infographicsClick"/>
+                    <include name="trainingMatrixTest"/>
+                    <include name="test78"/>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="uiTest.reportsTest.TrainingMatrixTest">
+                <methods>
+                    <include name="courseElementsClick"/>
+                    <include name="checkBoxsTest"/>
+                    <include name="checkTheText"/>
+                </methods>
+            </class>
+            <class name="uiTest.reportsTest.UsersUnderReportsTest">
+                <methods>
+                    <include name="clickUsersUnderReports"/>
+                </methods>
+            </class>
+            <class name="uiTest.userTypeTest.AddUserTypeTest">
+                <methods>
+                    <include name="addUserTypeTest"/>
+                    <include name="addUserTypeTest2"/>
+                    <include name="addUserTypeTest3"/>
+                </methods>
+            </class>
+            <class name="uiTest.userTypeTest.UserTypesTest">
+                <methods>
+                    <include name="addDuplicateUserTypeInTableTest"/>
+                    <include name="addUserTypeInTableTest"/>
+                    <include name="searchFieldTest"/>
+                    <include name="filterUserTypeNameInTableUserTypeTest"/>
                 </methods>
             </class>
         </classes>

@@ -9,10 +9,10 @@ import static org.testng.Assert.assertEquals;
 
 public class AddUserTypeTest extends BaseTest {
 
-    @Tag("Smoke")
     @Test(description = "Add a user type.Type user role defaults with the assert")
+    @Tag("Regression")
     void addUserTypeTest() {
-        addUserTypePage.clickAddUserType()
+        talentLmsInitPages.addUserTypePage.clickAddUserType()
                        .fillUpNameInput()
                        .arrowClick()
                        .adminClick()
@@ -27,46 +27,49 @@ public class AddUserTypeTest extends BaseTest {
     }
 
     @Test(description = "Add a user type with an existing name")
+    @Tag("Regression")
     void addUserTypeTest2() {
-        addUserTypePage.clickAddUserType()
+        talentLmsInitPages.addUserTypePage.clickAddUserType()
                        .fillUpNameInput1()
                        .arrowClick()
                        .adminClick()
                        .tickTheBoxForAdministrator()
                        .saveButton();
-        String actualAlreadyExistUserTypeWithThisNameMess = addUserTypePage.alreadyExistUserTypeWithThisNameMess.getText();
+        String actualAlreadyExistUserTypeWithThisNameMess = talentLmsInitPages.addUserTypePage.alreadyExistUserTypeWithThisNameMess.getText();
         assertEquals(actualAlreadyExistUserTypeWithThisNameMess, "A user type with this name already exists");
     }
 
     @Test(description = "Add the Instructor user type as the default user type - Administrator role, Instructor permissions")
+    @Tag("Regression")
     void addUserTypeTest3() {
-        addUserTypePage.clickAddUserType()
+        talentLmsInitPages.addUserTypePage.clickAddUserType()
                        .fillUpInstructorNameInput()
                        .arrowClick()
                        .adminClick()
                        .tickTheBoxForInstructor()
                        .saveButton();
-        String actualNotAvailableUserTypeForTheAssignedDefaultRoleMess = addUserTypePage.notAvailableUserTypeForTheAssignedDefaultRoleMess.getText();
+        String actualNotAvailableUserTypeForTheAssignedDefaultRoleMess = talentLmsInitPages.addUserTypePage.notAvailableUserTypeForTheAssignedDefaultRoleMess.getText();
         assertEquals(actualNotAvailableUserTypeForTheAssignedDefaultRoleMess, "The assigned default role is not available for this user type");
     }
 
     @Test(description = "Without adding the default user type and role for the administrator user type")
+    @Tag("Regression")
     void addUserTypeTest4() {
-        addUserTypePage .clickAddUserType();
-        webElementHelper.scrollToElement(addUserTypePage.saveBtn);
-        addUserTypePage .saveButton();
-        String actualNameIsRequiredMess = addUserTypePage.nameIsRequiredMess.getText();
+        talentLmsInitPages.addUserTypePage .clickAddUserType();
+        webElementHelper.scrollToElement(talentLmsInitPages.addUserTypePage.saveBtn);
+        talentLmsInitPages.addUserTypePage .saveButton();
+        String actualNameIsRequiredMess = talentLmsInitPages.addUserTypePage.nameIsRequiredMess.getText();
         assertEquals(actualNameIsRequiredMess, "'Name' is required");
-        String actualDefaultRoleUnavailableForThisUserTypeMess = addUserTypePage.defaultRoleUnavailableForThisUserTypeMess.getText();
+        String actualDefaultRoleUnavailableForThisUserTypeMess = talentLmsInitPages.addUserTypePage.defaultRoleUnavailableForThisUserTypeMess.getText();
         assertEquals(actualDefaultRoleUnavailableForThisUserTypeMess, "The assigned default role is not available for this user type");
-        String actualNotDefinedAnyPermissionsForThisUserTypeMess = addUserTypePage.notDefinedAnyPermissionsForThisUserTypeMess.getText();
+        String actualNotDefinedAnyPermissionsForThisUserTypeMess = talentLmsInitPages.addUserTypePage.notDefinedAnyPermissionsForThisUserTypeMess.getText();
         assertEquals(actualNotDefinedAnyPermissionsForThisUserTypeMess, "You have not defined any permissions for this user type");
     }
 
-    @Tag("Smoke")
     @Test(description = "Add the Instructor user type and existing permissions to Instructor")
+    @Tag("Regression")
     void addUserTypeInstructorTest() {
-        addUserTypePage.clickAddUserType()
+        talentLmsInitPages.addUserTypePage.clickAddUserType()
                        .fillUpInstructorNameInput()
                        .arrowClick()
                        .instructorClick()
@@ -75,14 +78,15 @@ public class AddUserTypeTest extends BaseTest {
     }
 
     @Test(description = "Add the Learner user type and existing permissions to Learner,General")
+    @Tag("Regression")
     void addUserTypeLearnerGeneralTest() {
-        addUserTypePage.clickAddUserType()
+        talentLmsInitPages.addUserTypePage.clickAddUserType()
                        .fillUpLearnNameInput()
                        .arrowClick()
                        .learnerClick()
                        .tickTheBoxForLearner()
                        .tickTheBoxForGeneral();
-        webElementHelper.scrollToElement(addUserTypePage.saveBtn);
-        addUserTypePage.saveButton();
+        webElementHelper.scrollToElement(talentLmsInitPages.addUserTypePage.saveBtn);
+        talentLmsInitPages.addUserTypePage.saveButton();
     }
 }

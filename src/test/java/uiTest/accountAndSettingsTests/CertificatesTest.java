@@ -1,5 +1,6 @@
 package uiTest.accountAndSettingsTests;
 
+import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
 import uiTest.BaseTest;
 
@@ -11,12 +12,13 @@ import static org.testng.Assert.assertEquals;
 public class CertificatesTest extends BaseTest {
 
     @Test(description = "Upload your own certificate and save it as new")
+    @Tag("Regression")
     public void saveNewCertificateTest() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + CERTIFICATES);
-        certificatesPage.uploadOwnCertificate()
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + CERTIFICATES.getURL());
+        talentLmsInitPages.certificatesPage.uploadOwnCertificate()
                 .clickSaveAsNewButton()
                 .fillUpCertificateName()
                 .clickSaveCertificateButton();
-        assertEquals(certificatesPage.successSaveAsNewMessage.getText(), "Operation completed successfully");
+        assertEquals(talentLmsInitPages.certificatesPage.successSaveAsNewMessage.getText(), "Operation completed successfully");
     }
 }

@@ -1,12 +1,12 @@
 package pages.reports;
 
+import pages.BasePage;
 import driver.Driver;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.BasePage;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -52,7 +52,7 @@ public class UserReportsPage extends BasePage {
     public WebElement exportInExcelBtn;
 
     public UserReportsPage goToTheCustomReportsPage() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + USER_REPORTS);
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + USER_REPORTS.getURL());
         return this;
     }
 

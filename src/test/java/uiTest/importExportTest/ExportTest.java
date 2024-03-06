@@ -1,5 +1,6 @@
 package uiTest.importExportTest;
 
+import io.qameta.allure.testng.Tag;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,8 +9,9 @@ import uiTest.BaseTest;
 public class ExportTest extends BaseTest {
 
     @Test(description = "Verify export functionality for Csv files")
-    void clickExportButtons() {
-        exportPage
+    @Tag("Regression")
+    public void clickExportButtonsTest() {
+        talentLmsInitPages.exportPage
                 .clickBtnExport()
                 .clickExport()
                 .csvClick()
@@ -19,8 +21,9 @@ public class ExportTest extends BaseTest {
     }
 
     @Test(description = "Verify export functionality for excell files")
-    void clickExcell() {
-        exportPage
+    @Tag("Regression")
+    public void clickExcellTest() {
+        talentLmsInitPages.exportPage
                 .clickBtnExport()
                 .clickExport()
                 .clickExcell()
@@ -28,8 +31,9 @@ public class ExportTest extends BaseTest {
     }
 
     @Test(description = "Verify export functionality for cancel  button")
-    void clickCancel() {
-        exportPage
+    @Tag("Regression")
+    public void clickCancelTest() {
+        talentLmsInitPages.exportPage
                 .clickBtnExport()
                 .clickCancel1();
     }

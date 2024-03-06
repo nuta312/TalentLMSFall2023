@@ -1,30 +1,33 @@
 package uiTest.reportsTest;
 
-import org.testng.Assert;
+import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
 import uiTest.BaseTest;
+
+import static org.testng.Assert.assertEquals;
 
 public class CoursesUnderReportsTest extends BaseTest {
 
     @Test(description = "method clicks on the Courses link, then clicks on all the course tabs in turn")
-    void clickCoursesUnderReports() {
-        reportsIconAndLinkPage.clickLinkUnderReports(coursesUnderReportsPage.coursesLink);
-        coursesUnderReportsPage.clickAdvancedFeatures();
+    @Tag("Regression")
+    public void clickCoursesUnderReportsTest() {
+        talentLmsInitPages.reportsIconAndLinkPage.clickLinkUnderReports(talentLmsInitPages.coursesUnderReportsPage.coursesLink);
+        talentLmsInitPages.coursesUnderReportsPage.clickAdvancedFeatures();
         browserManager.goBack();
-        coursesUnderReportsPage.clickContentAndTLMS();
+        talentLmsInitPages.coursesUnderReportsPage.clickContentAndTLMS();
         browserManager.goBack();
-        coursesUnderReportsPage.clickEmployeeTraining();
+        talentLmsInitPages.coursesUnderReportsPage.clickEmployeeTraining();
         browserManager.goBack();
-        coursesUnderReportsPage.clickGettingWithStarting();
+        talentLmsInitPages.coursesUnderReportsPage.clickGettingWithStarting();
         browserManager.goBack();
-        coursesUnderReportsPage.clickGiveYourCourseAName();
+        talentLmsInitPages.coursesUnderReportsPage.clickGiveYourCourseAName();
         browserManager.goBack();
-        coursesUnderReportsPage.clickIntroductionToTLMS();
+        talentLmsInitPages.coursesUnderReportsPage.clickIntroductionToTLMS();
         browserManager.goBack();
-        coursesUnderReportsPage.clickWhatIsTLMSLibrary()
+        talentLmsInitPages.coursesUnderReportsPage.clickWhatIsTLMSLibrary()
                 .clickScormTab()
                 .clickNestedWhatIsTLMSLibrary();
-        Assert.assertEquals(coursesUnderReportsPage.assertText.getText(),
+        assertEquals(talentLmsInitPages.coursesUnderReportsPage.assertText.getText(),
                 "There's no info to report, at the moment");
     }
 }

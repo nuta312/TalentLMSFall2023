@@ -7,11 +7,11 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.Story;
 import io.qameta.allure.testng.Tag;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 import io.qameta.allure.SeverityLevel;
 import listener.ScreenshotListener;
 import org.openqa.selenium.By;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
 import uiTest.BaseTest;
 import java.util.List;
 
@@ -37,19 +37,19 @@ public class UserReportsPageTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("TL-037")
     @Tag("Smoke")
-    void verify_user_table_sorting_after_clicking_user_column_sort_button() {
-        userReportsPage
+    public void verify_user_table_sorting_after_clicking_user_column_sort_button() {
+        talentLmsInitPages.userReportsPage
                 .goToTheCustomReportsPage()
                 .clickSortButtonForColumnName()
                 .clickButtonToDisplayTheWholeTable()
                 .pause(1000);
         List<String> tableDataBeforeClickingTheSortButton
-                = getColumnNameData(userReportsPage.tableRows, columnNameFromTheTable);
-        userReportsPage
+                = getColumnNameData(talentLmsInitPages.userReportsPage.tableRows, columnNameFromTheTable);
+        talentLmsInitPages.userReportsPage
                 .clickSortButtonForColumnName()
                 .pause(1000);
         List<String> tableDataAfterClickingTheSortButton
-                = getColumnNameData(userReportsPage.tableRows, columnNameFromTheTable);
+                = getColumnNameData(talentLmsInitPages.userReportsPage.tableRows, columnNameFromTheTable);
         List<String> tableDataBeforeClickingTheSortButtonAfterSorting
                 = sortData(tableDataBeforeClickingTheSortButton);
         assertEquals(
@@ -66,18 +66,18 @@ public class UserReportsPageTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("TL-037")
     @Tag("Smoke")
-    void verify_user_type_table_sorting_after_clicking_user_column_sort_button() {
-        userReportsPage
+    public void verify_user_type_table_sorting_after_clicking_user_column_sort_button() {
+        talentLmsInitPages.userReportsPage
                 .goToTheCustomReportsPage()
                 .clickButtonToDisplayTheWholeTable()
                 .pause(1000);
         List<String> tableDataBeforeClickingTheSortButton
-                = getColumnNameTypeData(userReportsPage.tableRows, columnUserTypeFromTheTable);
-        userReportsPage
+                = getColumnNameTypeData(talentLmsInitPages.userReportsPage.tableRows, columnUserTypeFromTheTable);
+        talentLmsInitPages.userReportsPage
                 .clickSortButtonForColumnUserType()
                 .pause(1000);
         List<String> tableDataAfterClickingTheSortButton
-                = getColumnNameTypeData(userReportsPage.tableRows, columnUserTypeFromTheTable);
+                = getColumnNameTypeData(talentLmsInitPages.userReportsPage.tableRows, columnUserTypeFromTheTable);
         List<String> tableDataBeforeClickingTheSortButtonAfterSorting
                 = sortUserTypeData(tableDataBeforeClickingTheSortButton);
         assertEquals(
@@ -94,11 +94,11 @@ public class UserReportsPageTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("TL-037")
     @Tag("Smoke")
-    void Testing_of_table_search_functionality() {
-        userReportsPage
+    public void Testing_of_table_search_functionality() {
+        talentLmsInitPages.userReportsPage
                 .goToTheCustomReportsPage();
         List<String> tableDataBeforeClickingTheSortButton
-                = getColumnNameData(userReportsPage.tableRows, columnNameFromTheTable);
+                = getColumnNameData(talentLmsInitPages.userReportsPage.tableRows, columnNameFromTheTable);
         String searchText
                 = selectTextFromTableForSearch(tableDataBeforeClickingTheSortButton);
         boolean result
@@ -116,9 +116,9 @@ public class UserReportsPageTest extends BaseTest {
     @Owner("Urmat")
     @Severity(SeverityLevel.MINOR)
     @Story("TL-037")
-    @Tag("Regression")
-    void user_profile_and_progress_on_click() {
-        userReportsPage
+    @Tag("Smoke")
+    public void user_profile_and_progress_on_click() {
+        talentLmsInitPages.userReportsPage
                 .goToTheCustomReportsPage()
                 .clickTextNameFromTable();
         String expected = "Activity";

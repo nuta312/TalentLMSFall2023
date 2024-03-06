@@ -1,5 +1,6 @@
 package uiTest.reportsTest;
 
+import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
 import uiTest.BaseTest;
 
@@ -9,11 +10,12 @@ public class UsersUnderReportsTest extends BaseTest {
 
     @Test(description = "This method clicks on the Users link, then clicks on a user and\n" +
             "displays  information about that user")
-    void clickUsersUnderReports() {
-        reportsIconAndLinkPage.clickLinkUnderReports(usersUnderReportsPage.usersLink);
-        reportsIconAndLinkPage.clickToUser(usersUnderReportsPage.userInfo);
-        assertEquals(usersUnderReportsPage.userData.getText(),"Bekeshev Nurzat");
-        usersUnderReportsPage.clickToday()
+    @Tag("Regression")
+    public void clickUsersUnderReports() {
+        talentLmsInitPages.reportsIconAndLinkPage.clickLinkUnderReports(talentLmsInitPages.usersUnderReportsPage.usersLink);
+        talentLmsInitPages.reportsIconAndLinkPage.clickToUser(talentLmsInitPages.usersUnderReportsPage.userInfo);
+        assertEquals(talentLmsInitPages.usersUnderReportsPage.userData.getText(),"Nomad Digital");
+        talentLmsInitPages.usersUnderReportsPage.clickToday()
                 .clickYesterday()
                 .clickWeek()
                 .clickMonth()
@@ -23,9 +25,9 @@ public class UsersUnderReportsTest extends BaseTest {
                 .clickTo()
                 .clickShow()
                 .clickViewInfographic();
-        assertEquals(usersUnderReportsPage.infographicText.getText(),"Training infographic");
+        assertEquals(talentLmsInitPages.usersUnderReportsPage.infographicText.getText(),"Training infographic");
         browserManager.goBack();
-        usersUnderReportsPage.clickViewAllBadges()
+        talentLmsInitPages.usersUnderReportsPage.clickViewAllBadges()
                 .clickOverViewTab()
                 .clickGamification()
                 .clickHowToCollPoints()

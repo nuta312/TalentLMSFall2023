@@ -12,17 +12,17 @@ import static org.testng.Assert.assertTrue;
 
 public class ThemesTest extends BaseTest {
 
-    @Tag("Regress")
     @Test
+    @Tag("Regression")
     public void selectRandomThemeTest() {
-        browserManager.openByNavigate(MY_DOMAIN.toString() + TALENTLMS + THEMES);
-        themesPage.selectRandomTheme()
+        browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + THEMES.getURL());
+        talentLmsInitPages.themesPage.selectRandomTheme()
                 .activeThemeButtonClick();
-        webElementHelper.click(themesPage.updateThemeButton)
-                .waitForElementToBeDisplayed(themesPage.successMessage);
-        assertEquals(themesPage.successMessage.getText(), "Operation completed successfully");
-        assertTrue(themesPage.updateThemeButton.isDisplayed());
-        assertTrue(themesPage.saveAsNewButton.isDisplayed());
-        assertTrue(themesPage.deleteButton.isDisplayed());
+        webElementHelper.click(talentLmsInitPages.themesPage.updateThemeButton)
+                .waitForElementToBeDisplayed(talentLmsInitPages.themesPage.successMessage);
+        assertEquals(talentLmsInitPages.themesPage.successMessage.getText(), "Operation completed successfully");
+        assertTrue(talentLmsInitPages.themesPage.updateThemeButton.isDisplayed());
+        assertTrue(talentLmsInitPages.themesPage.saveAsNewButton.isDisplayed());
+        assertTrue(talentLmsInitPages.themesPage.deleteButton.isDisplayed());
     }
 }
