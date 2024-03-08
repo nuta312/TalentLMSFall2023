@@ -6,7 +6,7 @@ pipeline {
     parameters {
        choice(
           name: "PROJECT",
-          choices: ['RegressionTest', 'TLMS', 'Project 1', 'Project 2', 'Project 3', 'Project 4'],
+          choices: ['SmokeTest', 'RegressionTest' 'TLMS', 'Project 1', 'Project 2', 'Project 3', 'Project 4'],
           description: 'Choose project'
        )
        string(
@@ -20,7 +20,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                   def project = params.PROJECT ?: 'TLMS'
+                   def project = params.PROJECT ?: 'SmokeTest'
                    def testType = params.TEST_CASE_ID ?: 'UI'
                    sh "mvn clean test -P $project -Dgroups=$testType -DfailIfNoTests=false"
                 }

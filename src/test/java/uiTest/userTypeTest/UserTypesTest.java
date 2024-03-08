@@ -22,7 +22,7 @@ public class UserTypesTest extends BaseTest {
     private String nameUserType;
     private int indexUserType;
 
-    @Test(groups = {"TLMS", "Regression", "UI"})
+    @Test(groups = {"TLMS", "Regression", "UI", "155"})
     @Feature("talentLMS User Types")
     @Description("Checking when adding user type it must be unique")
     @Owner("Timur")
@@ -41,7 +41,7 @@ public class UserTypesTest extends BaseTest {
         talentLmsInitPages.userTypesPage.removeTestsUsersTypes(driver);
     }
 
-    @Test(groups = {"TLMS", "Regression", "UI"})
+    @Test(groups = {"TLMS", "Regression", "UI", "156"})
     @Feature("talentLMS User Types")
     @Description("Adding a new role to a table")
     @Owner("Timur")
@@ -58,7 +58,7 @@ public class UserTypesTest extends BaseTest {
         talentLmsInitPages.userTypesPage.removeTestsUsersTypes(driver);
     }
 
-    @Test(groups = {"TLMS", "Regression", "UI"})
+    @Test(groups = {"TLMS", "Regression", "UI", "157"})
     @Feature("talentLMS User Types")
     @Description("Checking the table information search string")
     @Owner("Timur")
@@ -82,7 +82,7 @@ public class UserTypesTest extends BaseTest {
         talentLmsInitPages.userTypesPage.removeTestsUsersTypes(driver);
     }
 
-    @Test(groups = {"TLMS", "Regression", "UI"})
+    @Test(groups = {"TLMS", "Regression", "UI", "158"})
     @Feature("talentLMS User Types")
     @Description("Filter check user type name table user type")
     @Owner("Timur")

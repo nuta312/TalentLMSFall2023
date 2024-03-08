@@ -8,7 +8,7 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class CoursesTest extends BaseTest {
 
-    @Test(groups = {"TLMS", "Smoke", "UI"}, priority = 1)
+    @Test(groups = {"TLMS", "Smoke", "UI", "122"}, priority = 1)
     @Tag("Smoke")
     public void addTest() {
         talentLmsInitPages.coursesPage.addCourse();
@@ -16,21 +16,21 @@ public class CoursesTest extends BaseTest {
         talentLmsInitPages.coursesPage.clickToCoursePart();
     }
 
-    @Test(groups = {"TLMS", "Smoke", "UI"}, priority = 3)
+    @Test(groups = {"TLMS", "Smoke", "UI", "123"}, priority = 3)
     @Tag("Smoke")
     public void cloneTest() {
         talentLmsInitPages.coursesPage.cloneTheCourse();
         removeTest();
     }
 
-    @Test(groups = {"TLMS", "Smoke", "UI"}, priority = 2)
+    @Test(groups = {"TLMS", "Smoke", "UI", "124"}, priority = 2)
     @Tag("Smoke")
     public void editTest() {
         talentLmsInitPages.coursesPage.editCourse();
         assertEquals("Success! Course updated.", talentLmsInitPages.coursesPage.messageAfterEditCourse.getText());
     }
 
-    @Test(groups = {"TLMS", "Smoke", "UI"}, priority = 4)
+    @Test(groups = {"TLMS", "Smoke", "UI", "125"}, priority = 4)
     @Tag("Smoke")
     public void removeTest() {
         talentLmsInitPages.coursesPage.removeCourse();

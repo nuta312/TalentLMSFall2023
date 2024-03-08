@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
 
 public class GamificationTest extends BaseTest {
 
-    @Test(description = "Click all switch buttons", groups = {"TLMS", "Regression", "UI"})
+    @Test(description = "Click all switch buttons", groups = {"TLMS", "Regression", "UI", "106"})
     @Tag("Regression")
     public void clickAllSwitchButtons() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + GAMIFICATION.getURL());
@@ -25,7 +25,7 @@ public class GamificationTest extends BaseTest {
         assertEquals(talentLmsInitPages.gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
     }
 
-    @Test(description = "Click all 'Points' checkboxes", groups = {"TLMS", "Regression", "UI"})
+    @Test(description = "Click all 'Points' checkboxes", groups = {"TLMS", "Regression", "UI", "107"})
     @Tag("Regression")
     public void clickAllPointsCheckboxes() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + GAMIFICATION.getURL());
@@ -42,7 +42,7 @@ public class GamificationTest extends BaseTest {
         assertEquals(talentLmsInitPages.gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
     }
 
-    @Test(description = "Click all 'Badges' checkboxes", groups = {"TLMS", "Regression", "UI"})
+    @Test(description = "Click all 'Badges' checkboxes", groups = {"TLMS", "Regression", "UI", "108"})
     @Tag("Regression")
     public void clickAllBadgesCheckboxes() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + GAMIFICATION.getURL());
@@ -58,7 +58,7 @@ public class GamificationTest extends BaseTest {
         assertEquals(talentLmsInitPages.gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
     }
 
-    @Test(description = "Click all 'Levels' checkboxes", groups = {"TLMS", "Regression", "UI"})
+    @Test(description = "Click all 'Levels' checkboxes", groups = {"TLMS", "Regression", "UI", "109"})
     @Tag("Regression")
     public void clickAllLevelsCheckboxes() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + GAMIFICATION.getURL());
@@ -70,7 +70,7 @@ public class GamificationTest extends BaseTest {
         assertEquals(talentLmsInitPages.gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
     }
 
-    @Test(description = "Click all 'Rewards' checkboxes", groups = {"TLMS", "Regression", "UI"})
+    @Test(description = "Click all 'Rewards' checkboxes", groups = {"TLMS", "Regression", "UI", "110"})
     @Tag("Regression")
     public void clickAllRewardsCheckboxes() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + GAMIFICATION.getURL());
@@ -82,7 +82,7 @@ public class GamificationTest extends BaseTest {
         assertEquals(talentLmsInitPages.gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
     }
 
-    @Test(description = "Click all 'Rewards' checkboxes", groups = {"TLMS", "Regression", "UI"})
+    @Test(description = "Click all 'Rewards' checkboxes", groups = {"TLMS", "Regression", "UI", "111"})
     @Tag("Regression")
     public void clickAllLeaderboardCheckboxes() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + GAMIFICATION.getURL());
