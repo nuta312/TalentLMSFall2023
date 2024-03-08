@@ -6,7 +6,7 @@ pipeline {
     parameters {
        choice(
           name: "PROJECT",
-          choices: ['SmokeTest', 'RegressionTest', 'TLMS', 'Project 1', 'Project 2', 'Project 3', 'Project 4'],
+          choices: ['Smoke', 'Regression', 'TLMS', 'Project 1', 'Project 2', 'Project 3', 'Project 4'],
           description: 'Choose project'
        )
        string(
