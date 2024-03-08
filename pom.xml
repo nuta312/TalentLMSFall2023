@@ -134,7 +134,7 @@
 
     <profiles>
         <profile>
-            <id>SmokeTest</id>
+            <id>Smoke</id>
             <build>
                 <plugins>
                     <plugin>
@@ -152,7 +152,7 @@
         </profile>
 
         <profile>
-            <id>RegressionTest</id>
+            <id>Regression</id>
             <build>
                 <plugins>
                     <plugin>
