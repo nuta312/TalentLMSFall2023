@@ -6,7 +6,7 @@ pipeline {
     parameters {
        choice(
           name: "PROJECT",
-          choices: ['TLMS', 'Project 1', 'Project 2', 'Project 3', 'Project 4'],
+          choices: ['RegressionTest', 'TLMS', 'Project 1', 'Project 2', 'Project 3', 'Project 4'],
           description: 'Choose project'
        )
        string(
@@ -22,7 +22,7 @@ pipeline {
                 script {
                    def project = params.PROJECT ?: 'TLMS'
                    def testType = params.TEST_CASE_ID ?: 'UI'
-                   sh "mvn clean test -P$project -Dgroups=$testType -DfailIfNoTests=false"
+                   sh "mvn clean test -P $project -Dgroups=$testType -DfailIfNoTests=false"
                 }
             }
             post {
