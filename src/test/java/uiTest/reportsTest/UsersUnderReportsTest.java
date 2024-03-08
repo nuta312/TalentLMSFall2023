@@ -9,7 +9,7 @@ import static org.testng.Assert.assertEquals;
 public class UsersUnderReportsTest extends BaseTest {
 
     @Test(description = "This method clicks on the Users link, then clicks on a user and\n" +
-            "displays  information about that user")
+            "displays  information about that user", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     public void clickUsersUnderReports() {
         talentLmsInitPages.reportsIconAndLinkPage.clickLinkUnderReports(talentLmsInitPages.usersUnderReportsPage.usersLink);

@@ -29,7 +29,7 @@ import static pages.reports.UserReportsPage.isTextFoundInSearchResults;
 @Listeners(ScreenshotListener.class)
 public class UserReportsPageTest extends BaseTest {
 
-    @Test()
+    @Test(groups = {"TLMS", "Smoke", "UI"})
     @Feature("Sorting.")
     @Description("Verify user tables sorting after clicking user column sort button")
     @Epic("SCRUM-12")
@@ -58,7 +58,7 @@ public class UserReportsPageTest extends BaseTest {
                 , tableDataAfterClickingTheSortButton);
     }
 
-    @Test()
+    @Test(groups = {"TLMS", "Smoke", "UI"})
     @Feature("Sorting")
     @Description("Verify user type tables sorting after clicking user column sort button")
     @Epic("SCRUM -12")
@@ -86,7 +86,7 @@ public class UserReportsPageTest extends BaseTest {
                 , tableDataAfterClickingTheSortButton);
     }
 
-    @Test()
+    @Test(groups = {"TLMS", "Smoke", "UI"})
     @Feature("Search")
     @Description("Testing of table search functionality")
     @Epic("SCRUM-12")
@@ -108,7 +108,7 @@ public class UserReportsPageTest extends BaseTest {
         }
     }
 
-    @Test
+    @Test(groups = {"TLMS", "Smoke", "UI"})
     @Feature("User profile navigation and progress display feature")
     @Description("Automated test to verify the proper navigation to the user profile, " +
             "showcasing progress data, triggered by clicking on the user name in the user table")

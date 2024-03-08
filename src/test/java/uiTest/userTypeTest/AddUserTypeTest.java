@@ -9,7 +9,7 @@ import static org.testng.Assert.assertEquals;
 
 public class AddUserTypeTest extends BaseTest {
 
-    @Test(description = "Add a user type.Type user role defaults with the assert")
+    @Test(description = "Add a user type.Type user role defaults with the assert", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     void addUserTypeTest() {
         talentLmsInitPages.addUserTypePage.clickAddUserType()
@@ -26,7 +26,7 @@ public class AddUserTypeTest extends BaseTest {
         assertEquals(actualArrowClick3, "Learner");
     }
 
-    @Test(description = "Add a user type with an existing name")
+    @Test(description = "Add a user type with an existing name", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     void addUserTypeTest2() {
         talentLmsInitPages.addUserTypePage.clickAddUserType()
@@ -39,7 +39,7 @@ public class AddUserTypeTest extends BaseTest {
         assertEquals(actualAlreadyExistUserTypeWithThisNameMess, "A user type with this name already exists");
     }
 
-    @Test(description = "Add the Instructor user type as the default user type - Administrator role, Instructor permissions")
+    @Test(description = "Add the Instructor user type as the default user type - Administrator role, Instructor permissions", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     void addUserTypeTest3() {
         talentLmsInitPages.addUserTypePage.clickAddUserType()
@@ -52,7 +52,7 @@ public class AddUserTypeTest extends BaseTest {
         assertEquals(actualNotAvailableUserTypeForTheAssignedDefaultRoleMess, "The assigned default role is not available for this user type");
     }
 
-    @Test(description = "Without adding the default user type and role for the administrator user type")
+    @Test(description = "Without adding the default user type and role for the administrator user type", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     void addUserTypeTest4() {
         talentLmsInitPages.addUserTypePage .clickAddUserType();
@@ -66,7 +66,7 @@ public class AddUserTypeTest extends BaseTest {
         assertEquals(actualNotDefinedAnyPermissionsForThisUserTypeMess, "You have not defined any permissions for this user type");
     }
 
-    @Test(description = "Add the Instructor user type and existing permissions to Instructor")
+    @Test(description = "Add the Instructor user type and existing permissions to Instructor", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     void addUserTypeInstructorTest() {
         talentLmsInitPages.addUserTypePage.clickAddUserType()
@@ -77,7 +77,7 @@ public class AddUserTypeTest extends BaseTest {
                        .saveButton();
     }
 
-    @Test(description = "Add the Learner user type and existing permissions to Learner,General")
+    @Test(description = "Add the Learner user type and existing permissions to Learner,General", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     void addUserTypeLearnerGeneralTest() {
         talentLmsInitPages.addUserTypePage.clickAddUserType()

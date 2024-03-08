@@ -8,7 +8,7 @@ import uiTest.BaseTest;
 
 public class ExportTest extends BaseTest {
 
-    @Test(description = "Verify export functionality for Csv files")
+    @Test(description = "Verify export functionality for Csv files", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     public void clickExportButtonsTest() {
         talentLmsInitPages.exportPage
@@ -20,7 +20,7 @@ public class ExportTest extends BaseTest {
         Assert.assertEquals(actualExportClick,"Export");
     }
 
-    @Test(description = "Verify export functionality for excell files")
+    @Test(description = "Verify export functionality for excell files", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     public void clickExcellTest() {
         talentLmsInitPages.exportPage
@@ -30,7 +30,7 @@ public class ExportTest extends BaseTest {
                 .exportClick();
     }
 
-    @Test(description = "Verify export functionality for cancel  button")
+    @Test(description = "Verify export functionality for cancel  button", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     public void clickCancelTest() {
         talentLmsInitPages.exportPage
