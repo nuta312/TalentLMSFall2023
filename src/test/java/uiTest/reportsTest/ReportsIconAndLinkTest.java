@@ -9,7 +9,7 @@ import static org.testng.Assert.assertEquals;
 public class ReportsIconAndLinkTest extends BaseTest {
 
     @Test(description = "method clicks on the Reports icon, then clicks on Home\n" +
-            "and then clicks on the Reports link")
+            "and then clicks on the Reports link", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     public void openReportsIconAndLinkTest() {
         talentLmsInitPages.reportsIconAndLinkPage.clickReportsIcon()

@@ -8,7 +8,7 @@ import static org.testng.Assert.assertEquals;
 
 public class UsersTest extends BaseTest {
 
-    @Test(description = "Sign in to browser and choose the Add User field", priority = 0)
+    @Test(description = "Sign in to browser and choose the Add User field", groups = {"TLMS", "Smoke", "UI"}, priority = 0)
     @Tag("Smoke")
     public void addUserTest() {
         webElementHelper.click(talentLmsInitPages.usersPage.homeAddUserBtn);
@@ -22,7 +22,7 @@ public class UsersTest extends BaseTest {
         assertEquals(talentLmsInitPages.usersPage.addUserSuccessMessage.getText(), "Success! Do you want to add another user?");
     }
 
-    @Test(description = "Click on empty fields", priority = 1)
+    @Test(description = "Click on empty fields", groups = {"TLMS", "Smoke", "UI"}, priority = 1)
     @Tag("Smoke")
     public void requiredFieldsMessagesTest() {
         webElementHelper.click(talentLmsInitPages.usersPage.homeBtn);

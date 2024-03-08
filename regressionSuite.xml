@@ -106,6 +106,9 @@
                     <include name="addUserTypeTest"/>
                     <include name="addUserTypeTest2"/>
                     <include name="addUserTypeTest3"/>
+                    <include name="addUserTypeTest4"/>
+                    <include name="addUserTypeInstructorTest"/>
+                    <include name="addUserTypeLearnerGeneralTest"/>
                 </methods>
             </class>
             <class name="uiTest.userTypeTest.UserTypesTest">

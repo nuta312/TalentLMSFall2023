@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
 
 public class EcommerceTest extends BaseTest {
 
-    @Test(description = "Select stripe in e-commerce processor input")
+    @Test(description = "Select stripe in e-commerce processor input", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     public void connectStripeTest() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + ECOMMERCE.getURL());

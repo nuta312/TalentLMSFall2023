@@ -12,7 +12,7 @@ import static pages.TalentLMS_PAGES.DASHBOARD;
 
 public class AccountUsersTest extends BaseTest {
 
-    @Test(description = "Fill up users form and click 'Cancel' button amd move to Dashboard")
+    @Test(description = "Fill up users form and click 'Cancel' button amd move to Dashboard", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     public void usersIndexPageCancelTest() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + ACCOUNT_SETTINGS_USERS.getURL());

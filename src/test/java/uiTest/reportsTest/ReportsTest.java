@@ -12,7 +12,7 @@ import static pages.TalentLMS_PAGES.DASHBOARD;
 
 public class ReportsTest extends BaseTest {
 
-    @Test(description = "Assert in reports page")
+    @Test(description = "Assert in reports page", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     public void checkTheText() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + DASHBOARD.getURL());
@@ -20,7 +20,7 @@ public class ReportsTest extends BaseTest {
         Assert.assertEquals(talentLmsInitPages.reportsPage.overviewLink.getText(), "Overview");
     }
 
-    @Test(description = "Click to infographics tab and assert text")
+    @Test(description = "Click to infographics tab and assert text", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     public void infographicsClick() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + DASHBOARD.getURL());
@@ -28,14 +28,14 @@ public class ReportsTest extends BaseTest {
         assertEquals(talentLmsInitPages.reportsPage.your_training_infographicText.getText(), "Your training infographic".toUpperCase());
     }
 
-    @Test(description = "Click to training matrix tab")
+    @Test(description = "Click to training matrix tab", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     public void trainingMatrixTest() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + DASHBOARD.getURL());
         webElementHelper.click(talentLmsInitPages.reportsPage.trainingMatrix);
     }
 
-    @Test(description = "Click to all elements of period time")
+    @Test(description = "Click to all elements of period time", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     public void test78() throws InterruptedException {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + DASHBOARD.getURL());
@@ -43,7 +43,7 @@ public class ReportsTest extends BaseTest {
         talentLmsInitPages.reportsPage.periodElements();
     }
 
-    @Test(description = "All right side 10 elements,click")
+    @Test(description = "All right side 10 elements,click", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     public void test() throws InterruptedException {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + DASHBOARD.getURL());

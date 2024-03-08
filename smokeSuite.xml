@@ -22,18 +22,18 @@
                     <include name="removeTest"/>
                 </methods>
             </class>
-            <class name="uiTest.usersTest.UsersTest">
-                <methods>
-                    <include name="addUserTest"/>
-                    <include name="requiredFieldsMessagesTest"/>
-                </methods>
-            </class>
             <class name="uiTest.reportsTest.UserReportsPageTest">
                 <methods>
                     <include name="verify_user_table_sorting_after_clicking_user_column_sort_button"/>
                     <include name="verify_user_type_table_sorting_after_clicking_user_column_sort_button"/>
                     <include name="Testing_of_table_search_functionality"/>
                     <include name="user_profile_and_progress_on_click"/>
+                </methods>
+            </class>
+            <class name="uiTest.usersTest.UsersTest">
+                <methods>
+                    <include name="addUserTest"/>
+                    <include name="requiredFieldsMessagesTest"/>
                 </methods>
             </class>
         </classes>

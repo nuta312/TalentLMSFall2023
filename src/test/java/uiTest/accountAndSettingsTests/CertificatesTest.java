@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
 
 public class CertificatesTest extends BaseTest {
 
-    @Test(description = "Upload your own certificate and save it as new")
+    @Test(description = "Upload your own certificate and save it as new", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     public void saveNewCertificateTest() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + CERTIFICATES.getURL());

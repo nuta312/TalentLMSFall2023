@@ -12,7 +12,7 @@ import static org.testng.Assert.assertEquals;
 
 public class DomainTest extends BaseTest {
 
-    @Test(description = "Rename domain name and click cancel button")
+    @Test(description = "Rename domain name and click cancel button", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     public void renameDomainNameAndClickCancelTest() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + DOMAIN.getURL());
@@ -21,7 +21,7 @@ public class DomainTest extends BaseTest {
         assertEquals(MY_DOMAIN.getURL() + TALENTLMS.getURL() + DASHBOARD.getURL(), "https://fall2023dg.talentlms.com/dashboard");
     }
 
-    @Test(description = "Rename domain name positive test")
+    @Test(description = "Rename domain name positive test", groups = {"TLMS", "Regression", "UI"})
     @Tag("Regression")
     public void renameDomainNameTest() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + DOMAIN.getURL());
