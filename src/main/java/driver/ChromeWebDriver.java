@@ -15,7 +15,6 @@ public class ChromeWebDriver {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-extensions");
         options.addArguments("--window-size-1920,1080");
-        options.addArguments("--disable-extensions");
         options.addArguments("--no-sandbox");
         if(Boolean.parseBoolean(getValue("headless"))) {
             options.addArguments("--headless");
