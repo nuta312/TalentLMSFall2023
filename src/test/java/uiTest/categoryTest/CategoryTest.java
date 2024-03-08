@@ -12,7 +12,7 @@ import static org.testng.Assert.assertNotSame;
 
 public class CategoryTest extends BaseTest {
 
-    @Test(groups = {"TLMS", "Regression", "UI"})
+    @Test(groups = {"TLMS", "Regression", "UI", "117"})
     @Tag("Regression")
     public void addNewCategory() {
         talentLmsInitPages.categoriesPage.addCategoriesPage();
@@ -20,7 +20,7 @@ public class CategoryTest extends BaseTest {
         assertEquals("Success! New category created.", textAfterAddNewCategory);
     }
 
-    @Test(groups = {"TLMS", "Regression", "UI"})
+    @Test(groups = {"TLMS", "Regression", "UI", "118"})
     @Tag("Regression")
     public void updateCategory() {
         talentLmsInitPages.categoriesPage.categoryButtonClick();
@@ -29,7 +29,7 @@ public class CategoryTest extends BaseTest {
         assertEquals("Category updated successfully", textAfterUpdateCategory);
     }
 
-    @Test(groups = {"TLMS", "Regression", "UI"})
+    @Test(groups = {"TLMS", "Regression", "UI", "119"})
     @Tag("Regression")
     public void removeTheCategory() {
         List<WebElement> listOfCategories = driver.findElements(By.xpath("//table[@id='tl-categories-grid']/tbody"));
@@ -45,14 +45,14 @@ public class CategoryTest extends BaseTest {
         assertNotSame(listOfCategories, listOfCategoriesAfterDelete);
     }
 
-    @Test(groups = {"TLMS", "Regression", "UI"})
+    @Test(groups = {"TLMS", "Regression", "UI", "120"})
     @Tag("Regression")
     public void saveAsCSVFileOfCategory() {
         talentLmsInitPages.categoriesPage.categoryButtonClick();
         talentLmsInitPages.downloadCategoriesInfo.clickToInstall();
     }
 
-    @Test(groups = {"TLMS", "Regression", "UI"})
+    @Test(groups = {"TLMS", "Regression", "UI", "121"})
     @Tag("Regression")
     void catalogClickButton() {
         talentLmsInitPages.categoriesPage.categoryButtonClick();

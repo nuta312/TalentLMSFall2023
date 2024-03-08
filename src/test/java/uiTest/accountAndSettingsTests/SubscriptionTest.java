@@ -15,7 +15,7 @@ import static org.testng.Assert.assertEquals;
 
 public class SubscriptionTest extends BaseTest {
 
-    @Test(description = "Select 'Starter plan' on Subscription page and assert urls", groups = {"TLMS", "Smoke", "UI"}, priority = 0)
+    @Test(description = "Select 'Starter plan' on Subscription page and assert urls", groups = {"TLMS", "Smoke", "UI", "112"}, priority = 0)
     @Tag("Smoke")
     public void clickStarterPlanButtonTest() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + SUBSCRIPTION.getURL());
@@ -24,7 +24,7 @@ public class SubscriptionTest extends BaseTest {
         browserManager.goBack();
     }
 
-    @Test(description = "Select 'Basic plan' on Subscription page", groups = {"TLMS", "Smoke", "UI"}, priority = 1)
+    @Test(description = "Select 'Basic plan' on Subscription page", groups = {"TLMS", "Smoke", "UI", "113"}, priority = 1)
     @Tag("Smoke")
     public void clickBasicPlanButtonTest() {
         talentLmsInitPages.subscriptionPage.clickBasicPlanButton();
@@ -32,7 +32,7 @@ public class SubscriptionTest extends BaseTest {
         browserManager.goBack();
     }
 
-    @Test(description = "Select 'Plus plan' on Subscription page", groups = {"TLMS", "Smoke", "UI"}, priority = 2)
+    @Test(description = "Select 'Plus plan' on Subscription page", groups = {"TLMS", "Smoke", "UI", "114"}, priority = 2)
     @Tag("Smoke")
     public void clickPlusPlanButtonTest() {
         talentLmsInitPages.subscriptionPage.clickPlusPlanButton();
@@ -40,7 +40,7 @@ public class SubscriptionTest extends BaseTest {
         browserManager.goBack();
     }
 
-    @Test(description = "Select 'Premium plan' on Subscription page", groups = {"TLMS", "Smoke", "UI"}, priority = 3)
+    @Test(description = "Select 'Premium plan' on Subscription page", groups = {"TLMS", "Smoke", "UI", "115"}, priority = 3)
     @Tag("Smoke")
     public void clickPremiumPlanButtonTest() {
         talentLmsInitPages.subscriptionPage.clickPremiumPlanButton();

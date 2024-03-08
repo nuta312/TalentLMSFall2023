@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
 
 public class BasicSettingsTest extends BaseTest {
 
-    @Test(description = "Changing basic settings", groups = {"TLMS", "Regression", "UI"})
+    @Test(description = "Changing basic settings", groups = {"TLMS", "Regression", "UI", "101"})
     @Tag("Regression")
     public void fillUpBasicSettingsTest() throws InterruptedException {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + BASIC_SETTINGS.getURL());

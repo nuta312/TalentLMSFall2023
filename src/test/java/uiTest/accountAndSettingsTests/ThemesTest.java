@@ -12,7 +12,7 @@ import static org.testng.Assert.assertTrue;
 
 public class ThemesTest extends BaseTest {
 
-    @Test(description = "Select random theme", groups = {"TLMS", "Regression", "UI"})
+    @Test(description = "Select random theme", groups = {"TLMS", "Regression", "UI", "116"})
     @Tag("Regression")
     public void selectRandomThemeTest() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + THEMES.getURL());

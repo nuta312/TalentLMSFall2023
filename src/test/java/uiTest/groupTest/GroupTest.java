@@ -9,7 +9,7 @@ import static org.testng.Assert.assertEquals;
 @Tag("Smoke")
 public class GroupTest extends BaseTest {
 
-    @Test(groups = {"TLMS", "Regression", "UI"}, priority = 1)
+    @Test(groups = {"TLMS", "Regression", "UI", "126"}, priority = 1)
     @Tag("Regression")
     public void addGroupTest() {
         talentLmsInitPages.groupsPage.addGroup();
@@ -17,14 +17,14 @@ public class GroupTest extends BaseTest {
         talentLmsInitPages.groupsPage.backToMainGroupPageList();
     }
 
-    @Test(groups = {"TLMS", "Regression", "UI"}, priority = 2)
+    @Test(groups = {"TLMS", "Regression", "UI", "127"}, priority = 2)
     @Tag("Regression")
     public void updateGroupTest() {
         talentLmsInitPages.groupsPage.updateGroup();
         assertEquals(talentLmsInitPages.groupsPage.messageAfterUpdateGroup.getText(),"Success! Group updated.");
     }
 
-    @Test(groups = {"TLMS", "Regression", "UI"}, priority = 3)
+    @Test(groups = {"TLMS", "Regression", "UI", "128"}, priority = 3)
     @Tag("Regression")
     public void deleteGroupTest() {
         talentLmsInitPages.groupsPage.deleteGroup();
