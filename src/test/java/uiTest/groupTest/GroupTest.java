@@ -6,7 +6,6 @@ import uiTest.BaseTest;
 
 import static org.testng.Assert.assertEquals;
 
-@Tag("Smoke")
 public class GroupTest extends BaseTest {
 
     @Test(groups = {"TLMS", "Regression", "UI", "126"}, priority = 1)

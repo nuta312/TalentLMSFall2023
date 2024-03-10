@@ -4,12 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import java.time.Duration;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import static config.ConfigReader.getValue;
 
 public class FirefoxWebDriver {
 
     public static WebDriver loadFirefoxWebDriver() {
+        WebDriverManager.firefoxdriver().setup();
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--disable-extensions");
         options.addArguments("--window-size-1920,1080");

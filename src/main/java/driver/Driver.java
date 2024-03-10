@@ -36,7 +36,7 @@ public class Driver {
                 driver.quit();
                 driver=null;
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Error while closing driver");
         }
     }

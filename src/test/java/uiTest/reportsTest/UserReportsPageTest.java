@@ -7,10 +7,8 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.Story;
 import io.qameta.allure.testng.Tag;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import io.qameta.allure.SeverityLevel;
-import listener.ScreenshotListener;
 import org.openqa.selenium.By;
 import uiTest.BaseTest;
 import java.util.List;
@@ -26,7 +24,6 @@ import static pages.reports.UserReportsPage.sortData;
 import static pages.reports.UserReportsPage.selectTextFromTableForSearch;
 import static pages.reports.UserReportsPage.isTextFoundInSearchResults;
 
-@Listeners(ScreenshotListener.class)
 public class UserReportsPageTest extends BaseTest {
 
     @Test(groups = {"TLMS", "Smoke", "UI", "142"})
