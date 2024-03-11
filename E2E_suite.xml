@@ -46,6 +46,13 @@
                     <include name="test"/>
                 </methods>
             </class>
+            <class name="uiTest.reportsTest.TrainingMatrixTest">
+                <methods>
+                    <include name="courseElementsClick"/>
+                    <include name="checkBoxsTest"/>
+                    <include name="checkTheText"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
