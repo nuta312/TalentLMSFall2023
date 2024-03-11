@@ -1,58 +1,38 @@
 package uiTest.reportsTest;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
-import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import uiTest.BaseTest;
+
 import java.util.List;
 
 import static org.testng.Assert.fail;
 import static org.testng.AssertJUnit.assertEquals;
-import static pages.reports.UserReportsPage.columnNameFromTheTable;
-import static pages.reports.UserReportsPage.columnUserTypeFromTheTable;
-import static pages.reports.UserReportsPage.getColumnNameData;
-import static pages.reports.UserReportsPage.getColumnNameTypeData;
-import static pages.reports.UserReportsPage.sortUserTypeData;
-import static pages.reports.UserReportsPage.sortData;
-import static pages.reports.UserReportsPage.selectTextFromTableForSearch;
-import static pages.reports.UserReportsPage.isTextFoundInSearchResults;
+import static pages.reports.UserReportsPage.*;
 
 public class UserReportsPageTest extends BaseTest {
 
     @Test(groups = {"TLMS", "Smoke", "UI", "142"})
-    @Feature("Sorting.")
+    @Feature("Sorting")
     @Description("Verify user tables sorting after clicking user column sort button")
     @Epic("SCRUM-12")
     @Owner("Urmat")
     @Severity(SeverityLevel.CRITICAL)
     @Story("TL-037")
     @Tag("Smoke")
+    @Flaky
     public void verify_user_table_sorting_after_clicking_user_column_sort_button() {
         talentLmsInitPages.userReportsPage
                 .goToTheCustomReportsPage()
                 .clickSortButtonForColumnName()
-                .clickButtonToDisplayTheWholeTable()
-                .pause(1000);
-        List<String> tableDataBeforeClickingTheSortButton
-                = getColumnNameData(talentLmsInitPages.userReportsPage.tableRows, columnNameFromTheTable);
-        talentLmsInitPages.userReportsPage
-                .clickSortButtonForColumnName()
-                .pause(1000);
-        List<String> tableDataAfterClickingTheSortButton
-                = getColumnNameData(talentLmsInitPages.userReportsPage.tableRows, columnNameFromTheTable);
-        List<String> tableDataBeforeClickingTheSortButtonAfterSorting
-                = sortData(tableDataBeforeClickingTheSortButton);
-        assertEquals(
-                "Table not sorted correctly"
-                , tableDataBeforeClickingTheSortButtonAfterSorting
-                , tableDataAfterClickingTheSortButton);
+                .clickButtonToDisplayTheWholeTable();
+        List<String> tableDataBeforeClickingTheSortButton = getColumnNameData();
+        talentLmsInitPages.userReportsPage.clickSortButtonForColumnName();
+        List<String> tableDataAfterClickingTheSortButton = getColumnNameData();
+        List<String> tableDataBeforeClickingTheSortButtonAfterSorting = sortData(tableDataBeforeClickingTheSortButton);
+        assertEquals(tableDataBeforeClickingTheSortButtonAfterSorting, tableDataAfterClickingTheSortButton);
     }
 
     @Test(groups = {"TLMS", "Smoke", "UI", "143"})
@@ -63,24 +43,16 @@ public class UserReportsPageTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("TL-037")
     @Tag("Smoke")
+    @Flaky
     public void verify_user_type_table_sorting_after_clicking_user_column_sort_button() {
         talentLmsInitPages.userReportsPage
                 .goToTheCustomReportsPage()
-                .clickButtonToDisplayTheWholeTable()
-                .pause(1000);
-        List<String> tableDataBeforeClickingTheSortButton
-                = getColumnNameTypeData(talentLmsInitPages.userReportsPage.tableRows, columnUserTypeFromTheTable);
-        talentLmsInitPages.userReportsPage
-                .clickSortButtonForColumnUserType()
-                .pause(1000);
-        List<String> tableDataAfterClickingTheSortButton
-                = getColumnNameTypeData(talentLmsInitPages.userReportsPage.tableRows, columnUserTypeFromTheTable);
-        List<String> tableDataBeforeClickingTheSortButtonAfterSorting
-                = sortUserTypeData(tableDataBeforeClickingTheSortButton);
-        assertEquals(
-                "Table not sorted correctly"
-                , tableDataBeforeClickingTheSortButtonAfterSorting
-                , tableDataAfterClickingTheSortButton);
+                .clickButtonToDisplayTheWholeTable();
+        List<String> tableDataBeforeClickingTheSortButton = getColumnNameTypeData();
+        talentLmsInitPages.userReportsPage.clickSortButtonForColumnUserType();
+        List<String> tableDataAfterClickingTheSortButton = getColumnNameTypeData();
+        List<String> tableDataBeforeClickingTheSortButtonAfterSorting = sortUserTypeData(tableDataBeforeClickingTheSortButton);
+        assertEquals(tableDataBeforeClickingTheSortButtonAfterSorting, tableDataAfterClickingTheSortButton);
     }
 
     @Test(groups = {"TLMS", "Smoke", "UI", "144"})
@@ -91,15 +63,13 @@ public class UserReportsPageTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("TL-037")
     @Tag("Smoke")
+    @Flaky
     public void Testing_of_table_search_functionality() {
-        talentLmsInitPages.userReportsPage
-                .goToTheCustomReportsPage();
-        List<String> tableDataBeforeClickingTheSortButton
-                = getColumnNameData(talentLmsInitPages.userReportsPage.tableRows, columnNameFromTheTable);
-        String searchText
-                = selectTextFromTableForSearch(tableDataBeforeClickingTheSortButton);
-        boolean result
-                = isTextFoundInSearchResults(searchText);
+        talentLmsInitPages.userReportsPage.goToTheCustomReportsPage();
+        List<String> tableData = getColumnNameData();
+        String searchText = selectTextFromTableForSearch(tableData);
+        boolean result = isTextFoundInSearchResults(searchText);
+        System.out.println(result);
         if (!result) {
             fail("user search on the page does not work correctly");
         }
