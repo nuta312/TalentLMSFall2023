@@ -1,7 +1,14 @@
 package uiTest.reportsTest;
 
-import io.qameta.allure.*;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Flaky;
+import io.qameta.allure.Story;
 import io.qameta.allure.testng.Tag;
+import jdk.jfr.Description;
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import uiTest.BaseTest;
