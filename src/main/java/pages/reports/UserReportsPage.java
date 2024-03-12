@@ -22,14 +22,8 @@ import static pages.TalentLMS_PAGES.USER_REPORTS;
 
 
 public class UserReportsPage extends BasePage {
-
     public static String columnNameFromTheTable = "//tbody//tr//td[@class=' tl-align-left']";
     public static String columnUserTypeFromTheTable = "//tbody//tr//td[@class=' tl-align-left hidden-phone']";
-
-    /**
-     * This class reflects web elements of the "User reports" web page from https://www.talentlms.com and special methods created to work with this web page.
-     */
-
     @FindBy(xpath = "//a[@title='Home']")
     public WebElement textHome;
     @FindBy(xpath = "//a[@title='Reports']")
@@ -43,7 +37,7 @@ public class UserReportsPage extends BasePage {
     @FindBy(xpath = "//td[@class=' tl-align-center tl-table-operations-cell hidden-phone']")
     public WebElement optionsSignal;
     @FindBy(xpath = "//tbody//tr[@role='row']")
-    public WebElement tableRows;
+    public static WebElement tableRows;
     @FindBy(xpath = "//input[@class='tl-grid-search-input']")
     public WebElement inputTextForSearch;
     @FindBy(xpath = "//tbody//td//a")
@@ -110,34 +104,17 @@ public class UserReportsPage extends BasePage {
         return this;
     }
 
-    @Step("Get column data")
-    public static List<String> getColumnNameData(WebElement tableRows, String columnFromTheTableXPath) {
-        return saveColumnNameData(tableRows, columnFromTheTableXPath);
-    }
-
-    public static List<String> getColumnNameTypeData(WebElement tableRows, String columnFromTheTableXPath) {
-        return saveColumnNameTypeData(tableRows, columnFromTheTableXPath);
-    }
-
     @Step("Sort data")
     public static List<String> sortData(List<String> getColumnData) {
         Collections.sort(getColumnData);
         return getColumnData;
     }
 
-    /**
-     * Method saves data of a specific column in the sheet.
-     *
-     * @param tableRows          Web element representing rows in the table.
-     * @param columnFromTheTable Web elements representing cells of columns in the table.
-     * @return List<String> initialDataValues containing data from cells located in a single column.
-     */
-
     @Step("Save column name data")
-    public static List<String> saveColumnNameData(WebElement tableRows, String columnFromTheTable) {
+    public static List<String> getColumnNameData() {
         List<String> initialDataValues = new ArrayList<>();
         try {
-            List<WebElement> initialData = tableRows.findElements(By.xpath(columnFromTheTable));
+            List<WebElement> initialData = tableRows.findElements(By.xpath(columnNameFromTheTable));
             initialDataValues = initialData.stream()
                     .map(WebElement::getText)
                     .filter(text -> !text.equals("d. digitalnomad"))
@@ -149,14 +126,13 @@ public class UserReportsPage extends BasePage {
     }
 
     @Step("Save column name type data")
-    public static List<String> saveColumnNameTypeData(WebElement tableRows, String columnFromTheTable) {
+    public static List<String> getColumnNameTypeData() {
         List<String> initialDataValues = new ArrayList<>();
         try {
-            List<WebElement> initialData = tableRows.findElements(By.xpath(columnFromTheTable));
-            initialData.stream()
+            List<WebElement> initialData = tableRows.findElements(By.xpath(columnUserTypeFromTheTable));
+            initialDataValues = initialData.stream()
                     .map(WebElement::getText)
-                    .filter(text -> !text.equals("d. digitalnomad"))
-                    .forEach(initialDataValues::add);
+                    .collect(Collectors.toList());
         } catch (StaleElementReferenceException e) {
         }
         return initialDataValues;
@@ -165,14 +141,8 @@ public class UserReportsPage extends BasePage {
     @Step("Sort user type data")
     public static List<String> sortUserTypeData(List<String> getColumnData) {
         List<String> customOrder = Arrays.asList("SuperAdmin", "Admin-Type", "Trainer-Type", "Learner-Type", "Instructor");
-        List<String> list = new ArrayList<>();
-        for (String getColumnDatum : getColumnData) {
-            if (customOrder.contains(getColumnDatum)) {
-                list.add(getColumnDatum);
-            }
-        }
-        list.sort(Comparator.comparingInt(customOrder::indexOf));
-        return list;
+        getColumnData.sort(Comparator.comparingInt(customOrder::indexOf));
+        return getColumnData;
     }
 
     @Step("Select text from table for search")
