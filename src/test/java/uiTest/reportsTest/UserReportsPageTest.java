@@ -16,7 +16,12 @@ import java.util.List;
 
 import static org.testng.Assert.fail;
 import static org.testng.AssertJUnit.assertEquals;
-import static pages.reports.UserReportsPage.*;
+import static pages.reports.UserReportsPage.getColumnNameData;
+import static pages.reports.UserReportsPage.getColumnNameTypeData;
+import static pages.reports.UserReportsPage.sortUserTypeData;
+import static pages.reports.UserReportsPage.selectTextFromTableForSearch;
+import static pages.reports.UserReportsPage.isTextFoundInSearchResults;
+import static pages.reports.UserReportsPage.sortData;
 
 public class UserReportsPageTest extends BaseTest {
 
