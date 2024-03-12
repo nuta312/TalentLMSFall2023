@@ -12,7 +12,6 @@ import jdk.jfr.Description;
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import uiTest.BaseTest;
-
 import java.util.List;
 
 import static org.testng.Assert.fail;
