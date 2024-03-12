@@ -9,7 +9,6 @@ import io.qameta.allure.Flaky;
 import io.qameta.allure.Story;
 import io.qameta.allure.testng.Tag;
 import jdk.jfr.Description;
-
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import uiTest.BaseTest;
@@ -23,7 +22,6 @@ import static pages.reports.UserReportsPage.sortUserTypeData;
 import static pages.reports.UserReportsPage.selectTextFromTableForSearch;
 import static pages.reports.UserReportsPage.isTextFoundInSearchResults;
 import static pages.reports.UserReportsPage.sortData;
-
 
 public class UserReportsPageTest extends BaseTest {
 
