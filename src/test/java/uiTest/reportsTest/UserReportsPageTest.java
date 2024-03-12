@@ -1,16 +1,29 @@
 package uiTest.reportsTest;
 
-import io.qameta.allure.*;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Flaky;
+import io.qameta.allure.Story;
 import io.qameta.allure.testng.Tag;
+import jdk.jfr.Description;
+
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import uiTest.BaseTest;
-
 import java.util.List;
 
 import static org.testng.Assert.fail;
 import static org.testng.AssertJUnit.assertEquals;
-import static pages.reports.UserReportsPage.*;
+import static pages.reports.UserReportsPage.getColumnNameData;
+import static pages.reports.UserReportsPage.getColumnNameTypeData;
+import static pages.reports.UserReportsPage.sortUserTypeData;
+import static pages.reports.UserReportsPage.selectTextFromTableForSearch;
+import static pages.reports.UserReportsPage.isTextFoundInSearchResults;
+import static pages.reports.UserReportsPage.sortData;
+
 
 public class UserReportsPageTest extends BaseTest {
 
