@@ -4,9 +4,9 @@ import io.qameta.allure.testng.Tag;
 import uiTest.BaseTest;
 import org.testng.annotations.Test;
 
-import static pages.TalentLMS_PAGES.MY_DOMAIN;
-import static pages.TalentLMS_PAGES.TALENTLMS;
-import static pages.TalentLMS_PAGES.THEMES;
+import static ui.pages.TalentLMS_PAGES.MY_DOMAIN;
+import static ui.pages.TalentLMS_PAGES.TALENTLMS;
+import static ui.pages.TalentLMS_PAGES.THEMES;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 

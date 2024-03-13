@@ -3,9 +3,9 @@ package uiTest.accountAndSettingsTests;
 import org.testng.annotations.Test;
 import uiTest.BaseTest;
 
-import static pages.TalentLMS_PAGES.MY_DOMAIN;
-import static pages.TalentLMS_PAGES.TALENTLMS;
-import static pages.TalentLMS_PAGES.BASIC_SETTINGS;
+import static ui.pages.TalentLMS_PAGES.MY_DOMAIN;
+import static ui.pages.TalentLMS_PAGES.TALENTLMS;
+import static ui.pages.TalentLMS_PAGES.BASIC_SETTINGS;
 import static org.testng.Assert.assertEquals;
 
 public class BasicSettingsTest extends BaseTest {

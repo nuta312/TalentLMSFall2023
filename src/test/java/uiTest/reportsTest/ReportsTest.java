@@ -5,9 +5,9 @@ import org.testng.annotations.Test;
 import uiTest.BaseTest;
 
 import static org.testng.Assert.assertEquals;
-import static pages.TalentLMS_PAGES.MY_DOMAIN;
-import static pages.TalentLMS_PAGES.TALENTLMS;
-import static pages.TalentLMS_PAGES.DASHBOARD;
+import static ui.pages.TalentLMS_PAGES.MY_DOMAIN;
+import static ui.pages.TalentLMS_PAGES.TALENTLMS;
+import static ui.pages.TalentLMS_PAGES.DASHBOARD;
 
 public class ReportsTest extends BaseTest {
 

@@ -12,9 +12,9 @@ import org.testng.annotations.Test;
 import uiTest.BaseTest;
 import java.util.List;
 
-import static pages.TalentLMS_PAGES.MY_DOMAIN;
-import static pages.TalentLMS_PAGES.TALENTLMS;
-import static pages.TalentLMS_PAGES.USER_TYPES;
+import static ui.pages.TalentLMS_PAGES.MY_DOMAIN;
+import static ui.pages.TalentLMS_PAGES.TALENTLMS;
+import static ui.pages.TalentLMS_PAGES.USER_TYPES;
 
 public class UserTypesTest extends BaseTest {
 

@@ -4,13 +4,13 @@ import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
 import uiTest.BaseTest;
 
-import static pages.TalentLMS_PAGES.MY_DOMAIN;
-import static pages.TalentLMS_PAGES.TALENTLMS;
-import static pages.TalentLMS_PAGES.STARTER_PLAN;
-import static pages.TalentLMS_PAGES.SUBSCRIPTION;
-import static pages.TalentLMS_PAGES.BASIC_PLAN;
-import static pages.TalentLMS_PAGES.PLUS_PLAN;
-import static pages.TalentLMS_PAGES.PREMIUM_PLAN;
+import static ui.pages.TalentLMS_PAGES.MY_DOMAIN;
+import static ui.pages.TalentLMS_PAGES.TALENTLMS;
+import static ui.pages.TalentLMS_PAGES.STARTER_PLAN;
+import static ui.pages.TalentLMS_PAGES.SUBSCRIPTION;
+import static ui.pages.TalentLMS_PAGES.BASIC_PLAN;
+import static ui.pages.TalentLMS_PAGES.PLUS_PLAN;
+import static ui.pages.TalentLMS_PAGES.PREMIUM_PLAN;
 import static org.testng.Assert.assertEquals;
 
 public class SubscriptionTest extends BaseTest {
