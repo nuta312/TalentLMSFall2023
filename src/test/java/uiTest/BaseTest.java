@@ -1,13 +1,13 @@
 package uiTest;
 
-import driver.Driver;
-import helper.BrowserManager;
-import helper.WebElementHelper;
+import ui.driver.Driver;
+import ui.helper.BrowserManager;
+import ui.helper.WebElementHelper;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-import static pages.TalentLMS_PAGES.LOGIN_PAGE;
+import static ui.pages.TalentLMS_PAGES.LOGIN_PAGE;
 
 public class BaseTest {
 
