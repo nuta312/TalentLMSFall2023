@@ -4,8 +4,11 @@ import db.util.DBConnection;
 import org.apache.commons.dbutils.BeanProcessor;
 
 import java.lang.reflect.Field;
+import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -76,6 +79,21 @@ public class DBActions {
     }
 
     public static <T> T deleteDataTable(Class<T> beanClass, String nameTable, String sqlQueryWhere) throws SQLException {
+        List<String> listForeignKeys = DBConnection.getForeignKeysTable(nameTable);
+        System.out.println(listForeignKeys);
+        String updateQuery = "";
+
+        for(int i = 0; i < listForeignKeys.size(); i+=4){
+            updateQuery = "UPDATE " + listForeignKeys.get(i + 3) +
+                        " SET " + listForeignKeys.get(i + 2) + " = 1" +
+                        " WHERE " + listForeignKeys.get(i + 2) + " IN (" +
+                        " SELECT " + listForeignKeys.get(i) + " FROM " +
+                        listForeignKeys.get(i + 1) + " WHERE " + sqlQueryWhere + ");";
+
+            System.out.println(updateQuery);
+            DBConnection.updateRowsQuery(updateQuery);
+        }
+
         String deleteQuery = "DELETE FROM " +  nameTable + " WHERE " + sqlQueryWhere;
         String retrieveQuery = "SELECT * FROM " +  nameTable;
         return  DBConnection.deleteBean(deleteQuery,retrieveQuery,beanClass);
