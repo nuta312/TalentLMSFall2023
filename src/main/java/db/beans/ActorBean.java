@@ -52,8 +52,7 @@ public class ActorBean {
         ResultSet resultSet = DBConnection.query(query, value);
         if (!resultSet.next()) {
             return null;
-        }
-        else {
+        } else {
             return new BeanProcessor().toBean(resultSet, ActorBean.class);
         }
     }
