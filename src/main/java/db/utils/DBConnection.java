@@ -1,5 +1,6 @@
 package db.utils;
 
+import org.apache.commons.dbutils.BeanProcessor;
 import org.postgresql.ds.PGSimpleDataSource;
 import java.sql.Connection;
 import java.sql.Statement;
@@ -18,22 +19,6 @@ public class DBConnection {
      * Singleton
      */
     public DBConnection() {
-    }
-
-    /**
-     * Gets base data source (all credentials) to connect to the database.
-     * @param database: name of database
-     * @return: base data source
-     */
-    private static PGSimpleDataSource getBaseDataSource(String database) {
-        PGSimpleDataSource dataSource = new PGSimpleDataSource() {{
-            setServerName(getValue("server"));
-            setPortNumber(Integer.parseInt(getValue("port")));
-            setUser(getValue("user"));
-            setPassword(getValue("sql_password"));
-            setDatabaseName(database);
-        }};
-        return dataSource;
     }
 
     /**
@@ -56,13 +41,28 @@ public class DBConnection {
     public static ResultSet query(String query, Object... params) throws SQLException {
         if (params.length == 0) {
             return statement.executeQuery(query);
-        }
-        else {
+        } else {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             for (int i = 0; i < params.length; i++) {
                 preparedStatement.setObject(i + 1, params[i]);
             }
             return preparedStatement.executeQuery();
+        }
+    }
+
+    public static <T> T insertAndRetrieveBean(String insertQuery, String retrieveQuery, Class<T> beanClass, Object... insertParams) throws SQLException {
+        PreparedStatement insertStatement = connection.prepareStatement(insertQuery);
+        for (int i = 0; i < insertParams.length; i++) {
+            insertStatement.setObject(i + 1, insertParams[i]);
+        }
+        insertStatement.executeUpdate();
+
+        PreparedStatement retrieveStatement = connection.prepareStatement(retrieveQuery);
+        ResultSet resultSet = retrieveStatement.executeQuery();
+        if (!resultSet.next()) {
+            return null;
+        } else {
+            return new BeanProcessor().toBean(resultSet, beanClass);
         }
     }
 
@@ -82,5 +82,21 @@ public class DBConnection {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Gets base data source (all credentials) to connect to the database.
+     * @param database: name of database
+     * @return: base data source
+     */
+    private static PGSimpleDataSource getBaseDataSource(String database) {
+        PGSimpleDataSource dataSource = new PGSimpleDataSource() {{
+            setServerName(getValue("server"));
+            setPortNumber(Integer.parseInt(getValue("port")));
+            setUser(getValue("user"));
+            setPassword(getValue("sql_password"));
+            setDatabaseName(database);
+        }};
+        return dataSource;
     }
 }
