@@ -21,7 +21,7 @@ public class Test {
 */
 
         String nameTable = "address";
-        String sqlQuery = "address = '1331 Usak Boulevard'";
+        String sqlQuery = "address = '844 Bucuresti Place'";
 
         DBActions.deleteDataTable(ActorBean.class, nameTable, sqlQuery);
    /*     nameTable = "city";

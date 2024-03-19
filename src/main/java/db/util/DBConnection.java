@@ -5,14 +5,45 @@ import org.postgresql.ds.PGSimpleDataSource;
 import ui.config.ConfigReader;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBConnection {
     private static Connection connection;
     private static Statement statement;
     private static PreparedStatement preparedStatement;
+
+    private static DatabaseMetaData metaData ;
+    private static ResultSet primaryKeys;
+
+
     private  DBConnection(){
 
     }
+
+    public static List<String> getForeignKeysTable  (String tableName) throws SQLException {
+        List<String> listForeignKeys = new ArrayList<>();
+        metaData = connection.getMetaData();
+        primaryKeys = metaData.getExportedKeys(connection.getCatalog(), null, tableName);
+
+        while (primaryKeys.next()) {
+            String pkTableName = primaryKeys.getString("PKTABLE_NAME");
+            String pkColumnName = primaryKeys.getString("PKCOLUMN_NAME");
+            String fkTableName = primaryKeys.getString("FKTABLE_NAME");
+            String fkColumnName = primaryKeys.getString("FKCOLUMN_NAME");
+
+           /* System.out.println("Внешний ключ " + fkColumnName + " в таблице " + fkTableName +
+                    " ссылается на столбец " + pkColumnName + " в таблице " + pkTableName);*/
+
+            listForeignKeys.add(pkColumnName);
+            listForeignKeys.add(pkTableName);
+            listForeignKeys.add(fkColumnName);
+            listForeignKeys.add(fkTableName);
+        }
+
+        return listForeignKeys;
+    }
+
     public static void open  (String db)  throws SQLException { //открой соединение
         if (connection==null){
             connection=getBaseDataSource(db).getConnection();
@@ -89,6 +120,10 @@ public class DBConnection {
         }
     }
 
+    public static void updateRowsQuery(String updateQuery) throws SQLException {
+        PreparedStatement insertStatement = connection.prepareStatement(updateQuery);
+        insertStatement.executeUpdate();
+    }
 
     public static void close(){
         try {
