@@ -1,5 +1,6 @@
 package db.utils;
 
+import org.apache.commons.dbutils.BeanProcessor;
 import org.postgresql.ds.PGSimpleDataSource;
 import java.sql.Connection;
 import java.sql.Statement;
@@ -7,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static config.ConfigReader.getValue;
+import static ui.config.ConfigReader.getValue;
 
 public class DBConnection {
 
@@ -44,6 +45,24 @@ public class DBConnection {
         if (connection == null) {
             connection = getBaseDataSource(database).getConnection();
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        }
+    }
+
+    /**
+     * .
+     */
+    public static <T> T deleteBean(String deleteQuery, String retrieveQuery,Class<T> beanClass, Object... insertParams) throws SQLException {
+        PreparedStatement insertStatement = connection.prepareStatement(deleteQuery);
+        for (int i = 0; i < insertParams.length; i++) {
+            insertStatement.setObject(i + 1, insertParams[i]);
+        }
+        insertStatement.executeUpdate();
+        PreparedStatement retrieveStatement = connection.prepareStatement(retrieveQuery);
+        ResultSet resultSet = retrieveStatement.executeQuery();
+        if (resultSet.next()) {
+            return new BeanProcessor().toBean(resultSet, beanClass);
+        } else {
+            return null;
         }
     }
 
