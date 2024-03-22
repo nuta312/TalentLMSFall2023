@@ -5,7 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import ui.pages.BasePage;
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 import java.util.List;
 
 import static ui.driver.Driver.getDriver;

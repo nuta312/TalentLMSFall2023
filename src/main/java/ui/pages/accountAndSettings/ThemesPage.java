@@ -5,7 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import ui.pages.BasePage;
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 import java.util.LinkedList;
 import java.util.List;
 
