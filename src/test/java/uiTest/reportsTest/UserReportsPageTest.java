@@ -8,7 +8,7 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Flaky;
 import io.qameta.allure.Story;
 import io.qameta.allure.testng.Tag;
-import jdk.jfr.Description;
+import io.qameta.allure.Description;
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import uiTest.BaseTest;
