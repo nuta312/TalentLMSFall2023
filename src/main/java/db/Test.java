@@ -1,6 +1,5 @@
 package db;
 
-import db.beans.*;
 import db.utill.DBConnection;
 
 import java.sql.SQLException;
