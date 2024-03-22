@@ -15,14 +15,14 @@ import java.util.List;
 
 import static org.testng.Assert.fail;
 import static org.testng.AssertJUnit.assertEquals;
-import static pages.reports.UserReportsPage.columnNameFromTheTable;
-import static pages.reports.UserReportsPage.columnUserTypeFromTheTable;
-import static pages.reports.UserReportsPage.getColumnNameData;
-import static pages.reports.UserReportsPage.getColumnNameTypeData;
-import static pages.reports.UserReportsPage.sortUserTypeData;
-import static pages.reports.UserReportsPage.sortData;
-import static pages.reports.UserReportsPage.selectTextFromTableForSearch;
-import static pages.reports.UserReportsPage.isTextFoundInSearchResults;
+import static ui.pages.reports.UserReportsPage.columnNameFromTheTable;
+import static ui.pages.reports.UserReportsPage.columnUserTypeFromTheTable;
+import static ui.pages.reports.UserReportsPage.getColumnNameData;
+import static ui.pages.reports.UserReportsPage.getColumnNameTypeData;
+import static ui.pages.reports.UserReportsPage.sortUserTypeData;
+import static ui.pages.reports.UserReportsPage.sortData;
+import static ui.pages.reports.UserReportsPage.selectTextFromTableForSearch;
+import static ui.pages.reports.UserReportsPage.isTextFoundInSearchResults;
 
 public class UserReportsPageTest extends BaseTest {
 
