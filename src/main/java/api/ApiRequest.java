@@ -1,10 +1,13 @@
 package api;
 
-import io.restassured.builder.RequestSpecBuilder;
+import config.ConfigReader;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
@@ -12,22 +15,38 @@ import static io.restassured.RestAssured.given;
 @Data
 public abstract class ApiRequest {
     protected String url;
-    protected String authToken;
     protected RequestSpecification requestSpecification;
     protected Response response;
+    private static String SLASH = "/";
 
-    public ApiRequest(String url, String authToken) {
+    public ApiRequest(String url) {
         this.url = url;
-        this.authToken = authToken;
-        this.requestSpecification = new RequestSpecBuilder()
-                .setBaseUri(url)
-                .build();
+        this.requestSpecification = given()
+                .baseUri(url)
+                .auth()
+                .basic(ConfigReader.getValue("apiKey"), "");
     }
 
     private void logResponse() {
         log.warn("Response is:");
         log.warn(getResponse().getBody().asPrettyString());
         log.warn("Status code is {}", getResponse().getStatusCode());
+    }
+
+    protected static String getEndpoint(String... endpoints) {
+        StringBuilder endPoint = new StringBuilder();
+        for (String arg : endpoints) {
+            endPoint.append(arg).append(SLASH);
+        }
+        return endPoint.substring(0, endPoint.length() - 1);
+    }
+
+    public String formatParameter(HashMap<String, String> parameters) {
+        StringBuilder query = new StringBuilder("?");
+        for (Map.Entry<String, String> entry : parameters.entrySet()) {
+            query.append(entry.getKey() + "=" + entry.getValue() + "&");
+        }
+        return query.deleteCharAt(query.length() - 1).toString();
     }
 
     protected Response get(String endPoint) {
