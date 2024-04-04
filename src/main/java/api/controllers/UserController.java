@@ -27,8 +27,8 @@ public class UserController extends ApiRequest {
                 , formatParameter(parameters))).as(User.class);
     }
 
-    public void createUser(User user) {
-        super.post(getEndpoint(API, V1, USER_SIGNUP), user.toJson());
+    public User createUser(User user) {
+        return super.post(getEndpoint(API, V1, USER_SIGNUP), user.toJson()).as(User.class);
     }
 
     public void deleteUser(String userId) {

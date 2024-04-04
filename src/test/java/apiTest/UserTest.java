@@ -1,5 +1,6 @@
 package apiTest;
 
+import api.asserts.ApiAssert;
 import api.controllers.UserController;
 import api.entities.User;
 import api.utils.EntityManager;
@@ -19,13 +20,27 @@ public class UserTest extends BaseApiTest {
     @Test
     public void userDelete() {
         User[] users = userController.getUsers();
-        userController.deleteUser(users[2].getId());
+        userController.deleteUser(users[users.length - 1].getId());
+        ApiAssert.assertThat(userController.getResponse())
+                .isCorrectStatusCode(200);
     }
 
     @Test
     public void createUser() {
-        User user = EntityManager.generateUser();
-        userController.createUser(user);
+        User[] users = userController.getUsers();
+        ApiAssert.assertThat(userController.getResponse())
+                .isCorrectStatusCode(200);
+        if (users.length == 5) {
+            userController.deleteUser(users[users.length - 1].getId());
+            ApiAssert.assertThat(userController.getResponse())
+                    .isCorrectStatusCode(200);
+        }
+        User expectedUser = EntityManager.generateUser();
+        User actualUser = userController.createUser(expectedUser);
+        ApiAssert.assertThat(userController.getResponse())
+                .isCorrectStatusCode(200)
+                .assertUser(actualUser)
+                .isEqualTo(expectedUser);
     }
 }
 
