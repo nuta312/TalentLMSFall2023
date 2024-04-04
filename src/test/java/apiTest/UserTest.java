@@ -7,8 +7,6 @@ import api.utils.EntityManager;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertEquals;
-
 public class UserTest extends BaseApiTest {
     UserController userController;
 

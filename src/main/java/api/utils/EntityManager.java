@@ -7,6 +7,7 @@ public class EntityManager {
     private static final Faker faker = new Faker();
 
     public static User generateUser() {
+        faker.number().digits(3);
         return User.builder()
                 .firstName(faker.name().firstName())
                 .lastName(faker.name().lastName())
