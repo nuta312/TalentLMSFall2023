@@ -69,4 +69,15 @@ public abstract class ApiRequest {
         return this.response;
     }
 
+    protected Response post(String endPoint, Map<String, String> params) {
+        log.info("Performed post {}", endPoint);
+        log.info("Params is {}", params);
+        this.response = given()
+                .spec(requestSpecification)
+                .formParams(params)
+                .post(endPoint);
+        logResponse();
+        return this.response;
+    }
+
 }

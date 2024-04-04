@@ -5,6 +5,7 @@ import api.entities.User;
 import lombok.Getter;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import static api.TalentLMSEndpoints.*;
 
@@ -28,6 +29,14 @@ public class UserController extends ApiRequest {
 
     public void createUser(User user) {
         super.post(getEndpoint(API, V1, USER_SIGNUP), user.toJson());
+    }
+
+    public void deleteUser(String userId) {
+        Map<String, String> params = new HashMap<>() {{
+            put("user_id", userId);
+            put("deleted_by_user_id", "1");
+        }};
+        super.post(getEndpoint(API, V1, DELETE_USER), params);
     }
 
     @Getter

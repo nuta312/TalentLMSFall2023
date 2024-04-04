@@ -6,7 +6,6 @@ import api.utils.EntityManager;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static api.controllers.UserController.By.ID;
 import static org.testng.Assert.assertEquals;
 
 public class UserTest extends BaseApiTest {
@@ -18,11 +17,9 @@ public class UserTest extends BaseApiTest {
     }
 
     @Test
-    public void userTest() {
+    public void userDelete() {
         User[] users = userController.getUsers();
-        assertEquals(users.length, 5);
-        User userBy = userController.getUserBy(ID, "1");
-        assertEquals(userBy.getFirstName(), "Aidin");
+        userController.deleteUser(users[2].getId());
     }
 
     @Test
@@ -31,3 +28,4 @@ public class UserTest extends BaseApiTest {
         userController.createUser(user);
     }
 }
+
