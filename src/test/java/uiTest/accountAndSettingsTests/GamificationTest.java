@@ -82,7 +82,7 @@ public class GamificationTest extends BaseTest {
         assertEquals(talentLmsInitPages.gamificationPage.successUpdateMessage.getText(), "Gamification settings updated successfully");
     }
 
-    @Test(description = "Click all 'Rewards' checkboxes", groups = {"TLMS", "Regression", "UI", "111"})
+    @Test(description = "Click all 'Leaderboard' checkboxes", groups = {"TLMS", "Regression", "UI", "111"})
     @Tag("Regression")
     public void clickAllLeaderboardCheckboxes() {
         browserManager.openByNavigate(MY_DOMAIN.getURL() + TALENTLMS.getURL() + GAMIFICATION.getURL());
